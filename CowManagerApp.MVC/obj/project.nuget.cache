@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CSiAIC77HjY035pY82xnlsl+9cEV3cy7hd0/LIZ/SMoDaiJ2vXpEVhihl80K3SoykPSp+b60bahCVEm9WsxMbw==",
+  "dgSpecHash": "kTfnlzk1HyOLX5RWegXpwboPeGDEjSoxAkFyyYb+2IZ/XNNpoQRUKSM+uXLLtXprK/1gDHbgyIJ5SCKXUhjYcg==",
   "success": true,
-  "projectFilePath": "D:\\source\\repos\\CowManagerApp\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
+  "projectFilePath": "D:\\CowAp\\CowManager\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

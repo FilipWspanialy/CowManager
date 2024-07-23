@@ -8338,11 +8338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\source\\repos\\CowManagerApp\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
+      "projectUniqueName": "D:\\CowAp\\CowManager\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
       "projectName": "CowManagerApp.MVC",
-      "projectPath": "D:\\source\\repos\\CowManagerApp\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
+      "projectPath": "D:\\CowAp\\CowManager\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
       "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "D:\\source\\repos\\CowManagerApp\\CowManagerApp.MVC\\obj\\",
+      "outputPath": "D:\\CowAp\\CowManager\\CowManagerApp.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
