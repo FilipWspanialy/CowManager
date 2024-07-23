@@ -30,8 +30,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CowAp/CowManager/CowManagerApp.MVC/Views/Cow/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CowAp/CowManager/CowManagerApp.MVC/Views/Cow/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CowAp/CowManager/CowManagerApp.MVC/Views/Cow/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CowAp/CowManager/CowManagerApp.MVC/Views/Cow/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CowAp/CowManager/CowManagerApp.MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CowAp/CowManager/CowManagerApp.MVC/Views/Home/Privacy.cshtml]
