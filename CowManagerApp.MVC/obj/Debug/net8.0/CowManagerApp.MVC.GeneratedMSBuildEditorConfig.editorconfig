@@ -46,6 +46,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CowAp/CowManager/CowManagerApp.MVC/Views/Herd/HerdDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxIZXJkRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CowAp/CowManager/CowManagerApp.MVC/Views/Herd/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CowAp/CowManager/CowManagerApp.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,52 @@
+﻿@* @model CowManagerApp.MVC.Models.Herd
+
+<h1>Cows in herd: @Model.Id</h1>
+
+<ul>
+    @foreach (var krowa in Model.Krowy)
+    {
+        <li>@krowa.Nazwa</li>
+    }
+</ul>
+
+<a href="@Url.Action("Index")">Powrót do stad</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Models.Cow.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Models.Cow.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Models.Cow.Comment)
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cows)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(item => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item.Comment)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table> *@

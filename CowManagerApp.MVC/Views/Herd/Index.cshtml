@@ -1,0 +1,52 @@
+﻿@model CowManagerApp.MVC.Models.Herd
+@* @{
+    ViewData["Title"] = "List of herds";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountOfCows)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("Details", new { id = item.Id })">@item.Id</a>)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountOfCows)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table> *@
+
+<h1>Cows in herd @Model.Id (Number of cows: @Model.AmountOfCows)</h1>
+
+<ul>
+    @foreach (var cow in Model.Cows)
+    {
+        <li>@cow.Name</li>
+    }
+</ul>
+
+<a href="@Url.Action("Index")">Back to herds</a>
