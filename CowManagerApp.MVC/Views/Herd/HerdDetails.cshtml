@@ -1,26 +1,27 @@
-﻿@* @model CowManagerApp.MVC.Models.Herd
+﻿@model CowManagerApp.MVC.Models.Herd
 
 <h1>Cows in herd: @Model.Id</h1>
+<p>Total Cows: @Model.AmountOfCows</p>
 
-<ul>
-    @foreach (var krowa in Model.Krowy)
-    {
-        <li>@krowa.Nazwa</li>
-    }
-</ul>
 
-<a href="@Url.Action("Index")">Powrót do stad</a>
+<a href="@Url.Action("Index")">Powrót do stad</a>|
+<a asp-action="HerdEdit" asp-route-id="@Model.Id">Edit</a> |
+<a asp-action="HerdDelete" asp-route-id="@Model.Id">Delete</a> |
+<a asp-action="AddCow" asp-route-idh="@Model.Id" >Add Cow</a>
+
+
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(Models.Cow.Id)
+                Id
             </th>
             <th>
-                @Html.DisplayNameFor(Models.Cow.Name)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(Models.Cow.Comment)
+                Comment
             </th>
 
 
@@ -31,13 +32,13 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(item => item.Id)
+                    @item.Id
                 </td>
                 <td>
-                    @Html.DisplayFor(item => item.Name)
+                    @item.Name
                 </td>
                 <td>
-                    @Html.DisplayFor(item => item.Comment)
+                    @item.Comment
                 </td>
 
                 <td>
@@ -49,4 +50,4 @@
 
         }
     </tbody>
-</table> *@
+</table>

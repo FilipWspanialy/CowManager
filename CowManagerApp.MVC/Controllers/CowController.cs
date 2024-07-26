@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CowManager.Controllers
 {
@@ -42,14 +43,22 @@ namespace CowManager.Controllers
             return View(cows);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var herds = await _context.Herds.ToListAsync();
+            ViewBag.Herds = new SelectList(herds, "Id", "Id");
+
+            // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
+            if (herds == null || !herds.Any())
+            {
+                ViewBag.HerdsError = "No herds available.";
+            }
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Idherd,Comment")] Cow cows)
+        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment")] Cow cows)
         {
             if (ModelState.IsValid)
             {
@@ -57,11 +66,16 @@ namespace CowManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            var herds = await _context.Herds.ToListAsync();
+            ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
+
             return View(cows);
         }
 
         public async Task<IActionResult> Edit(int? id)
         {
+            var herds = await _context.Herds.ToListAsync();
+            ViewBag.Herds = new SelectList(herds, "Id", "Id");
             if (id == null)
             {
                 return NotFound();
@@ -93,7 +107,7 @@ namespace CowManager.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(cows.Id))
+                    if (!CowExists(cows.Id))
                     {
                         return NotFound();
                     }
@@ -104,6 +118,8 @@ namespace CowManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            var herds = await _context.Herds.ToListAsync();
+            ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
             return View(cows);
         }
 
@@ -138,9 +154,10 @@ namespace CowManager.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MovieExists(int id)
+        private bool CowExists(int id)
         {
             return _context.Cows.Any(e => e.Id == id);
         }
+        
     }
 }

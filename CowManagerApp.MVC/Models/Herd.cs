@@ -7,7 +7,7 @@ public partial class Herd
 {
     public int Id { get; set; }
 
-    public int AmountOfCows { get; set; }
+    public int AmountOfCows => Cows?.Count ?? 0;
 
     public string? Comment { get; set; }
 

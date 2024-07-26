@@ -1,0 +1,20 @@
+﻿@model CowManagerApp.MVC.Models.Cow
+
+<h1>Create Cow for Herd @ViewBag.HerdId</h1>
+
+<form asp-action="AddCow" method="post">
+    <input type="hidden" asp-for="Idherd" />
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Comment" class="control-label"></label>
+        <input asp-for="Comment" class="form-control" />
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
