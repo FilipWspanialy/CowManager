@@ -4,39 +4,39 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CowManagerApp.MVC.Controllers
 {
-    public class MedicineController : Controller
+    public class DiseaseController : Controller
     {
         private readonly CowManagerContext _context;
-        public MedicineController(CowManagerContext context)
+        public DiseaseController(CowManagerContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            if (_context.Medicines == null)
+            if (_context.Diseases == null)
             {
                 return Problem("Entity set 'ApiContext.Movie'  is null.");
             }
 
-            var meds = _context.Medicines;
+            var dises = _context.Diseases;
 
-            return View(await meds.ToListAsync());
+            return View(await dises.ToListAsync());
         }
-        public async Task<IActionResult> MedicineDetails(int? id)
+        public async Task<IActionResult> DIseaseDetails(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var meds = await _context.Medicines
+            var dises = await _context.Diseases
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (meds == null)
+            if (dises == null)
             {
                 return NotFound();
             }
 
-            return View(meds);
+            return View(dises);
         }
     }
 }
