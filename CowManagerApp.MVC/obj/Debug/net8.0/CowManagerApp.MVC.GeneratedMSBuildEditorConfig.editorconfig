@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\CowAp\CowManager\CowManagerApp.MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/CowAp/CowManager/CowManagerApp.MVC/Views/Condition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZGl0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CowAp/CowManager/CowManagerApp.MVC/Views/Cow/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
