@@ -4,7 +4,7 @@
 <p>Total Cows: @Model.AmountOfCows</p>
 
 
-<a href="@Url.Action("Index")">Powrót do stad</a>|
+<a asp-action="Index" asp-controller="Herd" >Back to Herds</a>|
 <a asp-action="HerdEdit" asp-route-id="@Model.Id">Edit</a> |
 <a asp-action="HerdDelete" asp-route-id="@Model.Id">Delete</a> |
 <a asp-action="AddCow" asp-route-idh="@Model.Id" >Add Cow</a>

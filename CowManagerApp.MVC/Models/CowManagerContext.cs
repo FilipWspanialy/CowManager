@@ -14,6 +14,7 @@ public partial class CowManagerContext : DbContext
         : base(options)
     {
     }
+   
 
     public virtual DbSet<Cow> Cows { get; set; }
 
@@ -49,14 +50,13 @@ public partial class CowManagerContext : DbContext
             entity.HasOne(d => d.IdherdNavigation).WithMany(p => p.Cows)
                 .HasForeignKey(d => d.Idherd)
                 .HasConstraintName("FK_Cow_Herd");
-        });
+        }); 
 
         modelBuilder.Entity<Diagnosis>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("Diagnosis");
+            entity.ToTable("Diagnosis");
 
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Comment)
                 .HasMaxLength(200)
                 .IsFixedLength();
@@ -115,10 +115,9 @@ public partial class CowManagerContext : DbContext
 
         modelBuilder.Entity<Treatment>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("Treatment");
+            entity.ToTable("Treatment");
 
+            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Comment)
                 .HasMaxLength(200)
                 .IsFixedLength();
@@ -137,7 +136,7 @@ public partial class CowManagerContext : DbContext
                 .HasForeignKey(d => d.Idmedicine)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Treatment_Medicine");
-        });
+        }); 
 
         OnModelCreatingPartial(modelBuilder);
     }
