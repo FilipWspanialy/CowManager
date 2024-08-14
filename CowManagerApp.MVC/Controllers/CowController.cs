@@ -497,7 +497,8 @@ namespace CowManager.Controllers
                 Cow = cow,
                 Treatments = treats
             };
-            
+            ViewBag.idd = idd;
+            ViewBag.idk = idk;
             return View(viewModel);
         }
         public async Task<IActionResult> TreatForDiagAdd(int idd, int idk)
