@@ -499,6 +499,7 @@ namespace CowManager.Controllers
             };
             ViewBag.idd = idd;
             ViewBag.idk = idk;
+            ViewBag.Disease = _context.Diagnoses.FirstOrDefault(d => d.Id == idd)?.NameOfDisease;
             return View(viewModel);
         }
         public async Task<IActionResult> TreatForDiagAdd(int idd, int idk)

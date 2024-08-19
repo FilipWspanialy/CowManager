@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\CowAp\\CowManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.MVC.csproj|D:\\CowAp\\CowManager\\cowmanagerapp.mvc\\views\\cow\\treatfordiag.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.MVC.csproj|d:\\cowap\\cowmanager\\cowmanagerapp.mvc\\views\\cow\\treatfordiag.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.MVC.csproj|solutionrelative:cowmanagerapp.mvc\\views\\cow\\treatfordiag.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -30,8 +30,7 @@
               "RelativeToolTip": "CowManagerApp.MVC\\Controllers\\CowController.cs",
               "ViewState": "AQIAAIQBAAAAAAAAAAA3wPQBAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T10:53:19.965Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-02T10:53:19.965Z"
             },
             {
               "$type": "Document",

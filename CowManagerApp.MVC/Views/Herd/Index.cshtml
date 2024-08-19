@@ -9,13 +9,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AmountOfCows)
+                Amount Of Cows
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Comment)
+                Comment
             </th>
 
 
@@ -29,10 +29,10 @@
                     <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a>)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AmountOfCows)
+                    @item.AmountOfCows
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Comment)
+                    @item.Comment
                 </td>
                 <td>
                     <a asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|
