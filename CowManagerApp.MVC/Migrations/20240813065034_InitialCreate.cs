@@ -68,8 +68,7 @@ namespace CowManagerApp.MVC.Migrations
                         name: "FK_Cow_Herd",
                         column: x => x.IDHerd,
                         principalTable: "Herd",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -90,14 +89,12 @@ namespace CowManagerApp.MVC.Migrations
                         name: "FK_Diagnosis_Cow",
                         column: x => x.IDCow,
                         principalTable: "Cow",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_Diagnosis_Disease",
                         column: x => x.IDDisease,
                         principalTable: "Disease",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -119,20 +116,17 @@ namespace CowManagerApp.MVC.Migrations
                         name: "FK_Treatment_Cow",
                         column: x => x.IDCow,
                         principalTable: "Cow",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_Treatment_Diagnosis",
                         column: x => x.IDDiagnosis,
                         principalTable: "Diagnosis",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_Treatment_Medicine",
                         column: x => x.IDMedicine,
                         principalTable: "Medicine",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateIndex(
