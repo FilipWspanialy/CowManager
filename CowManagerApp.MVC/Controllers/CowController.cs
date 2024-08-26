@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 
 namespace CowManager.Controllers
 {
@@ -251,12 +252,33 @@ namespace CowManager.Controllers
         }
         public async Task<IActionResult> DiagRemove(int? id)
         {
+            if(id == null)
+            {
+                return NotFound();
+            }
 
+            var diags = await _context.Diagnoses
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (diags == null)
+            {
+                return NotFound();
+            }
+
+            return View(diags);
+
+           
+        }
+
+        [HttpPost, ActionName("DiagRemove")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DiagRemoveConfirmed(int id)
+        {
+            var diagnosis = await _context.Diagnoses.FindAsync(id);
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
                 {
-                    var diagnosis = await _context.Diagnoses.FindAsync(id);
                     if (diagnosis != null)
                     {
 
@@ -268,6 +290,7 @@ namespace CowManager.Controllers
                         await _context.SaveChangesAsync();
 
                         await transaction.CommitAsync();
+                        
                     }
                 }
                 catch (Exception)
@@ -276,30 +299,7 @@ namespace CowManager.Controllers
                     throw;
                 }
             }
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost, ActionName("Remove")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DiagRemoveConfirmed(int id)
-        {
-            var diagnosis = await _context.Diagnoses.FindAsync(id);
-            if (diagnosis == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                _context.Diagnoses.Remove(diagnosis);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "An error occurred while removing the diagnosis.");
-                return View();
-            }
+            return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
         }
         public async Task<IActionResult> DiagEdit(int? id)
         {
@@ -435,7 +435,7 @@ namespace CowManager.Controllers
             return View(treats);
         }
 
-        [HttpPost, ActionName("Remove")]
+        [HttpPost, ActionName("TreatRemove")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> TreatRemoveConfirmed(int id)
         {
