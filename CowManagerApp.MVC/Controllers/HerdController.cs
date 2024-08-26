@@ -79,13 +79,20 @@ namespace CowManagerApp.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> HerdDeleteConfirmed(int id)
         {
-            var herds = await _context.Herds.FindAsync(id);
-            if (herds != null)
+            var herd = await _context.Herds
+               .Include(h => h.Cows)
+               .FirstOrDefaultAsync(h => h.Id == id);
+
+            if (herd != null)
             {
-                _context.Herds.Remove(herds);
+                if (herd.Cows != null)
+                {
+                    _context.Cows.RemoveRange(herd.Cows);
+                }
+                _context.Herds.Remove(herd);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> HerdEdit(int? id)

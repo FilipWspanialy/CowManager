@@ -49,6 +49,7 @@ public partial class CowManagerContext : DbContext
 
             entity.HasOne(d => d.IdherdNavigation).WithMany(p => p.Cows)
                 .HasForeignKey(d => d.Idherd)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Cow_Herd");
         }); 
 
@@ -68,7 +69,7 @@ public partial class CowManagerContext : DbContext
 
             entity.HasOne(d => d.IdcowNavigation).WithMany()
                 .HasForeignKey(d => d.Idcow)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Diagnosis_Cow");
 
             entity.HasOne(d => d.IddiseaseNavigation).WithMany()
@@ -130,7 +131,7 @@ public partial class CowManagerContext : DbContext
 
             entity.HasOne(d => d.IdcowNavigation).WithMany()
                 .HasForeignKey(d => d.Idcow)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Treatment_Cow");
 
             entity.HasOne(d => d.IdmedicineNavigation).WithMany()
@@ -140,7 +141,7 @@ public partial class CowManagerContext : DbContext
 
             entity.HasOne(d => d.IddiagnosisNavigation).WithMany()
                 .HasForeignKey(d => d.Iddiagnosis)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Treatment_Diagnosis");
         }); 
 

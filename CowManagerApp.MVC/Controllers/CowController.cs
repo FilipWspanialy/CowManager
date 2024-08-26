@@ -141,13 +141,32 @@ namespace CowManager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cows = await _context.Cows.FindAsync(id);
-            if (cows != null)
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                _context.Cows.Remove(cows);
-            }
+                try
+                {
+                    var cow = await _context.Cows.FindAsync(id);
+                    if (cow != null)
+                    {
+                        var diagnoses = _context.Diagnoses.Where(d => d.Idcow == id);
+                        _context.Diagnoses.RemoveRange(diagnoses);
 
-            await _context.SaveChangesAsync();
+                        var treatments = _context.Treatments.Where(t => t.Idcow == id);
+                        _context.Treatments.RemoveRange(treatments);
+
+                        _context.Cows.Remove(cow);
+
+                        await _context.SaveChangesAsync();
+
+                        await transaction.CommitAsync();
+                    }
+                }
+                catch (Exception)
+                {
+                    await transaction.RollbackAsync();
+                    throw;
+                }
+            }
             return RedirectToAction(nameof(Index));
         }
 
@@ -232,20 +251,32 @@ namespace CowManager.Controllers
         }
         public async Task<IActionResult> DiagRemove(int? id)
         {
-            if (id == null)
+
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                return NotFound();
+                try
+                {
+                    var diagnosis = await _context.Diagnoses.FindAsync(id);
+                    if (diagnosis != null)
+                    {
+
+                        var treatments = _context.Treatments.Where(t => t.Iddiagnosis == id);
+                        _context.Treatments.RemoveRange(treatments);
+
+                        _context.Diagnoses.Remove(diagnosis);
+
+                        await _context.SaveChangesAsync();
+
+                        await transaction.CommitAsync();
+                    }
+                }
+                catch (Exception)
+                {
+                    await transaction.RollbackAsync();
+                    throw;
+                }
             }
-
-            var diagnosis = await _context.Diagnoses
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (diagnosis == null)
-            {
-                return NotFound();
-            }
-
-            return View(diagnosis);
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost, ActionName("Remove")]
