@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CowManagerApp.MVC")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("CowMenager.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e729afc4438717b72976858f02dcb1d190cfe184")]
-[assembly: System.Reflection.AssemblyProductAttribute("CowManagerApp.MVC")]
-[assembly: System.Reflection.AssemblyTitleAttribute("CowManagerApp.MVC")]
+[assembly: System.Reflection.AssemblyProductAttribute("CowMenager.Data")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CowMenager.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.

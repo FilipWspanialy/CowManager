@@ -16,4 +16,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CowMenager.Data\CowManager.Data.csproj" />
+    <ProjectReference Include="..\CowMenager.Models\CowManager.Models.csproj" />
+  </ItemGroup>
+
 </Project>
