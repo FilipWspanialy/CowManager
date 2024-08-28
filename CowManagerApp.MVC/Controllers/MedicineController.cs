@@ -1,4 +1,5 @@
-﻿using CowManagerApp.MVC.Models;
+﻿using CowManager.Models;
+using CowManager.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

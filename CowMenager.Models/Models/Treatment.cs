@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CowManagerApp.MVC.Models;
+namespace CowManager.Models.Models;
 
 public partial class Treatment
 {
@@ -12,7 +12,7 @@ public partial class Treatment
     public int Idcow { get; set; }
 
     public int Idmedicine { get; set; }
-    
+
     public string NameOfMedicine { get; set; } = null!;
 
     public int? Iddiagnosis { get; set; }

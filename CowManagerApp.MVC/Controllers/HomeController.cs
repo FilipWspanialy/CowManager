@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using CowManagerApp.MVC.Models;
+using CowManager.Models.Models;
+using CowManager.Data;
 
 namespace CowManagerApp.MVC.Controllers;
 

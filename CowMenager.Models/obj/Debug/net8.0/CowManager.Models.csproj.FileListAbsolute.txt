@@ -1,0 +1,15 @@
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.AssemblyReference.cache
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfoInputs.cache
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfo.cs
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.CoreCompileInputs.cache
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.sourcelink.json
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.deps.json
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.runtimeconfig.json
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.pdb
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\refint\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
+C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll

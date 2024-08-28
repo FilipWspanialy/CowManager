@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CowManagerApp.MVC.Models
+namespace CowManager.Models.Models
 {
     public class CowDiagAdd
     {

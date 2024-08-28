@@ -1,4 +1,4 @@
-namespace CowManagerApp.MVC.Models;
+namespace CowManager.Models.Models;
 
 public class ErrorViewModel
 {

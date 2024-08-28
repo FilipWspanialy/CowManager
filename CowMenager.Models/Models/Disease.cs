@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CowManagerApp.MVC.Models;
+namespace CowManager.Models.Models;
 
 public partial class Disease
 {

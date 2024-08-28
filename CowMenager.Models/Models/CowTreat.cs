@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 
-namespace CowManagerApp.MVC.Models
+namespace CowManager.Models.Models
 {
     public class CowTreat
     {

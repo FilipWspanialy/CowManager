@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using CowManager.Models.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace CowManagerApp.MVC.Models;
 
-public partial class CowManagerContext : DbContext
+namespace CowManager.Data;
+
+public partial class CowManagerContext : IdentityDbContext
 {
     public CowManagerContext()
     {
@@ -34,8 +37,11 @@ public partial class CowManagerContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.Entity<Cow>(entity =>
         {
+           
             entity.ToTable("Cow");
 
             entity.Property(e => e.Id).HasColumnName("ID");
@@ -141,7 +147,7 @@ public partial class CowManagerContext : DbContext
 
             entity.HasOne(d => d.IddiagnosisNavigation).WithMany()
                 .HasForeignKey(d => d.Iddiagnosis)
-                .OnDelete(DeleteBehavior.Cascade)
+                .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Treatment_Diagnosis");
         }); 
 

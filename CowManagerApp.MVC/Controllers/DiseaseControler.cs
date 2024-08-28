@@ -1,6 +1,8 @@
-﻿using CowManagerApp.MVC.Models;
+﻿using CowManager.Models.Models;
+using CowManager.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace CowManagerApp.MVC.Controllers
 {

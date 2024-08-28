@@ -1,10 +1,11 @@
-﻿using CowManagerApp.MVC.Models;
+﻿using CowManager.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using CowManager.Models.Models;
 
-namespace CowManager.Controllers
+namespace CowManagerApp.MVC.Controllers
 {
     public class CowController : Controller
     {
@@ -246,13 +247,13 @@ namespace CowManager.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Diag", "Cow", new { id = model.CowId });
-            
-            
+
+
 
         }
         public async Task<IActionResult> DiagRemove(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -267,7 +268,7 @@ namespace CowManager.Controllers
 
             return View(diags);
 
-           
+
         }
 
         [HttpPost, ActionName("DiagRemove")]
@@ -290,7 +291,7 @@ namespace CowManager.Controllers
                         await _context.SaveChangesAsync();
 
                         await transaction.CommitAsync();
-                        
+
                     }
                 }
                 catch (Exception)
@@ -303,7 +304,7 @@ namespace CowManager.Controllers
         }
         public async Task<IActionResult> DiagEdit(int? id)
         {
-           
+
             var diags = await _context.Diagnoses.FindAsync(id);
             if (diags == null)
             {
