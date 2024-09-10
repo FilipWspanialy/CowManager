@@ -1,0 +1,25 @@
+﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
+@model CowManager.Models.Models.Diagnosis
+
+<h2>Remove Diagnosis</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    
+
+<h4>Are you sure you want to remove this diagnosis?</h4>
+
+<div>
+    <h5>Disease: @Model.NameOfDisease</h5>
+    <h5>Comment: @Model.Comment</h5>
+</div>
+
+<form asp-action="DiagRemove">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Remove" class="btn btn-danger" />
+</form>
+}else
+{
+    <h4>You don't have access to this commend</h4>
+
+}

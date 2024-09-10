@@ -1,0 +1,31 @@
+﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
+@model CowManager.Models.Models.Treatment
+<h2>Remove</h2>
+
+@if (true)
+{
+    <h4>Are you sure you want to remove this?</h4>
+
+    <div>
+        <h5>Disease: @Model.NameOfMedicine</h5>
+        <h5>Comment: @Model.Comment</h5>
+    </div>
+
+    <form asp-action="TreatRemove">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Remove" class="btn btn-danger" />
+    </form>
+
+}
+<h4>Are you sure you want to remove this?</h4>
+
+<div>
+    <h5>Disease: @Model.NameOfMedicine</h5>
+    <h5>Comment: @Model.Comment</h5>
+</div>
+
+<form asp-action="TreatRemove">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Remove" class="btn btn-danger" />
+</form>
+

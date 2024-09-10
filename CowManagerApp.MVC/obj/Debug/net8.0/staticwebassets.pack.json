@@ -1,8 +1,80 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CowManagerApp.MVC.bundle.scp.css",
-      "PackagePath": "staticwebassets\\CowManagerApp.MVC.bundle.scp.css"
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CowManagerApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CowManagerApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\CreateCow1.jpeg",
+      "PackagePath": "staticwebassets\\Images\\CreateCow1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\DeleteCow2.jpeg",
+      "PackagePath": "staticwebassets\\Images\\DeleteCow2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\DiagnosisCow.jpeg",
+      "PackagePath": "staticwebassets\\Images\\DiagnosisCow.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\DiseaseCow.jpg",
+      "PackagePath": "staticwebassets\\Images\\DiseaseCow.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\HerdCow.jpeg",
+      "PackagePath": "staticwebassets\\Images\\HerdCow.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\HomePageCow.jpeg",
+      "PackagePath": "staticwebassets\\Images\\HomePageCow.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\ListCow.jpeg",
+      "PackagePath": "staticwebassets\\Images\\ListCow.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\MedicineCow.jpeg",
+      "PackagePath": "staticwebassets\\Images\\MedicineCow.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\WheelCow.jpeg",
+      "PackagePath": "staticwebassets\\Images\\WheelCow.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\About.css",
+      "PackagePath": "staticwebassets\\css\\About.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\Create.css",
+      "PackagePath": "staticwebassets\\css\\Create.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\Delete.css",
+      "PackagePath": "staticwebassets\\css\\Delete.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\Diagnosis.css",
+      "PackagePath": "staticwebassets\\css\\Diagnosis.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\Disease.css",
+      "PackagePath": "staticwebassets\\css\\Disease.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\Herd.css",
+      "PackagePath": "staticwebassets\\css\\Herd.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\HomePage.css",
+      "PackagePath": "staticwebassets\\css\\HomePage.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\List.css",
+      "PackagePath": "staticwebassets\\css\\List.css"
+    },
+    {
+      "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\Medicine.css",
+      "PackagePath": "staticwebassets\\css\\Medicine.css"
     },
     {
       "Id": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\site.css",
@@ -245,20 +317,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CowManagerApp.MVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CowManagerApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CowManagerApp.MVC.props",
-      "PackagePath": "build\\CowManagerApp.MVC.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CowManagerApp.props",
+      "PackagePath": "build\\CowManagerApp.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CowManagerApp.MVC.props",
-      "PackagePath": "buildMultiTargeting\\CowManagerApp.MVC.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CowManagerApp.props",
+      "PackagePath": "buildMultiTargeting\\CowManagerApp.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CowManagerApp.MVC.props",
-      "PackagePath": "buildTransitive\\CowManagerApp.MVC.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CowManagerApp.props",
+      "PackagePath": "buildTransitive\\CowManagerApp.props"
     }
   ],
   "ElementsToRemove": []

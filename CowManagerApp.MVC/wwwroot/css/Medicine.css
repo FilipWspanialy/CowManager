@@ -1,0 +1,8 @@
+
+body {
+    background-image: url('/Images/MedicineCow.jpeg'); /* Dodaj tutaj link do zdjęcia */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+

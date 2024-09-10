@@ -1,0 +1,50 @@
+﻿<link rel="stylesheet" href="~/css/Herd.css" asp-append-version="true" />
+@model IEnumerable<CowManager.Models.Models.Herd>
+@{
+    ViewData["Title"] = "List of herds";
+}
+<h1>@ViewData["Title"]</h1>
+<a asp-action="HerdCreate" >Create</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Amount Of Cows
+            </th>
+            <th>
+                Comment
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a>)
+                </td>
+                <td>
+                    @item.AmountOfCows
+                </td>
+                <td>
+                    @item.Comment
+                </td>
+                <td>
+                    <a asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|
+                    <a asp-action="HerdEdit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="HerdDelete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+

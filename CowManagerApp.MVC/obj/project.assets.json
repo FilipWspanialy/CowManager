@@ -3107,6 +3107,21 @@
         "runtime": {
           "bin/placeholder/CowManager.Models.dll": {}
         }
+      },
+      "CowManager.S/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CowManager.Data": "1.0.0",
+          "CowManager.Models": "1.0.0",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.8"
+        },
+        "compile": {
+          "bin/placeholder/CowManager.S.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CowManager.S.dll": {}
+        }
       }
     }
   },
@@ -8612,12 +8627,18 @@
       "type": "project",
       "path": "../CowMenager.Models/CowManager.Models.csproj",
       "msbuildProject": "../CowMenager.Models/CowManager.Models.csproj"
+    },
+    "CowManager.S/1.0.0": {
+      "type": "project",
+      "path": "../CowManager.S/CowManager.S.csproj",
+      "msbuildProject": "../CowManager.S/CowManager.S.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "CowManager.Data >= 1.0.0",
       "CowManager.Models >= 1.0.0",
+      "CowManager.S >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.8",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.8",
       "Microsoft.EntityFrameworkCore >= 8.0.8",
@@ -8635,9 +8656,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
-      "projectName": "CowManagerApp.MVC",
-      "projectPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
+      "projectUniqueName": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\CowManagerApp.csproj",
+      "projectName": "CowManagerApp",
+      "projectPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\CowManagerApp.csproj",
       "packagesPath": "C:\\Users\\Kuba Sornek\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\obj\\",
       "projectStyle": "PackageReference",
@@ -8663,6 +8684,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManager.S\\CowManager.S.csproj": {
+              "projectPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManager.S\\CowManager.S.csproj"
+            },
             "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowMenager.Data\\CowManager.Data.csproj": {
               "projectPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowMenager.Data\\CowManager.Data.csproj"
             },

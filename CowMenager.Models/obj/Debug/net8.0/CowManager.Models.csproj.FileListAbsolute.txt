@@ -13,3 +13,31 @@ C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.deps.json
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.runtimeconfig.json
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.pdb
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.AssemblyReference.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfoInputs.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfo.cs
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.CoreCompileInputs.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\refint\CowManager.Models.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.deps.json
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.runtimeconfig.json
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.pdb
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.AssemblyReference.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfoInputs.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfo.cs
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.CoreCompileInputs.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\refint\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll

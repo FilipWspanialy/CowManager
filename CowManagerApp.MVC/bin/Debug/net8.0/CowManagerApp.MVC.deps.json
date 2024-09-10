@@ -2107,6 +2107,12 @@
       "System.Text.Json/8.0.4": {
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.724.31311"
+          }
         }
       },
       "System.Threading.Channels/7.0.0": {},
@@ -2141,10 +2147,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.4"
         },
         "runtime": {
-          "CowManager.Data.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "CowManager.Data.dll": {}
         }
       },
       "CowManager.Models/1.0.0": {
@@ -2156,10 +2159,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.4"
         },
         "runtime": {
-          "CowManager.Models.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "CowManager.Models.dll": {}
         }
       }
     }

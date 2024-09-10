@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7BgtxXmJbGM=",
+  "dgSpecHash": "U9V7NhIyrK4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\CowManagerApp.MVC.csproj",
+  "projectFilePath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\CowManagerApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kuba Sornek\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Kuba Sornek\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

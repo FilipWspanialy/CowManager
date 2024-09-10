@@ -16,3 +16,37 @@ C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Data\obj\Debug\net8.0\r
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.pdb
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.genruntimeconfig.cache
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowMenager.Data\obj\Debug\net8.0\ref\CowManager.Data.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.deps.json
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.runtimeconfig.json
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.pdb
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Models.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Models.pdb
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.csproj.AssemblyReference.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.AssemblyInfoInputs.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.AssemblyInfo.cs
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.csproj.CoreCompileInputs.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManag.6F7F01F1.Up2Date
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\refint\CowManager.Data.dll
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.pdb
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.genruntimeconfig.cache
+D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\ref\CowManager.Data.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.deps.json
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.runtimeconfig.json
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.pdb
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Models.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\bin\Debug\net8.0\CowManager.Models.pdb
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.csproj.AssemblyReference.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.AssemblyInfoInputs.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.AssemblyInfo.cs
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.csproj.CoreCompileInputs.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManag.6F7F01F1.Up2Date
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\refint\CowManager.Data.dll
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.pdb
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.genruntimeconfig.cache
+C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\ref\CowManager.Data.dll

@@ -17,303 +17,303 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CowManagerApp.MVC
 build_property.RootNamespace = CowManagerApp.MVC
-build_property.ProjectDir = C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowManagerApp.MVC\
+build_property.ProjectDir = D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowManagerApp.MVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowManagerApp.MVC
+build_property.MSBuildProjectDirectory = D:\Pobrane\CowManager-Kuba\CowManager-Kuba\CowManagerApp.MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Lockout.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/Error.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/Create.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/Delete.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/Details.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/Diag.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/Diag.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERpYWcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/DiagAdd.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/DiagAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERpYWdBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/DiagEdit.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/DiagEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERpYWdFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/DiagRemove.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/DiagRemove.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XERpYWdSZW1vdmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/Edit.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/Index.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/Treat.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/Treat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XFRyZWF0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/TreatAdd.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/TreatAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XFRyZWF0QWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/TreatEdit.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/TreatEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XFRyZWF0RWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/TreatForDiag.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/TreatForDiag.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XFRyZWF0Rm9yRGlhZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/TreatForDiagAdd.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/TreatForDiagAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XFRyZWF0Rm9yRGlhZ0FkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Cow/TreatRemove.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Cow/TreatRemove.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ293XFRyZWF0UmVtb3ZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Disease/DiseaseDetails.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Disease/DiseaseDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzZWFzZVxEaXNlYXNlRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Disease/Index.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Disease/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzZWFzZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Herd/AddCow.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Herd/AddCow.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxBZGRDb3cuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Herd/HerdCreate.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Herd/HerdCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxIZXJkQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Herd/HerdDelete.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Herd/HerdDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxIZXJkRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Herd/HerdDetails.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Herd/HerdDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxIZXJkRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Herd/HerdEdit.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Herd/HerdEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxIZXJkRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Herd/Index.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Herd/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Home/Index.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Medicine/Index.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Medicine/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNpbmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Medicine/MedicineDetails.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Medicine/MedicineDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNpbmVcTWVkaWNpbmVEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Shared/Error.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Shared/_LoginPartial.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/_ViewImports.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/_ViewStart.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuba Sornek/Desktop/Filip/CowManager/CowManagerApp.MVC/Views/Shared/_Layout.cshtml]
+[D:/Pobrane/CowManager-Kuba/CowManager-Kuba/CowManagerApp.MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bdu01ehjje
