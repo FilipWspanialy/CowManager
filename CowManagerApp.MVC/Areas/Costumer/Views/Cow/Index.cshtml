@@ -3,8 +3,7 @@
 @{
     ViewData["Title"] = "List";
 }
-<h1>@ViewData["Title"]</h1>@if (User.IsInRole("Admin"))
-{
+<h1>@ViewData["Title"]</h1>
     
 
 <p>
@@ -58,25 +57,4 @@
         }
     </tbody>
 </table>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Id
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Idherd
-                </th>
 
-
-            </tr>
-        </thead>
-       
-    </table>
-}

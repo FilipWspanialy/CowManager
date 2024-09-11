@@ -2,8 +2,7 @@
 @model CowManager.Models.Models.CowDiagAdd
 
 <h2>Add Diagnosis for @Model.CowName</h2>
-@if (User.IsInRole("Admin"))
-{
+
     
 
 <form asp-action="DiagAdd" asp-controller="Cow" method="post">
@@ -29,10 +28,7 @@
         <input type="submit" value="Add diagnosy" class="btn btn-primary" />
     </div>
 </form>
-}else
-{
-    <p style="text-align: center; font-size: 18px;"> You don't have access</P>
-}
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

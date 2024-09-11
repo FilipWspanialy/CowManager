@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Delete";
 }
-@if (User.IsInRole("Admin")){
+
 <div class="container">
     <h2>Delete</h2>
     <div class="row">
@@ -28,10 +28,4 @@
         <a asp-action="Index">Back to List</a>
     </form>
     </div>
-}
-else
-{
-    <p style="text-align: center; font-size: 18px;">
-        You don't have access to Delate ;(
-    </p>
-}
+

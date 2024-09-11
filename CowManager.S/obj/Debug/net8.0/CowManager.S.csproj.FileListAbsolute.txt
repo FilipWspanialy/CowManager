@@ -50,3 +50,21 @@ C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowManager.S\obj\Debug\net8.0\CowM
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowManager.S\obj\Debug\net8.0\refint\CowManager.S.dll
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.pdb
 C:\Users\Kuba Sornek\Desktop\Filip\CowManager\CowManager.S\obj\Debug\net8.0\ref\CowManager.S.dll
+D:\test\CowManager\CowManager.S\bin\Debug\net8.0\CowManager.S.deps.json
+D:\test\CowManager\CowManager.S\bin\Debug\net8.0\CowManager.S.dll
+D:\test\CowManager\CowManager.S\bin\Debug\net8.0\CowManager.S.pdb
+D:\test\CowManager\CowManager.S\bin\Debug\net8.0\CowManager.Data.dll
+D:\test\CowManager\CowManager.S\bin\Debug\net8.0\CowManager.Models.dll
+D:\test\CowManager\CowManager.S\bin\Debug\net8.0\CowManager.Data.pdb
+D:\test\CowManager\CowManager.S\bin\Debug\net8.0\CowManager.Models.pdb
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.csproj.AssemblyReference.cache
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.GeneratedMSBuildEditorConfig.editorconfig
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.AssemblyInfoInputs.cache
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.AssemblyInfo.cs
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.csproj.CoreCompileInputs.cache
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.sourcelink.json
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManag.7C8920ED.Up2Date
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.dll
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\refint\CowManager.S.dll
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\CowManager.S.pdb
+D:\test\CowManager\CowManager.S\obj\Debug\net8.0\ref\CowManager.S.dll

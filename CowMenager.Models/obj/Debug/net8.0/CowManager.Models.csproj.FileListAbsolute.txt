@@ -41,3 +41,18 @@ C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba
 C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
 C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
 C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll
+D:\test\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.deps.json
+D:\test\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.runtimeconfig.json
+D:\test\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.dll
+D:\test\CowManager\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.pdb
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.AssemblyReference.cache
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfoInputs.cache
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfo.cs
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.CoreCompileInputs.cache
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.sourcelink.json
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.dll
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\refint\CowManager.Models.dll
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
+D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll

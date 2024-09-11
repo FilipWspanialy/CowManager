@@ -2,9 +2,7 @@
 @model CowManager.Models.Models.CowTreatAdd
 
 <h2>Add Treatment for @Model.CowName</h2>
-@if (User.IsInRole("Admin"))
 
-{
 
     <form asp-action="TreatAdd" asp-controller="Cow" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,14 +29,7 @@
         </div>
     </form>
 
-}
-else
-{
 
-    <p style="text-align: center; font-size: 18px;">
-        You don't have access to Create ;(
-    </p>
-}
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

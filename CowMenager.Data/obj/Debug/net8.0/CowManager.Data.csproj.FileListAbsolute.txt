@@ -50,3 +50,21 @@ C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba
 C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.pdb
 C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.genruntimeconfig.cache
 C:\Users\Kuba Sornek\Desktop\CowManager-Maciek\CowManager-Maciek\CowManager-Kuba\CowMenager.Data\obj\Debug\net8.0\ref\CowManager.Data.dll
+D:\test\CowManager\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.deps.json
+D:\test\CowManager\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.runtimeconfig.json
+D:\test\CowManager\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.dll
+D:\test\CowManager\CowMenager.Data\bin\Debug\net8.0\CowManager.Data.pdb
+D:\test\CowManager\CowMenager.Data\bin\Debug\net8.0\CowManager.Models.dll
+D:\test\CowManager\CowMenager.Data\bin\Debug\net8.0\CowManager.Models.pdb
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.csproj.AssemblyReference.cache
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.AssemblyInfoInputs.cache
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.AssemblyInfo.cs
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.csproj.CoreCompileInputs.cache
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.sourcelink.json
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManag.6F7F01F1.Up2Date
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.dll
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\refint\CowManager.Data.dll
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.pdb
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\CowManager.Data.genruntimeconfig.cache
+D:\test\CowManager\CowMenager.Data\obj\Debug\net8.0\ref\CowManager.Data.dll

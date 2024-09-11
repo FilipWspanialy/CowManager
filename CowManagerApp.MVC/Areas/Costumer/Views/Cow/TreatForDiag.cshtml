@@ -8,8 +8,7 @@
 
 <h3>Treatment</h3>
 <a asp-action="TreatForDiagAdd" asp-controller="Cow" asp-route-idd="@ViewBag.idd" asp-route-idk="@Model.Cow.Id">Add medicine</a>
-@if (Model.Treatments.Any())
-{
+
     <ul>
         @foreach (var treats in Model.Treatments)
         {
@@ -24,8 +23,4 @@
             </li>
         }
     </ul>
-}
-else
-{
-    <p>No diagnoses found for this cow.</p>
-}
+
