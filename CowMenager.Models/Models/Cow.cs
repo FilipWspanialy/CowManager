@@ -17,5 +17,7 @@ public partial class Cow
 
     public string? Comment { get; set; }
 
+    public string? UserId { get; set; }
+
     public virtual Herd? IdherdNavigation { get; set; }
 }

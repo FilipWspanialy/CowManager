@@ -52,6 +52,7 @@ public partial class CowManagerContext : IdentityDbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(20)
                 .IsFixedLength();
+            entity.Property(e => e.UserId).HasColumnName("UserId");
 
             entity.HasOne(d => d.IdherdNavigation).WithMany(p => p.Cows)
                 .HasForeignKey(d => d.Idherd)
@@ -105,6 +106,7 @@ public partial class CowManagerContext : IdentityDbContext
             entity.Property(e => e.Comment)
                 .HasMaxLength(200)
                 .IsFixedLength();
+            entity.Property(e => e.UserId).HasColumnName("UserId");
         });
 
         modelBuilder.Entity<Medicine>(entity =>

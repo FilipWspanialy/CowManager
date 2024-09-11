@@ -3,6 +3,7 @@ using CowManager.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace CowManagerApp.Areas.Costumer.Controllers
 { [Area("Costumer")]
@@ -20,12 +21,16 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
         public async Task<IActionResult> Index()
         {
+
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (_context.Herds == null)
             {
                 return Problem("Entity set 'ApiContext.Movie'  is null.");
             }
 
             var herds = await _context.Herds
+                .Where(c => c.UserId == userId)
                 .Include(s => s.Cows)
                 .ToListAsync();
 
@@ -54,6 +59,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> HerdCreate([Bind("Id,Comment")] Herd herds)
         {
+            herds.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (ModelState.IsValid)
             {
                 _context.Add(herds);
@@ -119,6 +125,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> HerdEdit(int id, [Bind("Id,Comment")] Herd herd)
         {
+            herd.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (id != herd.Id)
             {
                 return NotFound();
@@ -173,6 +180,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment")] Cow cow)
         {
+            cow.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (ModelState.IsValid)
             {
                 _context.Add(cow);

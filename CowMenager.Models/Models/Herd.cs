@@ -11,5 +11,7 @@ public partial class Herd
 
     public string? Comment { get; set; }
 
+    public string? UserId { get; set; }
+
     public virtual ICollection<Cow> Cows { get; set; } = new List<Cow>();
 }

@@ -46,6 +46,10 @@ namespace CowManager.Data.Migrations
                         .HasColumnType("nchar(20)")
                         .IsFixedLength();
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UserId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Idherd");
@@ -128,6 +132,10 @@ namespace CowManager.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nchar(200)")
                         .IsFixedLength();
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UserId");
 
                     b.HasKey("Id");
 
@@ -347,12 +355,10 @@ namespace CowManager.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -389,12 +395,10 @@ namespace CowManager.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");

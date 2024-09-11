@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using CowManager.Models.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace CowManagerApp.Areas.Costumer.Controllers
 { [Area("Costumer")]
@@ -20,12 +21,15 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (_context.Cows == null)
             {
                 return Problem("Entity set 'ApiContext.Movie'  is null.");
             }
 
-            var cows = _context.Cows;
+            var cows = _context.Cows
+                            .Where(c => c.UserId == userId);
 
             return View(await cows.ToListAsync());
         }
@@ -48,8 +52,12 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
         public async Task<IActionResult> Create()
         {
-            var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id");
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var herds = await _context.Herds
+                            .Where(c => c.UserId == userId)
+                            .ToListAsync();
+            ViewBag.Herds = new SelectList(herds, "Id", "Comment");
 
             // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
             if (herds == null || !herds.Any())
@@ -63,6 +71,9 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,Idherd,Comment")] Cow cows)
         {
+
+            cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            
             if (ModelState.IsValid)
             {
                 _context.Add(cows);
@@ -96,6 +107,8 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment")] Cow cows)
         {
+
+            cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (id != cows.Id)
             {
                 return NotFound();
