@@ -20,13 +20,22 @@ builder.Services.AddIdentity<IdentityUser,IdentityRole>(options => options.SignI
     .AddEntityFrameworkStores<CowManagerContext>();
 builder.Services.ConfigureApplicationCookie(options =>
 {
+    //options.LoginPath = "/Identity/Account/Login";
+    //options.LogoutPath = "/Identity/Account/Logout";
+    //options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+    //options.Cookie.HttpOnly = true;
+    //options.Cookie.SameSite = SameSiteMode.Strict;
+    //options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    //options.Cookie.IsEssential = true;
     options.LoginPath = "/Identity/Account/Login";
     options.LogoutPath = "/Identity/Account/Logout";
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(20); 
     options.Cookie.HttpOnly = true;
-    options.Cookie.SameSite = SameSiteMode.Strict;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     options.Cookie.IsEssential = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.Strict;
+    options.Cookie.Expiration = null; 
 });
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddControllersWithViews();
