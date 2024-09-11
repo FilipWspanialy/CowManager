@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\controllers\\cowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\costumer\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -17,11 +17,11 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CowManager/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|d:\\test\\cowmanager\\cowmenager.models\\models\\cow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|D:\\test\\CowManager\\cowmenager.models\\models\\cow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|solutionrelative:cowmenager.models\\models\\cow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|d:\\test\\cowmanager\\cowmenager.models\\models\\herd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|D:\\test\\CowManager\\cowmenager.models\\models\\herd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|solutionrelative:cowmenager.models\\models\\herd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,8 +44,7 @@
               "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Create.cshtml",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-11T12:57:17.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T12:57:17.133Z"
             },
             {
               "$type": "Document",
@@ -55,7 +54,7 @@
               "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Controllers\\CowController.cs",
               "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Controllers\\CowController.cs",
               "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Controllers\\CowController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAADwvzwAAAAAAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAwwDwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T12:12:12.802Z",
               "EditorCaption": ""
@@ -67,8 +66,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CowManager/True/SqlTable/dbo.AspNetUsers.sql",
               "ToolTip": "dbo.AspNetUsers [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-11T12:49:40.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T12:49:40.375Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CowManager/True/SqlTable/dbo.Cow.sql",
               "ToolTip": "dbo.Cow [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-11T12:49:22.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T12:49:22.307Z"
             },
             {
               "$type": "Document",
@@ -90,8 +87,7 @@
               "RelativeToolTip": "CowMenager.Models\\Models\\Herd.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:10:14.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T12:10:14.336Z"
             },
             {
               "$type": "Document",
@@ -103,8 +99,7 @@
               "RelativeToolTip": "CowMenager.Models\\Models\\Cow.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:09:09.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T12:09:09.018Z"
             }
           ]
         }
