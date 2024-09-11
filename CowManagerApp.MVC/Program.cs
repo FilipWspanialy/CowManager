@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.CodeAnalysis.Options;
 using Microsoft.AspNetCore.Mvc;
 using static System.Collections.Specialized.BitVector32;
+using Microsoft.Extensions.Options;
+using Microsoft.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +18,16 @@ builder.Services.AddDbContext<CowManagerContext>(options =>
 builder.Services.AddIdentity<IdentityUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<CowManagerContext>();
-builder.Services.ConfigureApplicationCookie(Option => { Option.LoginPath=$"/Identity/Account/Login";Option.LogoutPath=$"/Identity/Account/Logout"; Option.AccessDeniedPath = $"/Identity/Account/AccessDeniedPath"; });
-
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Identity/Account/Login";
+    options.LogoutPath = "/Identity/Account/Logout";
+    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SameSite = SameSiteMode.Strict;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.IsEssential = true;
+});
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
