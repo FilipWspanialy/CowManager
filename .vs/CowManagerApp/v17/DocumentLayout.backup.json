@@ -1,15 +1,48 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\herd\\herdedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\herd\\herdedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\herd\\addcow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\herd\\addcow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\disease\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\disease\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\disease\\diseasedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\disease\\diseasedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\herd\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\herd\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\costumer\\views\\cow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\costumer\\views\\cow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 104,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +51,110 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddCow.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\AddCow.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\AddCow.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\AddCow.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\AddCow.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:34:48.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\Index.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\Index.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAC8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:33:37.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DiseaseDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\DiseaseDetails.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\DiseaseDetails.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\DiseaseDetails.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Disease\\DiseaseDetails.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:31:23.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HerdEdit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\HerdEdit.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\HerdEdit.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\HerdEdit.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\HerdEdit.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:28:14.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\Index.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\Index.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Herd\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:27:58.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAADIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:26:04.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Index.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Index.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:25:41.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Create.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Create.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Costumer\\Views\\Cow\\Create.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-12T21:25:38.022Z",
+              "EditorCaption": ""
             }
           ]
         }

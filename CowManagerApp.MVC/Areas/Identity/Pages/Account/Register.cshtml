@@ -28,9 +28,8 @@
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <select asp-for="Input.Role" asp-items="@(new SelectList(Model.Input.RoleList, "Value", "Text"))">
-                    <option value="">select Role</option>
-                </select>
+                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class ="form-select"></select>
+                
             </div>
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>

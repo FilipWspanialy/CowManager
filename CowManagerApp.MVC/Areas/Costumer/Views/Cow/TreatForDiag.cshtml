@@ -5,13 +5,17 @@
 <p>Comments: @Model.Cow.Comment</p>
 <a asp-action="Diag" asp-route-id="@Model.Cow.Id">Back to diagnosis</a>
 <h2>@ViewBag.Disease</h2>
+@if (User.IsInRole("Admin"))
+{
+    
 
-<h3>Treatment</h3>
-<a asp-action="TreatForDiagAdd" asp-controller="Cow" asp-route-idd="@ViewBag.idd" asp-route-idk="@Model.Cow.Id">Add medicine</a>
-
-    <ul>
-        @foreach (var treats in Model.Treatments)
-        {
+    <h3>Treatment</h3>
+    <a asp-action="TreatForDiagAdd" asp-controller="Cow" asp-route-idd="@ViewBag.idd" asp-route-idk="@Model.Cow.Id">Add medicine</a>
+    @if (Model.Treatments.Any())
+    {
+        <ul>
+         @foreach (var treats in Model.Treatments)
+            {
             <li>
                 Medicine: @treats.NameOfMedicine
                 <br />
@@ -21,6 +25,37 @@
                 <a asp-action="TreatRemove" asp-route-id="@treats.Id">Delete</a>
                 <a asp-action="TreatEdit" asp-route-id="@treats.Id">Edit</a>
             </li>
-        }
-    </ul>
+          }
+        </ul>
+    }
+    else
+    {
+        <p>No diagnoses found for this cow.</p>
+    }
 
+}
+else
+{
+    <h3>Treatment</h3>
+  
+    @if (Model.Treatments.Any())
+    {
+        <ul>
+            @foreach (var treats in Model.Treatments)
+            {
+                <li>
+                    Medicine: @treats.NameOfMedicine
+                    <br />
+                    Comment: @treats.Comment
+                    <br />
+                    <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
+                   
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No diagnoses found for this cow.</p>
+    }
+}

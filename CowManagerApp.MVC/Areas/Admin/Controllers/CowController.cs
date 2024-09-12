@@ -5,31 +5,45 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using CowManager.Models.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Identity;
 namespace CowManagerApp.Areas.Admin.Controllers
 { [Area("Admin")]
     [Authorize(Roles = "Admin")]
    
     public class CowController : Controller
-        
+    {
+        private readonly CowManagerContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-    {        private readonly CowManagerContext _context;
-        public CowController(CowManagerContext context)
+        // Skonsolidowany konstruktor z wstrzykiwaniem dwóch zależności
+        public CowController(CowManagerContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
+
         public async Task<IActionResult> Index()
         {
             if (_context.Cows == null)
             {
-                return Problem("Entity set 'ApiContext.Movie'  is null.");
+                return Problem("Entity set 'CowManagerContext.Cows' is null.");
             }
 
-            var cows = _context.Cows;
+            // Pobierz aktualnie zalogowanego użytkownika
+            var user = await _userManager.GetUserAsync(User);
+            var userName = user?.UserName; // Pobierz nazwę użytkownika
 
-            return View(await cows.ToListAsync());
+            // Pobierz listę krów z bazy danych
+            var cows = await _context.Cows.ToListAsync();
+
+        
+           
+
+            return View(cows);
         }
-        public async Task<IActionResult> Details(int? id)
+    
+
+public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -600,3 +614,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
     }
 }
+
+
+        

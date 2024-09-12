@@ -3,28 +3,30 @@
 @{
     ViewData["Title"] = "List";
 }
-<h1>@ViewData["Title"]</h1>@if (User.IsInRole("Admin"))
-{
-    
+<h1>@ViewData["Title"]</h1>
+
+
 
 <p>
     <a asp-action="Create">Create New</a>
-    </p>
+</p>
 
 
 <table class="table">
-    <thead>
+        <thead>
         <tr>
             <th>
                 Id
             </th>
             <th>
-               Name
+                Name
             </th>
             <th>
                 Idherd
             </th>
-            
+            <th>
+                UserId
+            </th>
 
         </tr>
     </thead>
@@ -41,42 +43,24 @@
                 <td>
                     @item.Idherd
                 </td>
-               
-                
-                    
-                 
+                <td>
+                    @item.UserId
+                </td>
+
+
+
+
                 <td>
                     <a asp-action="Diag" asp-route-id="@item.Id">Diagnosis</a> |
                     <a asp-action="Treat" asp-route-id="@item.Id">Treatment</a> |
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                
+                </td>
+
             </tr>
 
         }
-    </tbody>
+     </tbody>
 </table>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Id
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Idherd
-                </th>
 
-
-            </tr>
-        </thead>
-       
-    </table>
-}
