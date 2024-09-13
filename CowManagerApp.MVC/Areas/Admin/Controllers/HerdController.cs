@@ -58,7 +58,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> HerdCreate([Bind("Id,Comment")] Herd herds)
+        public async Task<IActionResult> HerdCreate([Bind("Id,Comment,UserId")] Herd herds)
         {
             if (ModelState.IsValid)
             {
@@ -171,16 +171,13 @@ namespace CowManagerApp.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
-
-            ViewBag.UserId = herd.UserId;
             ViewBag.HerdId = Idh;
-            return View(new Cow { Idherd = Idh });
+            return View(new Cow { Idherd = Idh, UserId = herd.UserId });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment")] Cow cow)
+        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment,UserId")] Cow cow)
         {
             if (ModelState.IsValid)
             {

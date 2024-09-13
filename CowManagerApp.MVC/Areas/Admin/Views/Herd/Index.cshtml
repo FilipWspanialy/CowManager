@@ -18,6 +18,9 @@
             <th>
                 Comment
             </th>
+            <th>
+                Owner
+            </th>
 
 
         </tr>
@@ -34,6 +37,9 @@
                 </td>
                 <td>
                     @item.Comment
+                </td>
+                <td>
+                    @item.UserId
                 </td>
                 <td>
                     <a asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|

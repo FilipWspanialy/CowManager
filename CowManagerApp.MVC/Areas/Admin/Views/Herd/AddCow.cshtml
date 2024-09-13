@@ -8,9 +8,8 @@
 
 <form asp-action="AddCow" method="post">
     <input type="hidden" asp-for="Idherd" />
-    @{
-        Model.UserId = ViewBag.UserId;
-    }
+    <input type="hidden" asp-for="UserId" />
+    
 
     <div class="form-group">
         <label asp-for="Name" class="control-label"></label>
