@@ -1,14 +1,14 @@
-﻿<link rel="stylesheet" href="~/css/List.css" asp-append-version="true" />
-@model IEnumerable<CowManager.Models.Models.Cow>
+﻿@model IEnumerable<CowManager.Models.Models.Cow>
 @{
     ViewData["Title"] = "List";
 }
 <h1>@ViewData["Title"]</h1>
-    
+
+
 
 <p>
     <a asp-action="Create">Create New</a>
-    </p>
+</p>
 
 
 <table class="table">
@@ -18,12 +18,14 @@
                 Id
             </th>
             <th>
-               Name
+                Name
             </th>
             <th>
                 Idherd
             </th>
-            
+            <th>
+                UserId
+            </th>
 
         </tr>
     </thead>
@@ -40,21 +42,25 @@
                 <td>
                     @item.Idherd
                 </td>
-               
-                
-                    
-                 
+                <td>
+                    @item.UserId
+                </td>
+
+
+
+
                 <td>
                     <a asp-action="Diag" asp-route-id="@item.Id">Diagnosis</a> |
                     <a asp-action="Treat" asp-route-id="@item.Id">Treatment</a> |
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                
+                </td>
+
             </tr>
 
         }
     </tbody>
 </table>
+
 

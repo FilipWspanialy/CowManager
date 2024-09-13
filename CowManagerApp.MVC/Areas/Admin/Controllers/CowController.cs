@@ -5,31 +5,45 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using CowManager.Models.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Identity;
 namespace CowManagerApp.Areas.Admin.Controllers
 { [Area("Admin")]
     [Authorize(Roles = "Admin")]
    
     public class CowController : Controller
-        
+    {
+        private readonly CowManagerContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-    {        private readonly CowManagerContext _context;
-        public CowController(CowManagerContext context)
+        // Skonsolidowany konstruktor z wstrzykiwaniem dwóch zależności
+        public CowController(CowManagerContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
+
         public async Task<IActionResult> Index()
         {
             if (_context.Cows == null)
             {
-                return Problem("Entity set 'ApiContext.Movie'  is null.");
+                return Problem("Entity set 'CowManagerContext.Cows' is null.");
             }
 
-            var cows = _context.Cows;
+            // Pobierz aktualnie zalogowanego użytkownika
+            var user = await _userManager.GetUserAsync(User);
+            var userName = user?.UserName; // Pobierz nazwę użytkownika
 
-            return View(await cows.ToListAsync());
+            // Pobierz listę krów z bazy danych
+            var cows = await _context.Cows.ToListAsync();
+
+        
+           
+
+            return View(cows);
         }
-        public async Task<IActionResult> Details(int? id)
+    
+
+public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -50,11 +64,16 @@ namespace CowManagerApp.Areas.Admin.Controllers
         {
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id");
-
+            var users = await _userManager.Users.ToListAsync();
+            ViewBag.Users = new SelectList(users, "Id", "UserName");
             // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
             if (herds == null || !herds.Any())
             {
                 ViewBag.HerdsError = "No herds available.";
+            }
+            if (users == null || !users.Any())
+            {
+                ViewBag.UsersError = "No users available.";
             }
             return View();
         }
@@ -600,3 +619,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
     }
 }
+
+
+        

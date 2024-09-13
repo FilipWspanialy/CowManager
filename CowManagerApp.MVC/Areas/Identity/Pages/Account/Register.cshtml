@@ -27,7 +27,19 @@
                 <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+<<<<<<< HEAD
             
+=======
+           @*  <div class="form-floating mb-3">
+                <input asp-for="Input.Nickname" class="form-control" aria-required="true" placeholder="Nickname" />
+                <label asp-for="Input.Nickname">Nickname</label>
+                <span asp-validation-for="Input.Nickname" class="text-danger"></span>
+            </div> *@
+            <div class="form-floating mb-3">
+                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class ="form-select"></select>
+                
+            </div>
+>>>>>>> 97bb8a4e33af21ffe98e5d493b23b5bb303dd705
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
     </div>

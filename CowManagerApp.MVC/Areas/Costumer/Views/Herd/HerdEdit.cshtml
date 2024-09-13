@@ -4,6 +4,9 @@
 @{
     ViewData["Title"] = "Edit";
 }
+@if (User.IsInRole("Admin"))
+{
+    
 
 <h1>Edit</h1>
 
@@ -29,8 +32,14 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div>
-
+    </div>
+}
+else
+{
+    <p style="text-align: center; font-size: 18px;">
+        You don't have access to Create ;(
+    </p>
+}
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

@@ -7,15 +7,19 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.CodeAnalysis.Options;
 using Microsoft.AspNetCore.Mvc;
 using static System.Collections.Specialized.BitVector32;
+<<<<<<< HEAD
 using Microsoft.Extensions.Options;
 using Microsoft.CodeAnalysis;
+=======
+using CowManager.Models.Models;
+>>>>>>> 97bb8a4e33af21ffe98e5d493b23b5bb303dd705
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CowManagerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<IdentityUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<CowManagerContext>();
 builder.Services.ConfigureApplicationCookie(options =>

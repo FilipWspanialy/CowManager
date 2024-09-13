@@ -8230,25 +8230,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\filip\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Kuba Sornek\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\test\\CowManager\\CowManager.S\\CowManager.S.csproj",
+      "projectUniqueName": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManager.S\\CowManager.S.csproj",
       "projectName": "CowManager.S",
-      "projectPath": "D:\\test\\CowManager\\CowManager.S\\CowManager.S.csproj",
-      "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "D:\\test\\CowManager\\CowManager.S\\obj\\",
+      "projectPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManager.S\\CowManager.S.csproj",
+      "packagesPath": "C:\\Users\\Kuba Sornek\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManager.S\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kuba Sornek\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -8262,11 +8265,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\test\\CowManager\\CowMenager.Data\\CowManager.Data.csproj": {
-              "projectPath": "D:\\test\\CowManager\\CowMenager.Data\\CowManager.Data.csproj"
+            "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowMenager.Data\\CowManager.Data.csproj": {
+              "projectPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowMenager.Data\\CowManager.Data.csproj"
             },
-            "D:\\test\\CowManager\\CowMenager.Models\\CowManager.Models.csproj": {
-              "projectPath": "D:\\test\\CowManager\\CowMenager.Models\\CowManager.Models.csproj"
+            "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowMenager.Models\\CowManager.Models.csproj": {
+              "projectPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowMenager.Models\\CowManager.Models.csproj"
             }
           }
         }
@@ -8307,7 +8310,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

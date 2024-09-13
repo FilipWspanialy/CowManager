@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\test\\CowManager\\",
   "Documents": [
     {
@@ -11,16 +12,21 @@
       "RelativeMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|solutionrelative:cowmenager.models\\models\\cowdiagadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "WorkspaceRootPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\",
+  "Documents": [],
+>>>>>>> 97bb8a4e33af21ffe98e5d493b23b5bb303dd705
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 104,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
+<<<<<<< HEAD
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CowDiagAdd.cs",
@@ -44,6 +50,14 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T12:12:12.802Z",
               "EditorCaption": ""
+=======
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+>>>>>>> 97bb8a4e33af21ffe98e5d493b23b5bb303dd705
             }
           ]
         }

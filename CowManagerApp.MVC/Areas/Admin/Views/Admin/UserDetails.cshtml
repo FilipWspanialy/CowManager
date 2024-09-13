@@ -1,0 +1,51 @@
+﻿@model CowManager.Models.Models.UserDetailsViewModel
+
+<h1>User Details: @Model.User.UserName</h1>
+
+
+<!-- Display cows for the current user -->
+<h2>Cows for @Model.User.UserName</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cow in Model.Cows)
+        {
+            <tr>
+                <td>@cow.Id</td>
+                <td>@cow.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Display diagnoses related to the user's cows -->
+<h2>Diagnoses for Cows of @Model.User.UserName</h2>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Cow Name</th>
+            <th>Diagnosis</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var diagnosis in Model.Diagnoses)
+        {
+            var cow = Model.Cows.FirstOrDefault(c => c.Id == diagnosis.Idcow);
+            <tr>
+                
+                <td>@cow?.Name</td> <!-- Display the cow's name associated with the diagnosis -->
+              <td>@diagnosis.NameOfDisease</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+}
