@@ -8,6 +8,10 @@
 
 <form asp-action="AddCow" method="post">
     <input type="hidden" asp-for="Idherd" />
+    @{
+        Model.UserId = ViewBag.UserId;
+    }
+
     <div class="form-group">
         <label asp-for="Name" class="control-label"></label>
         <input asp-for="Name" class="form-control" />
@@ -18,11 +22,7 @@
         <input asp-for="Comment" class="form-control" />
         <span asp-validation-for="Comment" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="UserId" class="control-label">Assign to User</label>
-        <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users"></select>
-        <span asp-validation-for="UserId" class="text-danger"></span>
-    </div>
+   
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>

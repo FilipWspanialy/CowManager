@@ -49,8 +49,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
             return View(herd);
         }
-        public IActionResult HerdCreate()
+        public async Task<IActionResult> HerdCreate()
         {
+            var users = await _userManager.Users.ToListAsync();
+            ViewBag.Users = new SelectList(users, "Id", "UserName");
             return View();
         }
 
@@ -158,15 +160,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> AddCow(int? Idh)
         {
-            var users = await _userManager.Users.ToListAsync();
-            ViewBag.Users = new SelectList(users, "Id", "UserName");
 
-            if (users == null || !users.Any())
-            {
-                ViewBag.UsersError = "No users available.";
-            }
-
-                if (Idh == null)
+            if (Idh == null)
             {
                 return NotFound();
             }
@@ -177,6 +172,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 return NotFound();
             }
 
+
+            ViewBag.UserId = herd.UserId;
             ViewBag.HerdId = Idh;
             return View(new Cow { Idherd = Idh });
         }
