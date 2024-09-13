@@ -7,12 +7,10 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.CodeAnalysis.Options;
 using Microsoft.AspNetCore.Mvc;
 using static System.Collections.Specialized.BitVector32;
-<<<<<<< HEAD
+
 using Microsoft.Extensions.Options;
 using Microsoft.CodeAnalysis;
-=======
 using CowManager.Models.Models;
->>>>>>> 97bb8a4e33af21ffe98e5d493b23b5bb303dd705
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,13 +22,6 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.Sign
     .AddEntityFrameworkStores<CowManagerContext>();
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    //options.LoginPath = "/Identity/Account/Login";
-    //options.LogoutPath = "/Identity/Account/Logout";
-    //options.AccessDeniedPath = "/Identity/Account/AccessDenied";
-    //options.Cookie.HttpOnly = true;
-    //options.Cookie.SameSite = SameSiteMode.Strict;
-    //options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-    //options.Cookie.IsEssential = true;
     options.LoginPath = "/Identity/Account/Login";
     options.LogoutPath = "/Identity/Account/Logout";
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";

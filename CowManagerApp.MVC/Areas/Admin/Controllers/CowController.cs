@@ -43,7 +43,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
     
 
-public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {

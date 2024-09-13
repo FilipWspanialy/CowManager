@@ -193,7 +193,8 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         {
             return _context.Cows.Any(e => e.Id == id);
         }
-        // ********************************************************************************* diagnosis
+
+        // ********************************************************************************* diagnosis adn treatments
         public async Task<IActionResult> Diag(int? id)
         {
             if (id == null)
@@ -223,142 +224,142 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
             return View(viewModel);
         }
-        public async Task<IActionResult> DiagAdd(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> DiagAdd(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var cow = await _context.Cows.FindAsync(id);
-            if (cow == null)
-            {
-                return NotFound();
-            }
+        //    var cow = await _context.Cows.FindAsync(id);
+        //    if (cow == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var diseases = await _context.Diseases.ToListAsync();
-            var viewModel = new CowDiagAdd
-            {
-                CowId = cow.Id,
-                CowName = cow.Name,
-                Diseases = diseases
-            };
+        //    var diseases = await _context.Diseases.ToListAsync();
+        //    var viewModel = new CowDiagAdd
+        //    {
+        //        CowId = cow.Id,
+        //        CowName = cow.Name,
+        //        Diseases = diseases
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DiagAdd(CowDiagAdd model)
-        {
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DiagAdd(CowDiagAdd model)
+        //{
 
-            var diagnosis = new Diagnosis
-            {
-                Idcow = model.CowId,
-                Iddisease = model.SelectedDiseaseId,
-                NameOfDisease = _context.Diseases.FirstOrDefault(d => d.Id == model.SelectedDiseaseId)?.Name,
-                Comment = model.Comment
-            };
+        //    var diagnosis = new Diagnosis
+        //    {
+        //        Idcow = model.CowId,
+        //        Iddisease = model.SelectedDiseaseId,
+        //        NameOfDisease = _context.Diseases.FirstOrDefault(d => d.Id == model.SelectedDiseaseId)?.Name,
+        //        Comment = model.Comment
+        //    };
 
-            _context.Add(diagnosis);
-            await _context.SaveChangesAsync();
+        //    _context.Add(diagnosis);
+        //    await _context.SaveChangesAsync();
 
-            return RedirectToAction("Diag", "Cow", new { id = model.CowId });
-
-
-
-        }
-        public async Task<IActionResult> DiagRemove(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var diags = await _context.Diagnoses
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (diags == null)
-            {
-                return NotFound();
-            }
-
-            return View(diags);
+        //    return RedirectToAction("Diag", "Cow", new { id = model.CowId });
 
 
-        }
 
-        [HttpPost, ActionName("DiagRemove")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DiagRemoveConfirmed(int id)
-        {
-            var diagnosis = await _context.Diagnoses.FindAsync(id);
-            using (var transaction = await _context.Database.BeginTransactionAsync())
-            {
-                try
-                {
-                    if (diagnosis != null)
-                    {
+        //}
+        //public async Task<IActionResult> DiagRemove(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-                        var treatments = _context.Treatments.Where(t => t.Iddiagnosis == id);
-                        _context.Treatments.RemoveRange(treatments);
+        //    var diags = await _context.Diagnoses
+        //        .FirstOrDefaultAsync(m => m.Id == id);
 
-                        _context.Diagnoses.Remove(diagnosis);
+        //    if (diags == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-                        await _context.SaveChangesAsync();
-
-                        await transaction.CommitAsync();
-
-                    }
-                }
-                catch (Exception)
-                {
-                    await transaction.RollbackAsync();
-                    throw;
-                }
-            }
-            return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
-        }
-        public async Task<IActionResult> DiagEdit(int? id)
-        {
-
-            var diags = await _context.Diagnoses.FindAsync(id);
-            if (diags == null)
-            {
-                return NotFound();
-            }
-            return View(diags);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DiagEdit(int id, [Bind("Id, Idcow, Iddisease, NameOfDisease, Comment")] Diagnosis diagnosis)
-        {
-            if (id != diagnosis.Id)
-            {
-                return NotFound();
-            }
+        //    return View(diags);
 
 
-            try
-            {
-                _context.Update(diagnosis);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CowExists(diagnosis.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    return View();
-                }
-            }
+        //}
 
-        }
+        //[HttpPost, ActionName("DiagRemove")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DiagRemoveConfirmed(int id)
+        //{
+        //    var diagnosis = await _context.Diagnoses.FindAsync(id);
+        //    using (var transaction = await _context.Database.BeginTransactionAsync())
+        //    {
+        //        try
+        //        {
+        //            if (diagnosis != null)
+        //            {
+
+        //                var treatments = _context.Treatments.Where(t => t.Iddiagnosis == id);
+        //                _context.Treatments.RemoveRange(treatments);
+
+        //                _context.Diagnoses.Remove(diagnosis);
+
+        //                await _context.SaveChangesAsync();
+
+        //                await transaction.CommitAsync();
+
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            await transaction.RollbackAsync();
+        //            throw;
+        //        }
+        //    }
+        //    return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
+        //}
+        //public async Task<IActionResult> DiagEdit(int? id)
+        //{
+
+        //    var diags = await _context.Diagnoses.FindAsync(id);
+        //    if (diags == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(diags);
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DiagEdit(int id, [Bind("Id, Idcow, Iddisease, NameOfDisease, Comment")] Diagnosis diagnosis)
+        //{
+        //    if (id != diagnosis.Id)
+        //    {
+        //        return NotFound();
+        //    }
+
+
+        //    try
+        //    {
+        //        _context.Update(diagnosis);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!CowExists(diagnosis.Id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            return View();
+        //        }
+        //    }
+
+        //}
 
         // ********************************************************************************* treatment
         public async Task<IActionResult> Treat(int? id)
@@ -390,131 +391,131 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
             return View(viewModel);
         }
-        public async Task<IActionResult> TreatAdd(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> TreatAdd(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var cow = await _context.Cows.FindAsync(id);
-            if (cow == null)
-            {
-                return NotFound();
-            }
+        //    var cow = await _context.Cows.FindAsync(id);
+        //    if (cow == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var meds = await _context.Medicines.ToListAsync();
-            var viewModel = new CowTreatAdd
-            {
-                CowId = cow.Id,
-                CowName = cow.Name,
-                Medicines = meds
-            };
+        //    var meds = await _context.Medicines.ToListAsync();
+        //    var viewModel = new CowTreatAdd
+        //    {
+        //        CowId = cow.Id,
+        //        CowName = cow.Name,
+        //        Medicines = meds
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> TreatAdd(CowTreatAdd model)
-        {
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> TreatAdd(CowTreatAdd model)
+        //{
 
-            var treats = new Treatment
-            {
-                Idcow = model.CowId,
-                Idmedicine = model.SelectedMedicinetId,
-                NameOfMedicine = _context.Medicines.FirstOrDefault(d => d.Id == model.SelectedMedicinetId)?.Name,
-                Comment = model.Comment
-            };
+        //    var treats = new Treatment
+        //    {
+        //        Idcow = model.CowId,
+        //        Idmedicine = model.SelectedMedicinetId,
+        //        NameOfMedicine = _context.Medicines.FirstOrDefault(d => d.Id == model.SelectedMedicinetId)?.Name,
+        //        Comment = model.Comment
+        //    };
 
-            _context.Add(treats);
-            await _context.SaveChangesAsync();
+        //    _context.Add(treats);
+        //    await _context.SaveChangesAsync();
 
-            return RedirectToAction("Treat", "Cow", new { id = model.CowId });
-
-
-
-        }
-        public async Task<IActionResult> TreatRemove(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var treats = await _context.Treatments
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (treats == null)
-            {
-                return NotFound();
-            }
-
-            return View(treats);
-        }
-
-        [HttpPost, ActionName("TreatRemove")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> TreatRemoveConfirmed(int id)
-        {
-            var treats = await _context.Treatments.FindAsync(id);
-            if (treats == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                _context.Treatments.Remove(treats);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Treat", "Cow", new { id = treats.Idcow });
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "An error occurred while removing the diagnosis.");
-                return View();
-            }
-        }
-        public async Task<IActionResult> TreatEdit(int? id)
-        {
-
-            var treats = await _context.Treatments.FindAsync(id);
-            if (treats == null)
-            {
-                return NotFound();
-            }
-            return View(treats);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> TreatEdit(int id, [Bind("Id, Idcow, Idmedicine, NameOfMedicine, Comment")] Treatment treatment)
-        {
-            if (id != treatment.Id)
-            {
-                return NotFound();
-            }
+        //    return RedirectToAction("Treat", "Cow", new { id = model.CowId });
 
 
-            try
-            {
-                _context.Update(treatment);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Treat", "Cow", new { id = treatment.Idcow });
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CowExists(treatment.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    return View();
-                }
-            }
 
-        }
+        //}
+        //public async Task<IActionResult> TreatRemove(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var treats = await _context.Treatments
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+
+        //    if (treats == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(treats);
+        //}
+
+        //[HttpPost, ActionName("TreatRemove")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> TreatRemoveConfirmed(int id)
+        //{
+        //    var treats = await _context.Treatments.FindAsync(id);
+        //    if (treats == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    try
+        //    {
+        //        _context.Treatments.Remove(treats);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction("Treat", "Cow", new { id = treats.Idcow });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ModelState.AddModelError("", "An error occurred while removing the diagnosis.");
+        //        return View();
+        //    }
+        //}
+        //public async Task<IActionResult> TreatEdit(int? id)
+        //{
+
+        //    var treats = await _context.Treatments.FindAsync(id);
+        //    if (treats == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(treats);
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> TreatEdit(int id, [Bind("Id, Idcow, Idmedicine, NameOfMedicine, Comment")] Treatment treatment)
+        //{
+        //    if (id != treatment.Id)
+        //    {
+        //        return NotFound();
+        //    }
+
+
+        //    try
+        //    {
+        //        _context.Update(treatment);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction("Treat", "Cow", new { id = treatment.Idcow });
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!CowExists(treatment.Id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            return View();
+        //        }
+        //    }
+
+        //}
         public async Task<IActionResult> TreatForDiag(int idd, int idk)
         {
             if (idd == null)
@@ -551,64 +552,64 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             ViewBag.Disease = _context.Diagnoses.FirstOrDefault(d => d.Id == idd)?.NameOfDisease;
             return View(viewModel);
         }
-        public async Task<IActionResult> TreatForDiagAdd(int idd, int idk)
-        {
-            if (idd == null)
-            {
-                return NotFound();
-            }
-            if (idk == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> TreatForDiagAdd(int idd, int idk)
+        //{
+        //    if (idd == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    if (idk == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var cow = await _context.Cows.FindAsync(idk);
-            if (cow == null)
-            {
-                return NotFound();
-            }
+        //    var cow = await _context.Cows.FindAsync(idk);
+        //    if (cow == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var diag = await _context.Diagnoses.FindAsync(idd);
-            if (diag == null)
-            {
-                return NotFound();
-            }
+        //    var diag = await _context.Diagnoses.FindAsync(idd);
+        //    if (diag == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var meds = await _context.Medicines.ToListAsync();
-            var viewModel = new CowTreatAdd
-            {
-                CowId = cow.Id,
-                CowName = cow.Name,
-                DiagId = diag.Id,
-                Medicines = meds
-            };
+        //    var meds = await _context.Medicines.ToListAsync();
+        //    var viewModel = new CowTreatAdd
+        //    {
+        //        CowId = cow.Id,
+        //        CowName = cow.Name,
+        //        DiagId = diag.Id,
+        //        Medicines = meds
+        //    };
 
-            return View(viewModel);
-
-
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> TreatForDiagAdd(CowTreatAdd cta)
-        {
+        //    return View(viewModel);
 
 
-            var treats = new Treatment
-            {
-                Idcow = cta.CowId,
-                Idmedicine = cta.SelectedMedicinetId,
-                Iddiagnosis = cta.DiagId,
-                NameOfMedicine = _context.Medicines.FirstOrDefault(d => d.Id == cta.SelectedMedicinetId)?.Name,
-                Comment = cta.Comment
-            };
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> TreatForDiagAdd(CowTreatAdd cta)
+        //{
+
+
+        //    var treats = new Treatment
+        //    {
+        //        Idcow = cta.CowId,
+        //        Idmedicine = cta.SelectedMedicinetId,
+        //        Iddiagnosis = cta.DiagId,
+        //        NameOfMedicine = _context.Medicines.FirstOrDefault(d => d.Id == cta.SelectedMedicinetId)?.Name,
+        //        Comment = cta.Comment
+        //    };
 
 
 
-            _context.Add(treats);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("TreatForDiag", "Cow", new { idd = cta.DiagId, idk = cta.CowId });
-        }
+        //    _context.Add(treats);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction("TreatForDiag", "Cow", new { idd = cta.DiagId, idk = cta.CowId });
+        //}
 
 
     }

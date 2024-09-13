@@ -10,52 +10,77 @@
 
 <h4>Cow</h4>
 <hr />
-@if (User.IsInRole("Costumer"))
+@if (User.IsInRole("Admin"))
 {
-    
+
 
     <div class="row">
         <div class="col-md-4">
-         <form asp-action="Create" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Idherd" class="control-label"></label>
-                <a asp-action="HerdCreate" asp-controller="Herd">Create herd</a>
-                <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
-                <span asp-validation-for="Idherd" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
 
-            </div>
-            <div class="form-group">
-                <label asp-for="Comment" class="control-label"></label>
-                <input asp-for="Comment" class="form-control" />
-                <span asp-validation-for="Comment" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="Idherd" class="control-label"></label>
+                    <a asp-action="HerdCreate" asp-controller="Herd">Create herd</a>
+                    <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
+                    <span asp-validation-for="Idherd" class="text-danger"></span>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-     </div>
+                </div>
+
+                    <div class="form-group">
+                    <label asp-for="Comment" class="control-label"></label>
+                    <input asp-for="Comment" class="form-control" />
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                    </div>
+                @if (ViewBag.Users == null || !ViewBag.Users.Any())
+                {
+                    <p class="text-danger">Users are not available.</p>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <label asp-for="UserId" class="control-label">Assign to User</label>
+                        <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users"></select>
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>
+                }
+              
+                
+                
+               
+                
+                
+                
+                
+                    
+                
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index">Back to List</a>
     </div>
 }
 else
 {
-     <p style="text-align: center; font-size: 18px;">
-         You don't have access to Create ;(
-         </p>
+    <p style="text-align: center; font-size: 18px;">
+        You don't have access to Create ;(
+    </p>
 }
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+

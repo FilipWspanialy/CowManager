@@ -4,6 +4,7 @@
     ViewData["Title"] = "List";
 }
 <h1>@ViewData["Title"]</h1>
+<a asp-action="DiseaseCreate">Create</a>
 
 <table class="table">
     <thead>
@@ -30,7 +31,9 @@
                 </td>
                 
                 <td>
-                    <a asp-action="DiseaseDetails" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="DiseaseDetails" asp-route-id="@item.Id">Details</a>|
+                    <a asp-action="DiseaseEdit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="DiseaseDelete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
 
