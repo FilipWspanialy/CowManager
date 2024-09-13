@@ -62,6 +62,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> Create()
         {
+            ViewBag.bol = 0;
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id");
             var users = await _userManager.Users.ToListAsync();
@@ -77,6 +78,24 @@ namespace CowManagerApp.Areas.Admin.Controllers
             }
             return View();
         }
+        //public async Task<IActionResult> Create(string id)
+        //{
+        //    ViewBag.bol = id;
+        //    var herds = await _context.Herds.ToListAsync();
+        //    ViewBag.Herds = new SelectList(herds, "Id", "Id");
+        //    var user = await _userManager.FindByIdAsync(id);
+        //    // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
+        //    if (herds == null || !herds.Any())
+        //    {
+        //        ViewBag.HerdsError = "No herds available.";
+        //    }
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View();
+        //}
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

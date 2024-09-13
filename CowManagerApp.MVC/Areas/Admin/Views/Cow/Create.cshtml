@@ -38,7 +38,8 @@
                     <input asp-for="Comment" class="form-control" />
                     <span asp-validation-for="Comment" class="text-danger"></span>
                     </div>
-                @if (ViewBag.Users == null || !ViewBag.Users.Any())
+
+                @if (ViewBag.Users == null || ViewBag.UsersError != null)
                 {
                     <p class="text-danger">Users are not available.</p>
                 }
@@ -50,6 +51,28 @@
                         <span asp-validation-for="UserId" class="text-danger"></span>
                     </div>
                 }
+               @*  @if (ViewBag.bul == 0)
+                {
+                    <div class="form-group">
+                        <label asp-for="UserId" class="control-label">Owner</label>
+                        <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users"></select>
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>
+                }
+                else 
+                {
+                    
+                    {
+                         Model.UserId = ViewBag.bul;
+                    }
+                    
+                    <div class="form-group">
+                        <label asp-for="UserId" class="control-label">Owner</label>
+                        <input asp-for="UserId" class="form-control" readonly ></input>
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>
+                
+                } *@
               
                 
                 

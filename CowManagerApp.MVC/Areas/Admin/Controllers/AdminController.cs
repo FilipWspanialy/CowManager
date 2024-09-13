@@ -66,10 +66,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 Diagnoses = userDiagnoses,
                 CurrentUserId = id
             };
-
             return View(model);
         }
 
+       
 
 
     }

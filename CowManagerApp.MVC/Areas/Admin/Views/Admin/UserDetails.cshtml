@@ -2,50 +2,68 @@
 
 <h1>User Details: @Model.User.UserName</h1>
 
+<h2>Herds</h2>
+<p>
+    <a asp-controller="Herd" asp-action="HerdCreate">Create New</a>
+</p>
 
-<!-- Display cows for the current user -->
-<h2>Cows for @Model.User.UserName</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Comment</th>
+            <th>Amount of cows</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Herd)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Comment</td>
+                <td>@item.AmountOfCows</td>
+                <a asp-controller="Herd" asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|
+                <a asp-controller="Herd" asp-action="HerdEdit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-controller="Herd" asp-action="HerdDelete" asp-route-id="@item.Id">Delete</a>
+            </tr>
+       
+        }
+    </tbody>
+</table>
+
+<h2>Cows</h2>
+<p>
+    <a asp-controller="Cow" asp-action="Create">Create New</a>
+</p>
+@* <p>
+    <a asp-controller="Cow" asp-action="Create" asp-route="@Model.User.Id">Create New</a>
+</p> *@
 <table class="table">
     <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
-            
+            <th>Comment</th>
+            <th>Idherd</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var cow in Model.Cows)
+        @foreach (var item in Model.Cows)
         {
             <tr>
-                <td>@cow.Id</td>
-                <td>@cow.Name</td>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Comment</td>
+                <td>@item.Idherd</td>
+                <a asp-controller="Cow" asp-action="Diag" asp-route-id="@item.Id">Diagnosis</a> |
+                <a asp-controller="Cow" asp-action="Treat" asp-route-id="@item.Id">Treatment</a> |
+                <a asp-controller="Cow" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-controller="Cow" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-controller="Cow" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </tr>
+        
         }
     </tbody>
 </table>
-
-<!-- Display diagnoses related to the user's cows -->
-<h2>Diagnoses for Cows of @Model.User.UserName</h2>
-<table class="table">
-    <thead>
-        <tr>
-            
-            <th>Cow Name</th>
-            <th>Diagnosis</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var diagnosis in Model.Diagnoses)
-        {
-            var cow = Model.Cows.FirstOrDefault(c => c.Id == diagnosis.Idcow);
-            <tr>
-                
-                <td>@cow?.Name</td> <!-- Display the cow's name associated with the diagnosis -->
-              <td>@diagnosis.NameOfDisease</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-
 }
