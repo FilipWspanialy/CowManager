@@ -1,7 +1,7 @@
 ﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
 @model CowManager.Models.Models.CowTreatAdd
 
-@if (User.IsInRole("Admin"))
+@if (User.IsInRole("Costumer"))
 
 {
 
@@ -37,7 +37,8 @@ else
     <p style="text-align: center; font-size: 18px;">
         You don't have access
     </p>
-}
+
+}
 
 
 @section Scripts {

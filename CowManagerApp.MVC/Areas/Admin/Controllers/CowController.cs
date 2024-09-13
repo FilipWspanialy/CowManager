@@ -64,11 +64,16 @@ public async Task<IActionResult> Details(int? id)
         {
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id");
-
+            var users = await _userManager.Users.ToListAsync();
+            ViewBag.Users = new SelectList(users, "Id", "UserName");
             // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
             if (herds == null || !herds.Any())
             {
                 ViewBag.HerdsError = "No herds available.";
+            }
+            if (users == null || !users.Any())
+            {
+                ViewBag.UsersError = "No users available.";
             }
             return View();
         }

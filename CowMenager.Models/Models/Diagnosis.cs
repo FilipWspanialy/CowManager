@@ -20,4 +20,5 @@ public partial class Diagnosis
     public virtual Cow IdcowNavigation { get; set; } = null!;
 
     public virtual Disease IddiseaseNavigation { get; set; } = null!;
+    
 }

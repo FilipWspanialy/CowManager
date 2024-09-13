@@ -10,6 +10,7 @@ namespace CowManager.Models.Models
     public class UserDetailsViewModel
     {
         public IdentityUser User { get; set; }
+        public List<Herd> Herd { get; set; }
         public List<Cow> Cows { get; set; }
         public List<Diagnosis> Diagnoses { get; set; }
         public string CurrentUserId { get; set; }

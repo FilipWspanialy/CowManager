@@ -2,7 +2,6 @@
 
 <h1>User Details: @Model.User.UserName</h1>
 
-<p>Username: @Model.User.UserName</p>
 
 <!-- Display cows for the current user -->
 <h2>Cows for @Model.User.UserName</h2>
@@ -11,6 +10,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -29,8 +29,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
+            
             <th>Cow Name</th>
+            <th>Diagnosis</th>
         </tr>
     </thead>
     <tbody>
@@ -38,9 +39,9 @@
         {
             var cow = Model.Cows.FirstOrDefault(c => c.Id == diagnosis.Idcow);
             <tr>
-                <td>@diagnosis.Id</td>
-                <td>@diagnosis.Comment</td>
+                
                 <td>@cow?.Name</td> <!-- Display the cow's name associated with the diagnosis -->
+              <td>@diagnosis.NameOfDisease</td>
             </tr>
         }
     </tbody>

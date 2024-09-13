@@ -1,5 +1,4 @@
-﻿<link rel="stylesheet" href="~/css/List.css" asp-append-version="true" />
-@model IEnumerable<CowManager.Models.Models.Cow>
+﻿@model IEnumerable<CowManager.Models.Models.Cow>
 @{
     ViewData["Title"] = "List";
 }
@@ -7,10 +6,13 @@
 
 
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 
 
 <table class="table">
-        <thead>
+    <thead>
         <tr>
             <th>
                 Id
@@ -58,6 +60,7 @@
             </tr>
 
         }
-     </tbody>
+    </tbody>
 </table>
+
 

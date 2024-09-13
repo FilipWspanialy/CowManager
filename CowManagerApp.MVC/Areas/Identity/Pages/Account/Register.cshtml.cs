@@ -103,10 +103,15 @@ namespace CowManagerApp.MVC.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
+            // Dodaj pole Nickname
+            //[Required]
+            //[Display(Name = "Nickname")]
+            //public string Nickname { get; set; }
 
             public string? Role { get; set; }
             [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }
+
         }
 
 

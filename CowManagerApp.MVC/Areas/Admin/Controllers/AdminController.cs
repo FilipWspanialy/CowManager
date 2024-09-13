@@ -35,28 +35,33 @@ namespace CowManagerApp.Areas.Admin.Controllers
         // Wyświetlanie szczegółów użytkownika
         public async Task<IActionResult> UserDetails(string id)
         {
+            // Pobierz użytkownika na podstawie podanego ID
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            // Fetch all cows
-            var cows = await _context.Cows.ToListAsync();
+            // Pobierz wszystkie stada należące do użytkownika
+            var userHerds = await _context.Herds
+                .Where(h => h.UserId == id) // Zakładamy, że Herd ma pole UserId wskazujące właściciela
+                .ToListAsync();
 
-            // Filter cows that belong to the current user
-            var userCows = cows.Where(c => c.UserId == id).ToList();
+            // Pobierz wszystkie krowy należące do użytkownika (opcjonalnie, jeśli potrzebne)
+            var userCows = await _context.Cows
+                .Where(c => c.UserId == id)
+                .ToListAsync();
 
-            // Fetch all diagnoses
-            var diagnoses = await _context.Diagnoses.ToListAsync();
+            // Pobierz wszystkie diagnozy powiązane z krowami użytkownika (opcjonalnie, jeśli potrzebne)
+            var userDiagnoses = await _context.Diagnoses
+                .Where(d => userCows.Select(c => c.Id).Contains(d.Idcow))
+                .ToListAsync();
 
-            // Filter diagnoses based on cows belonging to the current user
-            var userDiagnoses = diagnoses.Where(d => userCows.Select(c => c.Id).Contains(d.Idcow)).ToList();
-
-            // Create the view model
+            // Utwórz model widoku
             var model = new UserDetailsViewModel
             {
                 User = user,
+                Herd = userHerds, // Dodaj stada użytkownika
                 Cows = userCows,
                 Diagnoses = userDiagnoses,
                 CurrentUserId = id
@@ -64,8 +69,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
             return View(model);
         }
-    }
 
-    
+
+
+    }
 }
 
