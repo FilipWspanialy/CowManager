@@ -3,6 +3,8 @@ using CowManager.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CowManagerApp.Areas.Admin.Controllers
 { [Area("Admin")]
@@ -12,10 +14,12 @@ namespace CowManagerApp.Areas.Admin.Controllers
     public class HerdController : Controller
     {
         private readonly CowManagerContext _context;
+        private UserManager<IdentityUser> _userManager;
 
-        public HerdController(CowManagerContext context)
+        public HerdController(CowManagerContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index()
@@ -154,7 +158,15 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> AddCow(int? Idh)
         {
-            if (Idh == null)
+            var users = await _userManager.Users.ToListAsync();
+            ViewBag.Users = new SelectList(users, "Id", "UserName");
+
+            if (users == null || !users.Any())
+            {
+                ViewBag.UsersError = "No users available.";
+            }
+
+                if (Idh == null)
             {
                 return NotFound();
             }

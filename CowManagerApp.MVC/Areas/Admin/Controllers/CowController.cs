@@ -49,9 +49,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
             var cows = await _context.Cows
                 .FirstOrDefaultAsync(m => m.Id == id);
+            var user = await _userManager.FindByIdAsync(cows.UserId);
+            ViewBag.UserName = user.UserName;
             if (cows == null)
             {
                 return NotFound();
@@ -67,7 +68,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
             ViewBag.Herds = new SelectList(herds, "Id", "Id");
             var users = await _userManager.Users.ToListAsync();
             ViewBag.Users = new SelectList(users, "Id", "UserName");
-            // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
+            
             if (herds == null || !herds.Any())
             {
                 ViewBag.HerdsError = "No herds available.";
@@ -78,28 +79,12 @@ namespace CowManagerApp.Areas.Admin.Controllers
             }
             return View();
         }
-        //public async Task<IActionResult> Create(string id)
-        //{
-        //    ViewBag.bol = id;
-        //    var herds = await _context.Herds.ToListAsync();
-        //    ViewBag.Herds = new SelectList(herds, "Id", "Id");
-        //    var user = await _userManager.FindByIdAsync(id);
-        //    // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
-        //    if (herds == null || !herds.Any())
-        //    {
-        //        ViewBag.HerdsError = "No herds available.";
-        //    }
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View();
-        //}
+       
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment")] Cow cows)
+        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,UserId")] Cow cows)
         {
             if (ModelState.IsValid)
             {
@@ -117,6 +102,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
         {
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id");
+            var users = await _userManager.Users.ToListAsync();
+            ViewBag.Users = new SelectList(users, "Id", "UserName");
             if (id == null)
             {
                 return NotFound();
@@ -132,7 +119,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment")] Cow cows)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,UserId")] Cow cows)
         {
             if (id != cows.Id)
             {
