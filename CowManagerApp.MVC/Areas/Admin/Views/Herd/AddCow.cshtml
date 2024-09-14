@@ -4,11 +4,12 @@
 <h1>Create Cow for Herd @ViewBag.HerdId</h1>
 
 <a class="nav-link text-dark" asp-area="" asp-controller="Herd" asp-action="Index">Herds</a>
-<a asp-controller="Herd" asp-action="Index">Back to list</a>
+
 
 <form asp-action="AddCow" method="post">
     <input type="hidden" asp-for="Idherd" />
     <input type="hidden" asp-for="UserId" />
+    <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
     
 
     <div class="form-group">
@@ -24,5 +25,6 @@
    
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
+        <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
     </div>
 </form>

@@ -1,6 +1,7 @@
 ﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
 @model CowManager.Models.Models.CowTreatAdd
 
+<a asp-action="Treat" asp-route-idk="@Model.CowId" asp-route-idd="@Model.DiagId">Return</a>
 @if (User.IsInRole("Admin"))
 
 {
@@ -13,6 +14,7 @@
 
         <div class="form-group">
             <label asp-for="SelectedMedicinetId" class="control-label">Medicine</label>
+            <a asp-controller="Medicine" asp-action="MedicineCreate">Add medicine</a>
             <select asp-for="SelectedMedicinetId" class="form-control" asp-items="@(new SelectList(Model.Medicines, "Id", "Name"))">
                 <option value="">Select medicicne</option>
             </select>

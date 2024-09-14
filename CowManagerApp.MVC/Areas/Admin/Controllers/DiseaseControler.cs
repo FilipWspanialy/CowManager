@@ -47,18 +47,22 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> DiseaseCreate()
         {
-           return View();
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
+
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DiseaseCreate([Bind("Id, Name, Comment")] Disease dis)
+        public async Task<IActionResult> DiseaseCreate([Bind("Id, Name, Comment")] Disease dis, string previousUrl)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(dis);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect(previousUrl);
             }
             return View(dis);
         }

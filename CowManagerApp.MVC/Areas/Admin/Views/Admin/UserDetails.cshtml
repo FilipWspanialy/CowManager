@@ -1,7 +1,9 @@
 ﻿@model CowManager.Models.Models.UserDetailsViewModel
 
 <h1>User Details: @Model.User.UserName</h1>
-
+<p>
+    <a asp-area="Admin" asp-controller="Admin" asp-action="UsersList">Back to List</a>
+</p>
 <h2>Herds</h2>
 <p>
     <a asp-controller="Herd" asp-action="HerdCreate">Create New</a>

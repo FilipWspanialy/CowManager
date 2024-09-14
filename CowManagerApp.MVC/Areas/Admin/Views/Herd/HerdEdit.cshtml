@@ -14,6 +14,7 @@
         <form asp-action="HerdEdit" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
            
             <div class="form-group">
                 <label asp-for="Comment" class="control-label"></label>
@@ -33,7 +34,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
 </div>
 
 @section Scripts {

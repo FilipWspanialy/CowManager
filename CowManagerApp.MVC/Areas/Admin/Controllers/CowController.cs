@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using CowManager.Models.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Policy;
 namespace CowManagerApp.Areas.Admin.Controllers
 { [Area("Admin")]
     [Authorize(Roles = "Admin")]
@@ -14,8 +15,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
     {
         private readonly CowManagerContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        public string url { get; set; }
+       
 
-        // Skonsolidowany konstruktor z wstrzykiwaniem dwóch zależności
         public CowController(CowManagerContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
@@ -45,6 +47,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> Details(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
+
             if (id == null)
             {
                 return NotFound();
@@ -63,6 +69,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> Create()
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+            
+
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment");
             var users = await _userManager.Users.ToListAsync();
@@ -83,14 +93,14 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,UserId")] Cow cows)
+        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,UserId")] Cow cows, string previousUrl)
         {
             var user = await _userManager.FindByIdAsync(cows.UserId);
             if (ModelState.IsValid)
             {
                 _context.Add(cows);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect(previousUrl);
             }
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd);
@@ -100,6 +110,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment");
             var users = await _userManager.Users.ToListAsync();
@@ -119,7 +132,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,UserId")] Cow cows)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,UserId")] Cow cows, string previousUrl)
         {
             if (id != cows.Id)
             {
@@ -144,7 +157,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect(previousUrl);
             }
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
@@ -153,6 +166,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             if (id == null)
             {
                 return NotFound();
@@ -170,7 +186,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id, string previousUrl)
         {
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
@@ -198,7 +214,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
                     throw;
                 }
             }
-            return RedirectToAction(nameof(Index));
+            return Redirect(previousUrl);
         }
 
         private bool CowExists(int id)
@@ -208,6 +224,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
         // ********************************************************************************* diagnosis
         public async Task<IActionResult> Diag(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             if (id == null)
             {
                 return NotFound();
@@ -375,6 +394,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
         // ********************************************************************************* treatment
         public async Task<IActionResult> Treat(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             if (id == null)
             {
                 return NotFound();
@@ -565,6 +587,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> TreatForDiagAdd(int idd, int idk)
         {
+
             if (idd == null)
             {
                 return NotFound();

@@ -38,6 +38,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> HerdDetails(int id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             var herd = await _context.Herds
                 .Include(s => s.Cows)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -51,6 +54,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> HerdCreate()
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             var users = await _userManager.Users.ToListAsync();
             ViewBag.Users = new SelectList(users, "Id", "UserName");
             return View();
@@ -58,18 +64,21 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> HerdCreate([Bind("Id,Comment,UserId")] Herd herds)
+        public async Task<IActionResult> HerdCreate([Bind("Id,Comment,UserId")] Herd herds, string previousUrl)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(herds);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect(previousUrl);
             }
             return View(herds);
         }
         public async Task<IActionResult> HerdDelete(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             if (id == null)
             {
                 return NotFound();
@@ -87,7 +96,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> HerdDeleteConfirmed(int id)
+        public async Task<IActionResult> HerdDeleteConfirmed(int id, string previousUrl)
         {
             var herd = await _context.Herds
                .Include(h => h.Cows)
@@ -103,10 +112,13 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction(nameof(Index));
+            return Redirect(previousUrl);
         }
         public async Task<IActionResult> HerdEdit(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             var users = await _userManager.Users.ToListAsync();
             ViewBag.Users = new SelectList(users, "Id", "UserName");
             if (id == null)
@@ -125,7 +137,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> HerdEdit(int id, [Bind("Id,Comment")] Herd herd)
+        public async Task<IActionResult> HerdEdit(int id, [Bind("Id,Comment")] Herd herd, string previousUrl)
         {
             if (id != herd.Id)
             {
@@ -138,7 +150,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 {
                     _context.Update(herd);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    return Redirect(previousUrl);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -162,6 +174,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> AddCow(int? Idh)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
 
             if (Idh == null)
             {
@@ -179,13 +193,13 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment,UserId")] Cow cow)
+        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment,UserId")] Cow cow, string previousUrl)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(cow);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("HerdDetails", "Herd", new { id = cow.Idherd });
+                return Redirect(previousUrl);
             }
 
             var herd = await _context.Herds.FindAsync(cow.Idherd);

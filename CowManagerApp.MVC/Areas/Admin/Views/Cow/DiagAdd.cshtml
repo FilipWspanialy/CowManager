@@ -2,16 +2,17 @@
 @model CowManager.Models.Models.CowDiagAdd
 
 <h2>Add Diagnosis for @Model.CowName</h2>
+<a asp-action="Diag" asp-route-id="@Model.CowId">Back to diagnosis</a>
 @if (User.IsInRole("Admin"))
 {
     
-
 <form asp-action="DiagAdd" asp-controller="Cow" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="CowId" value="@Model.CowId" />
 
     <div class="form-group">
         <label asp-for="SelectedDiseaseId" class="control-label">Disease</label>
+        <a asp-controller="Disease" asp-action="DiseaseCreate">Add disease</a>
         <select asp-for="SelectedDiseaseId" class="form-control" asp-items="@(new SelectList(Model.Diseases, "Id", "Name"))">
             <option value="">Select Disease</option>
         </select>

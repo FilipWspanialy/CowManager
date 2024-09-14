@@ -2,6 +2,7 @@
 @model CowManager.Models.Models.CowTreatAdd
 
 <h2>Add Treatment for @Model.CowName</h2>
+<a asp-action="Treat" asp-route-id="@Model.CowId">Back to treatments</a>
 @if (User.IsInRole("Admin"))
 
 {
@@ -13,6 +14,7 @@
 
         <div class="form-group">
             <label asp-for="SelectedMedicinetId" class="control-label">Medicine</label>
+            <a asp-controller="Medicine" asp-action="MedicineCreate">Add medicine</a>
             <select asp-for="SelectedMedicinetId" class="form-control" asp-items="@(new SelectList(Model.Medicines, "Id", "Name"))">
                 <option value="">Select medicicne</option>
             </select>

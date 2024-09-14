@@ -3,48 +3,84 @@
   "WorkspaceRootPath": "D:\\test\\CowManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\controllers\\cowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\controllers\\cowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatfordiagadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatfordiagadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\herd\\addcow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\herd\\addcow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\herd\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\herd\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\controllers\\diseasecontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\controllers\\diseasecontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\disease\\diseasecreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\disease\\diseasecreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatremove.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatremove.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\treatedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\diagremove.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\diagremove.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\diagedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\diagedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|D:\\test\\CowManager\\cowmenager.models\\models\\diagnosis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|solutionrelative:cowmenager.models\\models\\diagnosis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\diagadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\diagadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\medicine\\medicinecreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\medicine\\medicinecreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\controllers\\medicinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\controllers\\medicinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\controllers\\herdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\controllers\\herdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\herd\\herdedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\herd\\herdedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\herd\\herdedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|d:\\test\\cowmanager\\cowmenager.models\\models\\herd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76BAFF38-D55E-4B42-94B7-61CCC156C226}|CowMenager.Models\\CowManager.Models.csproj|solutionrelative:cowmenager.models\\models\\herd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\herd\\addcow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\herd\\addcow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|d:\\test\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\cow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\cow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\herd\\herdcreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\herd\\herdcreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\herd\\herddelete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\herd\\herddelete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|D:\\test\\CowManager\\cowmanagerapp.mvc\\areas\\admin\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,150 +90,251 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Edit.cshtml",
-              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Edit.cshtml",
-              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Edit.cshtml",
-              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABRAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-14T09:22:51.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Create.cshtml",
               "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Create.cshtml",
               "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Create.cshtml",
               "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Create.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAABCAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-14T09:20:39.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T10:47:00.207Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\Index.cshtml",
-              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\Index.cshtml",
-              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\Index.cshtml",
-              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\Index.cshtml",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAACoAAAAVAAAA",
+              "Title": "DiseaseCreate.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Disease\\DiseaseCreate.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Disease\\DiseaseCreate.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Disease\\DiseaseCreate.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Disease\\DiseaseCreate.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-14T09:10:35.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T11:00:15.342Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Index.cshtml",
-              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Index.cshtml",
-              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Index.cshtml",
-              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAMAAAA",
+              "DocumentIndex": 12,
+              "Title": "MedicineCreate.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Medicine\\MedicineCreate.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Medicine\\MedicineCreate.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Medicine\\MedicineCreate.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Medicine\\MedicineCreate.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-13T21:17:22.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HerdController.cs",
-              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
-              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
-              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
-              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG4AAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T20:26:17.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddCow.cshtml",
-              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
-              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
-              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
-              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-13T20:29:01.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T11:00:14.295Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAADwvyYAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T14:37:09.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "CowController.cs",
               "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\CowController.cs",
               "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\CowController.cs",
               "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\CowController.cs",
               "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\CowController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
+              "ViewState": "AQIAAOsBAAAAAAAAAAA4wE0CAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T13:24:45.641Z",
+              "WhenOpened": "2024-09-14T10:58:28.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TreatForDiagAdd.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatForDiagAdd.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatForDiagAdd.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatForDiagAdd.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatForDiagAdd.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T10:57:31.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TreatAdd.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatAdd.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatAdd.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatAdd.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatAdd.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T10:56:11.708Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Herd.cs",
-              "DocumentMoniker": "D:\\test\\CowManager\\CowMenager.Models\\Models\\Herd.cs",
-              "RelativeDocumentMoniker": "CowMenager.Models\\Models\\Herd.cs",
-              "ToolTip": "D:\\test\\CowManager\\CowMenager.Models\\Models\\Herd.cs",
-              "RelativeToolTip": "CowMenager.Models\\Models\\Herd.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAaAAAA",
+              "DocumentIndex": 4,
+              "Title": "DiseaseControler.cs",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\DiseaseControler.cs",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\DiseaseControler.cs",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\DiseaseControler.cs",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\DiseaseControler.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADoAAAByAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T08:35:40.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T10:58:21.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Diagnosis.cs",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowMenager.Models\\Models\\Diagnosis.cs",
+              "RelativeDocumentMoniker": "CowMenager.Models\\Models\\Diagnosis.cs",
+              "ToolTip": "D:\\test\\CowManager\\CowMenager.Models\\Models\\Diagnosis.cs",
+              "RelativeToolTip": "CowMenager.Models\\Models\\Diagnosis.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T11:07:10.623Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "DiagRemove.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagRemove.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagRemove.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagRemove.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagRemove.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T11:07:37.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TreatEdit.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatEdit.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatEdit.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatEdit.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T11:08:22.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TreatRemove.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatRemove.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatRemove.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatRemove.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\TreatRemove.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T11:08:40.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DiagEdit.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagEdit.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagEdit.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagEdit.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T11:06:27.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MedicineController.cs",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\MedicineController.cs",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\MedicineController.cs",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\MedicineController.cs",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\MedicineController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T10:58:21.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DiagAdd.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagAdd.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagAdd.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagAdd.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Cow\\DiagAdd.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T10:57:45.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HerdDelete.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdDelete.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdDelete.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdDelete.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdDelete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T10:47:29.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HerdCreate.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdCreate.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdCreate.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdCreate.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdCreate.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-14T10:47:18.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddCow.cshtml",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\AddCow.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-13T20:29:01.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "HerdEdit.cshtml",
               "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdEdit.cshtml",
               "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdEdit.cshtml",
               "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdEdit.cshtml",
               "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Herd\\HerdEdit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-14T08:54:49.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T08:54:49.773Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "UserDetails.cshtml",
               "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
               "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
               "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
               "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-14T09:08:03.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T09:08:03.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HerdController.cs",
+              "DocumentMoniker": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
+              "ToolTip": "D:\\test\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\HerdController.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAIwJcAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T20:26:17.613Z"
             }
           ]
         }
