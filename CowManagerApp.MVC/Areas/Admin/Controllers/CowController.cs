@@ -7,6 +7,7 @@ using CowManager.Models.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Policy;
+using Microsoft.AspNetCore.Http;
 namespace CowManagerApp.Areas.Admin.Controllers
 { [Area("Admin")]
     [Authorize(Roles = "Admin")]
@@ -48,7 +49,16 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            ViewBag.PreviousUrl = referer;
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("Edit"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
 
 
             if (id == null)
@@ -225,7 +235,18 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Diag(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            ViewBag.PreviousUrl = referer;
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
+            
+
 
             if (id == null)
             {
@@ -301,6 +322,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> DiagRemove(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
@@ -395,8 +417,16 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Treat(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            ViewBag.PreviousUrl = referer;
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("TreatAdd") && !referer.Contains("TreatForDiag"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
 
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
             if (id == null)
             {
                 return NotFound();

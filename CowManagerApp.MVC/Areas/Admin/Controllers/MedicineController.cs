@@ -29,6 +29,17 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> MedicineDetails(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("Edit"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
             if (id == null)
             {
                 return NotFound();
@@ -67,6 +78,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> MedicineEdit(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
             if (id == null)
             {
                 return NotFound();
@@ -83,7 +97,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> MedicineEdit(int id, [Bind("Id, Name, Comment")] Medicine med)
+        public async Task<IActionResult> MedicineEdit(int id, [Bind("Id, Name, Comment")] Medicine med, string previousUrl)
         {
             if (id != med.Id)
             {
@@ -96,7 +110,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 {
                     _context.Update(med);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    return Redirect(previousUrl);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
