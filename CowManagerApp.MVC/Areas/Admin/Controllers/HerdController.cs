@@ -107,6 +107,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> HerdEdit(int? id)
         {
+            var users = await _userManager.Users.ToListAsync();
+            ViewBag.Users = new SelectList(users, "Id", "UserName");
             if (id == null)
             {
                 return NotFound();

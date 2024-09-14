@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Idherd" class="control-label"></label>
+                    <label asp-for="Idherd" class="control-label">Choose the herd</label>
                     <a asp-action="HerdCreate" asp-controller="Herd">Create herd</a>
                     <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
                     <span asp-validation-for="Idherd" class="text-danger"></span>

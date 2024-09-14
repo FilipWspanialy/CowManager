@@ -63,9 +63,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> Create()
         {
-            ViewBag.bol = 0;
             var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id");
+            ViewBag.Herds = new SelectList(herds, "Id", "Comment");
             var users = await _userManager.Users.ToListAsync();
             ViewBag.Users = new SelectList(users, "Id", "UserName");
             
@@ -86,6 +85,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,UserId")] Cow cows)
         {
+            var user = await _userManager.FindByIdAsync(cows.UserId);
             if (ModelState.IsValid)
             {
                 _context.Add(cows);
@@ -93,7 +93,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
+            ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd);
 
             return View(cows);
         }
@@ -101,7 +101,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id");
+            ViewBag.Herds = new SelectList(herds, "Id", "Comment");
             var users = await _userManager.Users.ToListAsync();
             ViewBag.Users = new SelectList(users, "Id", "UserName");
             if (id == null)

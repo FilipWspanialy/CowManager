@@ -20,14 +20,15 @@
         @foreach (var item in Model.Herd)
         {
             <tr>
-                <td>@item.Id</td>
-                <td>@item.Comment</td>
+                <td><a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a></td>
+                <td><a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Comment</a></td>
                 <td>@item.AmountOfCows</td>
+            <td>
                 <a asp-controller="Herd" asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|
                 <a asp-controller="Herd" asp-action="HerdEdit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-controller="Herd" asp-action="HerdDelete" asp-route-id="@item.Id">Delete</a>
+            </td>
             </tr>
-       
         }
     </tbody>
 </table>
@@ -56,11 +57,13 @@
                 <td>@item.Name</td>
                 <td>@item.Comment</td>
                 <td>@item.Idherd</td>
+            <td>
                 <a asp-controller="Cow" asp-action="Diag" asp-route-id="@item.Id">Diagnosis</a> |
                 <a asp-controller="Cow" asp-action="Treat" asp-route-id="@item.Id">Treatment</a> |
                 <a asp-controller="Cow" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-controller="Cow" asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-controller="Cow" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
             </tr>
         
         }

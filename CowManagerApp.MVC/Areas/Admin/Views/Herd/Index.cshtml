@@ -30,13 +30,13 @@
         {
             <tr>
                 <td>
-                    <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a>)
+                    <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a>
                 </td>
                 <td>
                     @item.AmountOfCows
                 </td>
                 <td>
-                    @item.Comment
+                    <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Comment</a>
                 </td>
                 <td>
                     @item.UserId
