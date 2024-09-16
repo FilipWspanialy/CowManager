@@ -9,6 +9,9 @@ public partial class Cow
 {
     public int Id { get; set; }
 
+    [RegularExpression(@"^\d{6}$", ErrorMessage = "Cowid must be exactly 6 digits.")]
+    public string Cowid { get; set; }
+
     [Required(ErrorMessage = "Name is required")]
     [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Name can only contain letters and spaces")]
     public string? Name { get; set; }

@@ -45,6 +45,7 @@ public partial class CowManagerContext : IdentityDbContext
             entity.ToTable("Cow");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Cowid).HasColumnName("Cowid");
             entity.Property(e => e.Comment)
                 .HasMaxLength(200)
                 .IsFixedLength();
@@ -60,6 +61,9 @@ public partial class CowManagerContext : IdentityDbContext
                 .HasForeignKey(d => d.Idherd)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Cow_Herd");
+
+            entity.HasIndex(e => e.Cowid)
+           .IsUnique();
         }); 
 
         modelBuilder.Entity<Diagnosis>(entity =>

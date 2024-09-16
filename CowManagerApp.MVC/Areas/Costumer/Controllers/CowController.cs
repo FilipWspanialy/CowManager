@@ -79,12 +79,20 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         {
             
             cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            
             if (ModelState.IsValid)
             {
-                _context.Add(cows);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cows.Cowid);
+
+                if (isCowidExists)
+                {
+                    ModelState.AddModelError("Cowid", "Cowid already exists.");
+                }
+                else
+                {
+                    _context.Add(cows);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
@@ -118,13 +126,24 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(cows);
-                    await _context.SaveChangesAsync();
+                    var existingCow = await _context.Cows
+                        .Where(c => c.Cowid == cows.Cowid && c.Id != cows.Id)
+                        .FirstOrDefaultAsync();
+
+                    if (existingCow != null)
+                    {
+                        ModelState.AddModelError("Cowid", "Cowid already exists.");
+                    }
+                    else
+                    {
+                        _context.Update(cows);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -137,7 +156,6 @@ namespace CowManagerApp.Areas.Costumer.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);

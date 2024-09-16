@@ -116,15 +116,24 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,UserId, BirthDate, DeathDate")] Cow cows, string previousUrl)
+        public async Task<IActionResult> Create([Bind("Cowid,Name,Idherd,Comment,UserId, BirthDate, DeathDate")] Cow cows, string previousUrl)
         {
 
             var user = await _userManager.FindByIdAsync(cows.UserId);
             if (ModelState.IsValid)
             {
-                _context.Add(cows);
-                await _context.SaveChangesAsync();
-                return Redirect(previousUrl);
+                bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cows.Cowid);
+
+                if (isCowidExists)
+                {
+                    ModelState.AddModelError("Cowid", "Cowid already exists.");
+                }
+                else
+                {
+                    _context.Add(cows);
+                    await _context.SaveChangesAsync();
+                    return Redirect(previousUrl);
+                }
             }
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd);
@@ -165,7 +174,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,UserId, , BirthDate, DeathDate")] Cow cows, string previousUrl)
+        public async Task<IActionResult> Edit(int id, [Bind("Cowid,Name,Idherd,Comment,UserId, , BirthDate, DeathDate")] Cow cows, string previousUrl)
         {
             if (id != cows.Id)
             {
@@ -176,8 +185,20 @@ namespace CowManagerApp.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(cows);
-                    await _context.SaveChangesAsync();
+                    var existingCow = await _context.Cows
+                        .Where(c => c.Cowid == cows.Cowid && c.Id != cows.Id)
+                        .FirstOrDefaultAsync();
+
+                    if (existingCow != null)
+                    {
+                        ModelState.AddModelError("Cowid", "Cowid already exists.");
+                    }
+                    else
+                    {
+                        _context.Update(cows);
+                        await _context.SaveChangesAsync();
+                        return Redirect(previousUrl);
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -190,7 +211,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return Redirect(previousUrl);
             }
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);

@@ -197,9 +197,18 @@ namespace CowManagerApp.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cow);
-                await _context.SaveChangesAsync();
-                return Redirect(previousUrl);
+                bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cow.Cowid);
+
+                if (isCowidExists)
+                {
+                    ModelState.AddModelError("Cowid", "Cowid already exists.");
+                }
+                else
+                {
+                    _context.Add(cow);
+                    await _context.SaveChangesAsync();
+                    return Redirect(previousUrl);
+                }
             }
 
             var herd = await _context.Herds.FindAsync(cow.Idherd);

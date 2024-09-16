@@ -181,13 +181,22 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment")] Cow cow)
         {
             cow.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (ModelState.IsValid)
             {
-                _context.Add(cow);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("HerdDetails", "Herd", new { id = cow.Idherd });
-            }
+                bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cow.Cowid);
 
+                if (isCowidExists)
+                {
+                    ModelState.AddModelError("Cowid", "Cowid already exists.");
+                }
+                else
+                {
+                    _context.Add(cow);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("HerdDetails", "Herd", new { id = cow.Idherd });
+                }
+            }
             var herd = await _context.Herds.FindAsync(cow.Idherd);
             ViewBag.HerdId = cow.Idherd;
             return View(cow);

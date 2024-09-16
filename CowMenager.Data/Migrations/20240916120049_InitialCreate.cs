@@ -204,6 +204,7 @@ namespace CowManager.Data.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Cowid = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nchar(20)", fixedLength: true, maxLength: 20, nullable: false),
                     IDHerd = table.Column<int>(type: "int", nullable: true),
                     Comment = table.Column<string>(type: "nchar(200)", fixedLength: true, maxLength: 200, nullable: true),
@@ -322,6 +323,12 @@ namespace CowManager.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Cow_Cowid",
+                table: "Cow",
+                column: "Cowid",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cow_IDHerd",

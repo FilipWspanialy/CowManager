@@ -40,6 +40,11 @@ namespace CowManager.Data.Migrations
                         .HasColumnType("nchar(200)")
                         .IsFixedLength();
 
+                    b.Property<string>("Cowid")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("Cowid");
+
                     b.Property<DateTime?>("DeathDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("DeathDate");
@@ -62,6 +67,9 @@ namespace CowManager.Data.Migrations
                         .HasColumnName("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Cowid")
+                        .IsUnique();
 
                     b.HasIndex("Idherd");
 
