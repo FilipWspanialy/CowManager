@@ -63,8 +63,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> HerdCreate([Bind("Id,Comment,UserId")] Herd herds, string previousUrl)
+        public async Task<IActionResult> HerdCreate([Bind("Id,Comment,UserId,UserName")] Herd herds, string previousUrl)
         {
+            var user = await _userManager.FindByIdAsync(herds.UserId);
+            herds.UserName = user.UserName;
             if (ModelState.IsValid)
             {
                 _context.Add(herds);
@@ -136,8 +138,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> HerdEdit(int id, [Bind("Id,Comment,UserId")] Herd herd, string previousUrl)
+        public async Task<IActionResult> HerdEdit(int id, [Bind("Id,Comment,UserId,UserName")] Herd herd, string previousUrl)
         {
+            var user = await _userManager.FindByIdAsync(herd.UserId);
+            herd.UserName = user.UserName;
             if (id != herd.Id)
             {
                 return NotFound();
@@ -192,7 +196,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment,UserId")] Cow cow, string previousUrl)
+        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Nameherd,Comment,UserId,UserName,BirthDate,DeathDate")] Cow cow, string previousUrl)
         {
             if (ModelState.IsValid)
             {
@@ -204,6 +208,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 }
                 else
                 {
+                    var user = await _userManager.FindByIdAsync(cow.UserId);
+                    cow.UserName = user.UserName;
                     _context.Add(cow);
                     await _context.SaveChangesAsync();
                     return Redirect(previousUrl);
@@ -212,6 +218,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
             var herd = await _context.Herds.FindAsync(cow.Idherd);
             ViewBag.HerdId = cow.Idherd;
+            var idherd = await _context.Herds.FindAsync(cow.Idherd);
+            cow.Nameherd = idherd.Comment;
             return View(cow);
         }
 

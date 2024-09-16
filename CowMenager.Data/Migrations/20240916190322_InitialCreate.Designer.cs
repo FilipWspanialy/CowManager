@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CowManager.Data.Migrations
 {
     [DbContext(typeof(CowManagerContext))]
-    [Migration("20240916120049_InitialCreate")]
+    [Migration("20240916190322_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -65,9 +65,17 @@ namespace CowManager.Data.Migrations
                         .HasColumnType("nchar(20)")
                         .IsFixedLength();
 
+                    b.Property<string>("Nameherd")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("NameHerd");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("UserId");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UserName");
 
                     b.HasKey("Id");
 
@@ -158,6 +166,10 @@ namespace CowManager.Data.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("UserId");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("UserName");
 
                     b.HasKey("Id");
 

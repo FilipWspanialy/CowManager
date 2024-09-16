@@ -50,10 +50,12 @@ public partial class CowManagerContext : IdentityDbContext
                 .HasMaxLength(200)
                 .IsFixedLength();
             entity.Property(e => e.Idherd).HasColumnName("IDHerd");
+            entity.Property(e => e.Nameherd).HasColumnName("NameHerd");
             entity.Property(e => e.Name)
                 .HasMaxLength(20)
                 .IsFixedLength();
             entity.Property(e => e.UserId).HasColumnName("UserId");
+            entity.Property(e => e.UserName).HasColumnName("UserName");
             entity.Property(e => e.BirthDate).HasColumnName("BirthDate");
             entity.Property(e => e.DeathDate).HasColumnName("DeathDate");
 
@@ -113,6 +115,7 @@ public partial class CowManagerContext : IdentityDbContext
                 .HasMaxLength(200)
                 .IsFixedLength();
             entity.Property(e => e.UserId).HasColumnName("UserId");
+            entity.Property(e => e.UserName).HasColumnName("UserName");
         });
 
         modelBuilder.Entity<Medicine>(entity =>

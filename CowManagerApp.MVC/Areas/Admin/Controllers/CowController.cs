@@ -120,10 +120,13 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Cowid,Name,Idherd,Comment,UserId, BirthDate, DeathDate")] Cow cows, string previousUrl)
+        public async Task<IActionResult> Create([Bind("Cowid,Name,Idherd,Nameherd,Comment,UserId,UserName, BirthDate, DeathDate")] Cow cows, string previousUrl)
         {
 
             var user = await _userManager.FindByIdAsync(cows.UserId);
+            cows.UserName = user.UserName;
+            var idherd = await _context.Herds.FindAsync(cows.Idherd);
+            cows.Nameherd = idherd.Comment;
             if (ModelState.IsValid)
             {
                 bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cows.Cowid);
@@ -175,10 +178,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
             }
             return View(cows);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Cowid,Name,Idherd,Comment,UserId,BirthDate,DeathDate")] Cow cows, string previousUrl)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Cowid,Name,Idherd,Comment,UserId,BirthDate,DeathDate")] Cow cows, string previousUrl)
         {
             if (id != cows.Id)
             {
@@ -201,7 +203,15 @@ namespace CowManagerApp.Areas.Admin.Controllers
                     {
                         _context.Update(cows);
                         await _context.SaveChangesAsync();
-                        return Redirect(previousUrl);
+                        // Ensure previousUrl is valid and not empty
+                        if (!string.IsNullOrEmpty(previousUrl))
+                        {
+                            return Redirect(previousUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home"); // or another appropriate action
+                        }
                     }
                 }
                 catch (DbUpdateConcurrencyException)
@@ -216,10 +226,65 @@ namespace CowManagerApp.Areas.Admin.Controllers
                     }
                 }
             }
+
+            // If we got this far, something failed, redisplay the form
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd);
+            var user = await _userManager.FindByIdAsync(cows.UserId);
+            cows.UserName = user.UserName;
+            var idherd = await _context.Herds.FindAsync(cows.Idherd);
+            cows.Nameherd = idherd.Comment;
             return View(cows);
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, [Bind("Cowid,Name,Idherd,Nameherd,Comment,UserId,UserName,BirthDate,DeathDate")] Cow cows, string previousUrl)
+        //{
+        //    if (id != cows.Id)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            var existingCow = await _context.Cows
+        //                .Where(c => c.Cowid == cows.Cowid && c.Id != cows.Id)
+        //                .FirstOrDefaultAsync();
+
+        //            if (existingCow != null)
+        //            {
+        //                ModelState.AddModelError("Cowid", "Cowid already exists.");
+        //            }
+        //            else
+        //            {
+        //                _context.Update(cows);
+        //                await _context.SaveChangesAsync();
+        //                return Redirect(previousUrl);
+        //            }
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!CowExists(cows.Id))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //    }
+        //    var herds = await _context.Herds.ToListAsync();
+        //    ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd); 
+        //    var user = await _userManager.FindByIdAsync(cows.UserId);
+        //    cows.UserName = user.UserName;
+        //    var idherd = await _context.Herds.FindAsync(cows.Idherd);
+        //    cows.Nameherd = idherd.Comment;
+        //    return View(cows);
+        //}
 
         public async Task<IActionResult> Delete(int? id)
         {

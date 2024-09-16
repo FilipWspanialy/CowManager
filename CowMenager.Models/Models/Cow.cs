@@ -18,9 +18,13 @@ public partial class Cow
 
     public int? Idherd { get; set; }
 
+    public string? Nameherd { get; set; }
+
     public string? Comment { get; set; }
 
     public string? UserId { get; set; }
+
+    public string? UserName { get; set; }
     public DateTime? BirthDate { get; set; }
     public DateTime? DeathDate { get; set; }
     public bool IsInactive { get; set; }

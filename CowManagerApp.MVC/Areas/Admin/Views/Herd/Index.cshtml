@@ -39,7 +39,7 @@
                     <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Comment</a>
                 </td>
                 <td>
-                    @item.UserId
+                    @item.UserName
                 </td>
                 <td>
                     <a asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|

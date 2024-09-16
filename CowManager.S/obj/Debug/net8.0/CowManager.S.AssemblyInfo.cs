@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CowManager.S")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+248220d11c612bf714847366a9cabff1fdfcb60e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b88a25f0e50ee1d4ce03a20aa88b134cf6487012")]
 [assembly: System.Reflection.AssemblyProductAttribute("CowManager.S")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CowManager.S")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
