@@ -21,6 +21,16 @@
 
                 <dt class="col-sm-4">Comment</dt>
                 <dd class="col-sm-8">@Model.Comment</dd>
+
+                <dt class="col-sm-4">Birth Date</dt>
+                <dd class="col-sm-8">
+                    @(Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "N/A")
+                </dd>
+
+                <dt class="col-sm-4">Death Date</dt>
+                <dd class="col-sm-8">
+                    @(Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "N/A")
+                </dd>
             </dl>
         </div>
     </div>

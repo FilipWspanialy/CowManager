@@ -49,6 +49,8 @@
             <th>Name</th>
             <th>Comment</th>
             <th>Idherd</th>
+            <th>Birth date</th>
+            <th>Death date</th>
         </tr>
     </thead>
     <tbody>
@@ -59,6 +61,9 @@
                 <td>@item.Name</td>
                 <td>@item.Comment</td>
                 <td>@item.Idherd</td>
+                <td>@item.BirthDate</td>
+                <td>@item.DeathDate</td>
+
             <td>
                 <a asp-controller="Cow" asp-action="Diag" asp-route-id="@item.Id">Diagnosis</a> |
                 <a asp-controller="Cow" asp-action="Treat" asp-route-id="@item.Id">Treatment</a> |

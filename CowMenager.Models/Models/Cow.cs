@@ -18,6 +18,9 @@ public partial class Cow
     public string? Comment { get; set; }
 
     public string? UserId { get; set; }
+    public DateTime? BirthDate { get; set; }
+    public DateTime? DeathDate { get; set; }
+    public bool IsInactive { get; set; }
 
     public virtual Herd? IdherdNavigation { get; set; }
 }

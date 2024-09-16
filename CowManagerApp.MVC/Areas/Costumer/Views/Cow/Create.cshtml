@@ -37,7 +37,15 @@
                     <label asp-for="Comment" class="control-label"></label>
                     <input asp-for="Comment" class="form-control" />
                     <span asp-validation-for="Comment" class="text-danger"></span>
-                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="BirthDate">Birth date</label>
+                    <input type="date" class="form-control" id="BirthDate" name="BirthDate" value="@(Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "")" />
+                </div>
+                <div class="form-group">
+                    <label for="DeathDate">Death date</label>
+                    <input type="date" class="form-control" id="DeathDate" name="DeathDate" value="@(Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "")" />
+                </div>
                 @if (ViewBag.Users == null || !ViewBag.Users.Any())
                 {
                     <p class="text-danger">Users are not available.</p>

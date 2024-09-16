@@ -24,7 +24,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
             _context = context;
             _userManager = userManager;
         }
-
         public async Task<IActionResult> Index()
         {
             if (_context.Cows == null)
@@ -32,15 +31,20 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 return Problem("Entity set 'CowManagerContext.Cows' is null.");
             }
 
-            // Pobierz aktualnie zalogowanego użytkownika
             var user = await _userManager.GetUserAsync(User);
-            var userName = user?.UserName; // Pobierz nazwę użytkownika
+            var userName = user?.UserName; 
 
-            // Pobierz listę krów z bazy danych
             var cows = await _context.Cows.ToListAsync();
+            foreach (var cow in cows)
+            {
+                if (cow.DeathDate.HasValue && !cow.IsInactive)
+                {
+                    cow.IsInactive = true;
+                    _context.SaveChanges();
+                }
+            }
 
-        
-           
+
 
             return View(cows);
         }
@@ -80,8 +84,17 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Create()
         {
             var referer = Request.Headers["Referer"].ToString();
-            ViewBag.PreviousUrl = referer;
-            
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
+
 
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment");
@@ -103,8 +116,9 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,UserId")] Cow cows, string previousUrl)
+        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,UserId, BirthDate, DeathDate")] Cow cows, string previousUrl)
         {
+
             var user = await _userManager.FindByIdAsync(cows.UserId);
             if (ModelState.IsValid)
             {
@@ -121,7 +135,16 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            ViewBag.PreviousUrl = referer;
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
 
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment");
@@ -142,7 +165,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,UserId")] Cow cows, string previousUrl)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,UserId, , BirthDate, DeathDate")] Cow cows, string previousUrl)
         {
             if (id != cows.Id)
             {

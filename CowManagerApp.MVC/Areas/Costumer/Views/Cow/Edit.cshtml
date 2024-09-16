@@ -24,6 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Idherd" class="control-label"></label>
+                <a asp-action="HerdCreate" asp-controller="Herd">Create herd</a>
                 <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
                 <span asp-validation-for="Idherd" class="text-danger"></span>
             </div>
@@ -32,6 +33,14 @@
                 <input asp-for="Comment" class="form-control" />
                 <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
+                <div class="form-group">
+                    <label for="BirthDate">Birth date</label>
+                    <input type="date" class="form-control" id="BirthDate" name="BirthDate" value="@(Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "")" />
+                </div>
+                <div class="form-group">
+                    <label for="DeathDate">Death date</label>
+                    <input type="date" class="form-control" id="DeathDate" name="DeathDate" value="@(Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "")" />
+                </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

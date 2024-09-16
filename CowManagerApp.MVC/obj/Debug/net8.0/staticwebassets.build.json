@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gjylmP4gqLR3sfMbbI/SJ1apQFXAevAO/Ol4mIw70WI=",
+  "Hash": "Nuwx/DZ/0g0CtuUgVbLBZR9vVZRhyBSH2gD+5uqYlhM=",
   "Source": "CowManagerApp",
   "BasePath": "_content/CowManagerApp",
   "Mode": "Default",
@@ -1383,6 +1383,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\styles.css",
+      "SourceId": "CowManagerApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\",
+      "BasePath": "_content/CowManagerApp",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
       "Identity": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\favicon.ico",

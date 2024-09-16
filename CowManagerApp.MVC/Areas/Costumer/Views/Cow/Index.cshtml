@@ -26,6 +26,12 @@
             <th>
                 UserId
             </th>
+            <th>
+                Birth date
+            </th>
+            <th>
+                Death date
+            </th>
 
         </tr>
     </thead>
@@ -37,7 +43,14 @@
                     @item.Id
                 </td>
                 <td>
-                    @item.Name
+                    @if (item.DeathDate.HasValue)
+                    {
+                        <span class="strikethrough">@item.Name</span>
+                    }
+                    else
+                    {
+                        <span>@item.Name</span>
+                    }
                 </td>
                 <td>
                     @item.Idherd

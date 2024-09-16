@@ -30,7 +30,14 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
             var cows = _context.Cows
                             .Where(c => c.UserId == userId);
-
+            foreach (var cow in cows)
+            {
+                if (cow.DeathDate.HasValue && !cow.IsInactive)
+                {
+                    cow.IsInactive = true;
+                    _context.SaveChanges();
+                }
+            }
             return View(await cows.ToListAsync());
         }
         public async Task<IActionResult> Details(int? id)
@@ -46,7 +53,6 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             {
                 return NotFound();
             }
-
             return View(cows);
         }
 
@@ -69,9 +75,9 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment")] Cow cows)
+        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
         {
-
+            
             cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             
             if (ModelState.IsValid)
@@ -105,9 +111,8 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment")] Cow cows)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
         {
-
             cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (id != cows.Id)
             {

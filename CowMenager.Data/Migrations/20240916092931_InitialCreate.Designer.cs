@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CowManager.Data.Migrations
 {
     [DbContext(typeof(CowManagerContext))]
-    [Migration("20240912211810_Próbna")]
-    partial class Próbna
+    [Migration("20240916092931_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,14 +34,25 @@ namespace CowManager.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime?>("BirthDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("BirthDate");
+
                     b.Property<string>("Comment")
                         .HasMaxLength(200)
                         .HasColumnType("nchar(200)")
                         .IsFixedLength();
 
+                    b.Property<DateTime?>("DeathDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeathDate");
+
                     b.Property<int?>("Idherd")
                         .HasColumnType("int")
                         .HasColumnName("IDHerd");
+
+                    b.Property<bool>("IsInactive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

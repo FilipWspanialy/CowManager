@@ -19,7 +19,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
         private readonly CowManagerContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
-        // Skonsolidowany konstruktor z wstrzykiwaniem dwóch zależności
         public AdminController(CowManagerContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
@@ -32,7 +31,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
             return View(usersInRole);
         }
-        // Wyświetlanie szczegółów użytkownika
         public async Task<IActionResult> UserDetails(string id)
         {
             // Pobierz użytkownika na podstawie podanego ID

@@ -207,7 +207,10 @@ namespace CowManager.Data.Migrations
                     Name = table.Column<string>(type: "nchar(20)", fixedLength: true, maxLength: 20, nullable: false),
                     IDHerd = table.Column<int>(type: "int", nullable: true),
                     Comment = table.Column<string>(type: "nchar(200)", fixedLength: true, maxLength: 200, nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeathDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsInactive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -53,6 +53,8 @@ public partial class CowManagerContext : IdentityDbContext
                 .HasMaxLength(20)
                 .IsFixedLength();
             entity.Property(e => e.UserId).HasColumnName("UserId");
+            entity.Property(e => e.BirthDate).HasColumnName("BirthDate");
+            entity.Property(e => e.DeathDate).HasColumnName("DeathDate");
 
             entity.HasOne(d => d.IdherdNavigation).WithMany(p => p.Cows)
                 .HasForeignKey(d => d.Idherd)
