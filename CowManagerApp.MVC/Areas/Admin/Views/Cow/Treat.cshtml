@@ -12,6 +12,7 @@
     <div>
     @Html.ActionLink("Add Treatment", "TreatAdd", "Cow", new { id = Model.Cow.Id }, new { @class = "btn btn-primary" })
     </div>
+    <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id">Documentation</a>
     @if (Model.Treatments.Any())
     {
     <ul>

@@ -98,6 +98,14 @@ namespace CowManager.Data.Migrations
                         .HasColumnType("nchar(200)")
                         .IsFixedLength();
 
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreateTime");
+
+                    b.Property<DateTime?>("DeleteTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeleteTime");
+
                     b.Property<int>("Idcow")
                         .HasColumnType("int")
                         .HasColumnName("IDCow");
@@ -211,6 +219,14 @@ namespace CowManager.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nchar(200)")
                         .IsFixedLength();
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreateTime");
+
+                    b.Property<DateTime?>("DeleteTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeleteTime");
 
                     b.Property<int>("Idcow")
                         .HasColumnType("int")

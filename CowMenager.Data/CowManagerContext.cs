@@ -81,6 +81,8 @@ public partial class CowManagerContext : IdentityDbContext
             entity.Property(e => e.NameOfDisease)
                 .HasMaxLength(50)
                 .IsFixedLength();
+            entity.Property(e => e.CreateTime).HasColumnName("CreateTime");
+            entity.Property(e => e.DeleteTime).HasColumnName("DeleteTime");
 
             entity.HasOne(d => d.IdcowNavigation).WithMany()
                 .HasForeignKey(d => d.Idcow)
@@ -145,6 +147,8 @@ public partial class CowManagerContext : IdentityDbContext
             entity.Property(e => e.NameOfMedicine)
                 .HasMaxLength(50)
                 .IsFixedLength();
+            entity.Property(e => e.CreateTime).HasColumnName("CreateTime");
+            entity.Property(e => e.DeleteTime).HasColumnName("DeleteTime");
 
             entity.HasOne(d => d.IdcowNavigation).WithMany()
                 .HasForeignKey(d => d.Idcow)

@@ -19,6 +19,10 @@ public partial class Treatment
 
     public string? Comment { get; set; }
 
+    public DateTime? CreateTime { get; set; }
+
+    public DateTime? DeleteTime { get; set; }
+
     public virtual Cow IdcowNavigation { get; set; } = null!;
 
     public virtual Medicine IdmedicineNavigation { get; set; } = null!;

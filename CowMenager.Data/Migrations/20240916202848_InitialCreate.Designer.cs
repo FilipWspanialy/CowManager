@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CowManager.Data.Migrations
 {
     [DbContext(typeof(CowManagerContext))]
-    [Migration("20240916190322_InitialCreate")]
+    [Migration("20240916202848_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -100,6 +100,14 @@ namespace CowManager.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nchar(200)")
                         .IsFixedLength();
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreateTime");
+
+                    b.Property<DateTime?>("DeleteTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeleteTime");
 
                     b.Property<int>("Idcow")
                         .HasColumnType("int")
@@ -214,6 +222,14 @@ namespace CowManager.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nchar(200)")
                         .IsFixedLength();
+
+                    b.Property<DateTime?>("CreateTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreateTime");
+
+                    b.Property<DateTime?>("DeleteTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeleteTime");
 
                     b.Property<int>("Idcow")
                         .HasColumnType("int")

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Policy;
 using Microsoft.AspNetCore.Http;
+using Microsoft.CodeAnalysis;
 namespace CowManagerApp.Areas.Admin.Controllers
 { [Area("Admin")]
     [Authorize(Roles = "Admin")]
@@ -347,7 +348,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Diag(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag"))
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag") && !referer.Contains("Documentation"))
             {
                 HttpContext.Session.SetString("PreviousUrl", referer);
                 ViewBag.PreviousUrl = referer;
@@ -375,7 +376,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
             }
 
             var diagnoses = await _context.Diagnoses
-                .Where(d => d.Idcow == id)
+                .Where(d => d.Idcow == id && d.DeleteTime == null)
                 .Include(d => d.IddiseaseNavigation)
                 .ToListAsync();
 
@@ -421,7 +422,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 Idcow = model.CowId,
                 Iddisease = model.SelectedDiseaseId,
                 NameOfDisease = _context.Diseases.FirstOrDefault(d => d.Id == model.SelectedDiseaseId)?.Name,
-                Comment = model.Comment
+                Comment = model.Comment,
+                CreateTime = DateTime.Now
             };
 
             _context.Add(diagnosis);
@@ -453,37 +455,41 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         }
 
-        [HttpPost, ActionName("DiagRemove")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DiagRemoveConfirmed(int id)
+        public async Task<IActionResult> DiagRemove(int id)
         {
             var diagnosis = await _context.Diagnoses.FindAsync(id);
-            using (var transaction = await _context.Database.BeginTransactionAsync())
+            if (diagnosis == null)
             {
-                try
+                return NotFound();
+            }
+
+            diagnosis.DeleteTime = DateTime.Now;
+
+            try
+            {
+                _context.Update(diagnosis);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!DiagnosisExists(id))
                 {
-                    if (diagnosis != null)
-                    {
-
-                        var treatments = _context.Treatments.Where(t => t.Iddiagnosis == id);
-                        _context.Treatments.RemoveRange(treatments);
-
-                        _context.Diagnoses.Remove(diagnosis);
-
-                        await _context.SaveChangesAsync();
-
-                        await transaction.CommitAsync();
-
-                    }
+                    return NotFound();
                 }
-                catch (Exception)
+                else
                 {
-                    await transaction.RollbackAsync();
-                    throw;
+                    return View("Error");
                 }
             }
-            return RedirectToAction("Diag", "Cow", new { id = diagnosis.Idcow });
         }
+        private bool DiagnosisExists(int id)
+        {
+            return _context.Diagnoses.Any(e => e.Id == id);
+        }
+
         public async Task<IActionResult> DiagEdit(int? id)
         {
 
@@ -529,7 +535,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Treat(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(referer) && !referer.Contains("TreatAdd") && !referer.Contains("TreatForDiag"))
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("TreatAdd") && !referer.Contains("TreatForDiag") && !referer.Contains("Documentation"))
             {
                 HttpContext.Session.SetString("PreviousUrl", referer);
                 ViewBag.PreviousUrl = referer;
@@ -554,7 +560,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
             }
 
             var treats = await _context.Treatments
-                .Where(d => d.Idcow == id)
+                .Where(d => d.Idcow == id && d.DeleteTime == null)
                 .Include(d => d.IdmedicineNavigation)
                 .ToListAsync();
 
@@ -600,7 +606,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 Idcow = model.CowId,
                 Idmedicine = model.SelectedMedicinetId,
                 NameOfMedicine = _context.Medicines.FirstOrDefault(d => d.Id == model.SelectedMedicinetId)?.Name,
-                Comment = model.Comment
+                Comment = model.Comment,
+                CreateTime = DateTime.Now
             };
 
             _context.Add(treats);
@@ -631,7 +638,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost, ActionName("TreatRemove")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> TreatRemoveConfirmed(int id)
+        public async Task<IActionResult> TreatRemove(int id, [Bind("DeleteTime")] Treatment treatment)
         {
             var treats = await _context.Treatments.FindAsync(id);
             if (treats == null)
@@ -639,16 +646,24 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            treats.DeleteTime = DateTime.Now;
+
             try
             {
-                _context.Treatments.Remove(treats);
+                _context.Update(treats);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Treat", "Cow", new { id = treats.Idcow });
+                return RedirectToAction("treat", "Cow", new { id = treats.Idcow });
             }
-            catch (Exception ex)
+            catch (DbUpdateConcurrencyException)
             {
-                ModelState.AddModelError("", "An error occurred while removing the diagnosis.");
-                return View();
+                if (!DiagnosisExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return View("Error");
+                }
             }
         }
         public async Task<IActionResult> TreatEdit(int? id)
@@ -777,7 +792,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 Idmedicine = cta.SelectedMedicinetId,
                 Iddiagnosis = cta.DiagId,
                 NameOfMedicine = _context.Medicines.FirstOrDefault(d => d.Id == cta.SelectedMedicinetId)?.Name,
-                Comment = cta.Comment
+                Comment = cta.Comment,
+                CreateTime = DateTime.Now
             };
 
 
@@ -787,7 +803,48 @@ namespace CowManagerApp.Areas.Admin.Controllers
             return RedirectToAction("TreatForDiag", "Cow", new { idd = cta.DiagId, idk = cta.CowId });
         }
 
+        // ********************************************************************************* documentation
 
+        public async Task<IActionResult> Documentation(int id)
+        {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
+            
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cow = await _context.Cows
+                .Include(c => c.IdherdNavigation)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (cow == null)
+            {
+                return NotFound();
+            }
+
+            var treats = await _context.Treatments
+                .Where(d => d.Idcow == id && d.DeleteTime != null)
+                .Include(d => d.IdmedicineNavigation)
+                .OrderBy(d => d.DeleteTime)
+                .ToListAsync();
+            var diags = await _context.Diagnoses
+                .Where(d => d.Idcow == id && d.DeleteTime != null)
+                .Include(d => d.IddiseaseNavigation)
+                .OrderBy(d => d.DeleteTime)
+                .ToListAsync();
+
+            var viewModel = new CowDocumentation
+            {
+                Cow = cow,
+                Treatments = treats,
+                Diagnosis = diags
+            };
+
+            return View(viewModel);
+        }
     }
 }
 

@@ -1,0 +1,53 @@
+﻿@model CowManager.Models.Models.CowDocumentation
+
+<h2>@Model.Cow.Name</h2>
+
+{
+    <h3>History of diagnoses</h3>
+    
+    @if (Model.Diagnosis.Any())
+    {
+        <ul>
+            @foreach (var item in Model.Diagnosis)
+            {
+                <li>
+                    Disease: @item.NameOfDisease
+                    <br />
+                    Comment: @item.Comment
+                    <br />
+                    Create Time: @item.CreateTime
+                    <br />
+                    Delete Time: @item.DeleteTime
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No diagnoses found for this cow.</p>
+    }
+    <h3>History of treatment</h3>
+
+    @if (Model.Treatments.Any())
+    {
+        <ul>
+            @foreach (var item in Model.Treatments)
+            {
+                <li>
+                    Medicine: @item.NameOfMedicine
+                    <br />
+                    Comment: @item.Comment
+                    <br />
+                    Create Time: @item.CreateTime
+                    <br />
+                    Delete Time: @item.DeleteTime
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No treatments found for this cow.</p>
+    }
+    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
+}

@@ -14,7 +14,7 @@
     <h5>Comment: @Model.Comment</h5>
 </div>
 
-<form asp-action="DiagRemove">
+    <form asp-action="DiagRemove" method="post">
     <input type="hidden" asp-for="Id" />
     <input type="submit" value="Remove" class="btn btn-danger" />
         <a asp-action="Diag" asp-route-id="@Model.Idcow">Return</a>

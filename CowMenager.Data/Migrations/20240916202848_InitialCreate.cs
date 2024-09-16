@@ -236,7 +236,9 @@ namespace CowManager.Data.Migrations
                     IDCow = table.Column<int>(type: "int", nullable: false),
                     IDDisease = table.Column<int>(type: "int", nullable: false),
                     NameOfDisease = table.Column<string>(type: "nchar(50)", fixedLength: true, maxLength: 50, nullable: false),
-                    Comment = table.Column<string>(type: "nchar(200)", fixedLength: true, maxLength: 200, nullable: true)
+                    Comment = table.Column<string>(type: "nchar(200)", fixedLength: true, maxLength: 200, nullable: true),
+                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeleteTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -264,7 +266,9 @@ namespace CowManager.Data.Migrations
                     IDMedicine = table.Column<int>(type: "int", nullable: false),
                     NameOfMedicine = table.Column<string>(type: "nchar(50)", fixedLength: true, maxLength: 50, nullable: false),
                     IDDiagnosis = table.Column<int>(type: "int", nullable: true),
-                    Comment = table.Column<string>(type: "nchar(200)", fixedLength: true, maxLength: 200, nullable: true)
+                    Comment = table.Column<string>(type: "nchar(200)", fixedLength: true, maxLength: 200, nullable: true),
+                    CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeleteTime = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
