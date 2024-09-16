@@ -5,7 +5,12 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-
+<form asp-action="Index" method="get">
+    <p>
+        Search by name: <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </p>
+</form>
 
 <p>
     <a asp-action="Create">Create New</a>

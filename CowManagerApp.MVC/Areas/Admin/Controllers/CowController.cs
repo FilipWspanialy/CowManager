@@ -24,7 +24,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
             _context = context;
             _userManager = userManager;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
             if (_context.Cows == null)
             {
@@ -35,6 +35,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
             var userName = user?.UserName; 
 
             var cows = await _context.Cows.ToListAsync();
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                cows = cows.Where(c => c.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
             foreach (var cow in cows)
             {
                 if (cow.DeathDate.HasValue && !cow.IsInactive)
@@ -144,7 +148,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(referer) && !referer.Contains("Herd"))
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("HerdCreate"))
             {
                 HttpContext.Session.SetString("PreviousUrl", referer);
                 ViewBag.PreviousUrl = referer;
@@ -174,7 +178,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Cowid,Name,Idherd,Comment,UserId, , BirthDate, DeathDate")] Cow cows, string previousUrl)
+        public async Task<IActionResult> Edit(int id, [Bind("Cowid,Name,Idherd,Comment,UserId,BirthDate,DeathDate")] Cow cows, string previousUrl)
         {
             if (id != cows.Id)
             {
@@ -213,7 +217,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 }
             }
             var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
+            ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd);
             return View(cows);
         }
 

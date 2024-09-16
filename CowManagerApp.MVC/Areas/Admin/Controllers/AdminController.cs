@@ -31,35 +31,33 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
             return View(usersInRole);
         }
-        public async Task<IActionResult> UserDetails(string id)
+        public async Task<IActionResult> UserDetails(string id, string searchString)
         {
-            // Pobierz użytkownika na podstawie podanego ID
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            // Pobierz wszystkie stada należące do użytkownika
             var userHerds = await _context.Herds
-                .Where(h => h.UserId == id) // Zakładamy, że Herd ma pole UserId wskazujące właściciela
+                .Where(h => h.UserId == id) 
                 .ToListAsync();
 
-            // Pobierz wszystkie krowy należące do użytkownika (opcjonalnie, jeśli potrzebne)
             var userCows = await _context.Cows
                 .Where(c => c.UserId == id)
                 .ToListAsync();
-
-            // Pobierz wszystkie diagnozy powiązane z krowami użytkownika (opcjonalnie, jeśli potrzebne)
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                userCows = userCows.Where(c => c.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
             var userDiagnoses = await _context.Diagnoses
                 .Where(d => userCows.Select(c => c.Id).Contains(d.Idcow))
                 .ToListAsync();
 
-            // Utwórz model widoku
             var model = new UserDetailsViewModel
             {
                 User = user,
-                Herd = userHerds, // Dodaj stada użytkownika
+                Herd = userHerds, 
                 Cows = userCows,
                 Diagnoses = userDiagnoses,
                 CurrentUserId = id

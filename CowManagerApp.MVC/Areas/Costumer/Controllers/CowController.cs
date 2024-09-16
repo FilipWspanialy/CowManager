@@ -19,7 +19,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -30,6 +30,10 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
             var cows = _context.Cows
                             .Where(c => c.UserId == userId);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                cows = cows.Where(c => c.Name.Contains(searchString));
+            }
             foreach (var cow in cows)
             {
                 if (cow.DeathDate.HasValue && !cow.IsInactive)

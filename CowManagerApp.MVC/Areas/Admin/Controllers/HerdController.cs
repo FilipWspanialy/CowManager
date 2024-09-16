@@ -32,7 +32,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
             var herds = await _context.Herds
                 .Include(s => s.Cows)
                 .ToListAsync();
-
             return View(herds);
         }
 
@@ -137,7 +136,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> HerdEdit(int id, [Bind("Id,Comment")] Herd herd, string previousUrl)
+        public async Task<IActionResult> HerdEdit(int id, [Bind("Id,Comment,UserId")] Herd herd, string previousUrl)
         {
             if (id != herd.Id)
             {
