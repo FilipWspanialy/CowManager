@@ -84,7 +84,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Create()
         {
             var referer = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag"))
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("Herd"))
             {
                 HttpContext.Session.SetString("PreviousUrl", referer);
                 ViewBag.PreviousUrl = referer;
@@ -135,7 +135,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag"))
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("Herd"))
             {
                 HttpContext.Session.SetString("PreviousUrl", referer);
                 ViewBag.PreviousUrl = referer;

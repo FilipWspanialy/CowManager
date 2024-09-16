@@ -19,6 +19,14 @@
         <span asp-validation-for="Comment" class="text-danger"></span>
     </div>
     <div class="form-group">
+        <label for="BirthDate">Birth date</label>
+        <input type="date" class="form-control" id="BirthDate" name="BirthDate" value="@(Model != null && Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "")" />
+    </div>
+    <div class="form-group">
+        <label for="DeathDate">Death date</label>
+        <input type="date" class="form-control" id="DeathDate" name="DeathDate" value="@(Model != null && Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "")" />
+    </div>
+    <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
 </form>
