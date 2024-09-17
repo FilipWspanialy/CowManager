@@ -4,18 +4,14 @@
 @{
     ViewData["Title"] = "Details";
 }
-@if(User.IsInRole("Admin"))
-{
-    
+  
 
 <div class="container">
     <h2>Details</h2>
     <div class="row">
         <div class="col-md-6">
             <dl class="row">
-                <dt class="col-sm-4">Id</dt>
-                <dd class="col-sm-8">@Model.Id</dd>
-
+                
                 <dt class="col-sm-4">Name</dt>
                 <dd class="col-sm-8">@Model.Name</dd>
 
@@ -28,10 +24,4 @@
         <a asp-action="Index">Back to List</a>
     </div>
     </div>
-}
-else
-{
-    <p style="text-align: center; font-size: 18px;">
-        You don't have access 
-    </p>
-}
+

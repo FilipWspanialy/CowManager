@@ -3,42 +3,9 @@
 
 <h2>@Model.Cow.Name</h2>
 <p>Comments: @Model.Cow.Comment</p>
-@if (User.IsInRole("Admin"))
-{
-    
-
 
     <h3>Treatment</h3>
-    <div>
-    @Html.ActionLink("Add Treatment", "TreatAdd", "Cow", new { id = Model.Cow.Id }, new { @class = "btn btn-primary" })
-    </div>
-    @if (Model.Treatments.Any())
-    {
-    <ul>
-        @foreach (var treats in Model.Treatments)
-        {
-            <li>
-                Medicine: @treats.NameOfMedicine
-                <br />
-                Comment: @treats.Comment
-                <br />
-                <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
-                <a asp-action="TreatRemove" asp-route-id="@treats.Id">Delete</a>
-                <a asp-action="TreatEdit" asp-route-id="@treats.Id">Edit</a>
-            </li>
-        }
-    </ul>
-    }
-    else
-    {
-        <p>No diagnoses found for this cow.</p>
-    }
-
-}
-else
-{
-    <h3>Treatment</h3>
-    
+<a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id">Documentation</a>
     @if (Model.Treatments.Any())
     {
         <ul>
@@ -61,4 +28,3 @@ else
     }
 
 
-}

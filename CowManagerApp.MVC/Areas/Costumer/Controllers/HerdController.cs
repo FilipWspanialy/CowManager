@@ -42,7 +42,14 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             var herd = await _context.Herds
                 .Include(s => s.Cows)
                 .FirstOrDefaultAsync(m => m.Id == id);
-
+            foreach (var cow in herd.Cows)
+            {
+                if (cow.DeathDate.HasValue && !cow.IsInactive)
+                {
+                    cow.IsInactive = true;
+                    _context.SaveChanges();
+                }
+            }
             if (herd == null)
             {
                 return NotFound();
@@ -161,6 +168,17 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         }
         public async Task<IActionResult> AddCow(int? Idh)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("HerdCreate"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
             if (Idh == null)
             {
                 return NotFound();
@@ -178,8 +196,9 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Comment")] Cow cow)
+        public async Task<IActionResult> AddCow([Bind("Cowid,Name,Idherd,Comment")] Cow cow, string previousUrl)
         {
+
             cow.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (ModelState.IsValid)
@@ -194,13 +213,26 @@ namespace CowManagerApp.Areas.Costumer.Controllers
                 {
                     _context.Add(cow);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction("HerdDetails", "Herd", new { id = cow.Idherd });
+                    if (!string.IsNullOrEmpty(previousUrl))
+                    {
+                        return Redirect(previousUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("HerdDetails", "Herd", new { id = cow.Idherd });
+                    }
+                    
                 }
             }
             var herd = await _context.Herds.FindAsync(cow.Idherd);
             ViewBag.HerdId = cow.Idherd;
             return View(cow);
         }
+        private bool CowExists(int id)
+        {
+            return _context.Cows.Any(e => e.Id == id);
+        }
+
 
     }
 

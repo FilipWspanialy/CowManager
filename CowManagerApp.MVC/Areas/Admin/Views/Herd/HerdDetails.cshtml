@@ -24,6 +24,12 @@
             <th>
                 Comment
             </th>
+            <th>
+                Birth date
+            </th>
+            <th>
+                Death date
+            </th>
 
 
         </tr>
@@ -36,10 +42,23 @@
                     @item.Id
                 </td>
                 <td>
-                    @item.Name
+                @if (item.DeathDate.HasValue)
+                {
+                    <span class="strikethrough">@item.Name</span>
+                }
+                else
+                {
+                    <span>@item.Name</span>
+                }
                 </td>
                 <td>
                     @item.Comment
+                </td>
+                <td>
+                    @item.BirthDate
+                </td>
+                <td>
+                    @item.DeathDate
                 </td>
 
                 <td>

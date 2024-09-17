@@ -4,16 +4,12 @@
     ViewData["Title"] = "List";
 }
 <h1>@ViewData["Title"]</h1>
-@if (User.IsInRole("Admin"))
-{
-    
+
 
     <table class="table">
      <thead>
         <tr>
-            <th>
-                Id
-            </th>
+            
             <th>
                 Name
             </th>
@@ -25,9 +21,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @item.Id
-                </td>
+                
                 <td>
                     @item.Name
                 </td>
@@ -40,10 +34,3 @@
         }
      </tbody>
     </table>
-}
-else
-{
-    <p style="text-align: center; font-size: 18px;">
-        You don't have access to Create ;(
-    </p>
-}

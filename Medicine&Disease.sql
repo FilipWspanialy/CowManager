@@ -1,22 +1,23 @@
 ﻿INSERT INTO Disease (Name, Comment) VALUES
-('Gruźlica bydlęca (TB)', 'Choroba zakaźna wywoływana przez prątki Mycobacterium bovis, atakująca głównie płuca, ale mogąca rozprzestrzeniać się na inne narządy.'),
-('Mastitis (zapalanie wymienia)', 'Stan zapalny wymienia, zazwyczaj wywoływany przez infekcje bakteryjne, powodujący ból, obrzęk i zmiany w jakości mleka.'),
-('BVD (Viralna biegunka bydła)', 'Wirusowa choroba wywoływana przez wirusa BVD, prowadząca do biegunki, gorączki, spadku produkcji mleka i problemów z rozrodem.'),
-('Niedobór magnezu (tężyczka pastwiskowa)', 'Metaboliczna choroba wynikająca z niedoboru magnezu we krwi, powodująca drgawki, chwiejność i potencjalnie śmierć.'),
-('Paratuberkuloza', 'Przewlekła, wyniszczająca choroba jelit wywoływana przez Mycobacterium avium subsp. paratuberculosis, objawiająca się biegunką i utratą masy ciała.'),
-('Bruceloza', 'Zakaźna choroba bakteryjna wywoływana przez Brucella abortus, prowadząca do poronień, zmniejszonej płodności i spadku produkcji mleka.'),
-('Ketoza', 'Metaboliczna choroba wynikająca z zaburzeń równowagi energetycznej, objawiająca się zmniejszeniem apetytu, spadkiem masy ciała i zmniejszeniem produkcji mleka.'),
-('Lipoproteinoza (choroba tłuszczowa wątroby)', 'Choroba metaboliczna spowodowana nadmiernym nagromadzeniem tłuszczu w wątrobie, prowadząca do spadku apetytu, produkcji mleka i ogólnego osłabienia.'),
-('Przewlekła postępująca encefalopatia', 'Choroba neurodegeneracyjna wywoływana przez priony, prowadząca do zaburzeń ruchowych, zmian behawioralnych i śmierci.'),
-('Wąglik', 'Ostra, zakaźna choroba wywoływana przez Bacillus anthracis, charakteryzująca się nagłą śmiercią, obrzękiem i krwawieniem.');
+('Bovine Tuberculosis (TB)', 'An infectious disease caused by Mycobacterium bovis, primarily affecting the lungs but capable of spreading to other organs.'),
+('Mastitis', 'Inflammation of the udder, usually caused by bacterial infections, leading to pain, swelling, and changes in milk quality.'),
+('Bovine Viral Diarrhea (BVD)', 'A viral disease caused by the BVD virus, leading to diarrhea, fever, reduced milk production, and reproductive issues.'),
+('Magnesium Deficiency (Grass Tetany)', 'A metabolic disorder resulting from low magnesium levels in the blood, causing seizures, instability, and potentially death.'),
+('Paratuberculosis', 'A chronic, debilitating intestinal disease caused by Mycobacterium avium subsp. paratuberculosis, characterized by diarrhea and weight loss.'),
+('Brucellosis', 'A bacterial infectious disease caused by Brucella abortus, leading to abortions, reduced fertility, and decreased milk production.'),
+('Ketosis', 'A metabolic disease caused by an energy imbalance, manifesting as reduced appetite, weight loss, and decreased milk production.'),
+('Hepatic Lipidosis (Fatty Liver Disease)', 'A metabolic disorder caused by excessive fat accumulation in the liver, leading to reduced appetite, milk production, and overall weakness.'),
+('Chronic Wasting Disease', 'A neurodegenerative disease caused by prions, resulting in movement disorders, behavioral changes, and death.'),
+('Anthrax', 'An acute, infectious disease caused by Bacillus anthracis, characterized by sudden death, swelling, and bleeding.');
+
 INSERT INTO Medicine (Name, Comment) VALUES
-('Oxytetracyklina', 'Antybiotyk stosowany w leczeniu infekcji bakteryjnych, takich jak zapalenie płuc i mastitis.'),
-('Fluniksyna meglumina', 'Niesteroidowy lek przeciwzapalny (NSAID) stosowany w łagodzeniu bólu i stanów zapalnych.'),
-('Ivermectin', 'Lek przeciwpasożytniczy stosowany w leczeniu i zapobieganiu infekcjom wywołanym przez robaki i pasożyty zewnętrzne.'),
-('Tylosina', 'Antybiotyk makrolidowy stosowany w leczeniu zapalenia płuc, mastitis i innych infekcji bakteryjnych.'),
-('Ceftiofur', 'Antybiotyk beta-laktamowy stosowany w leczeniu infekcji dróg oddechowych, moczowych oraz zapalenia macicy.'),
-('Meloksykam', 'Niesteroidowy lek przeciwzapalny (NSAID) stosowany w łagodzeniu bólu i stanów zapalnych.'),
-('Fenbendazol', 'Lek przeciwpasożytniczy stosowany w leczeniu zakażeń wywołanych przez robaki żołądkowo-jelitowe.'),
-('Penicylina', 'Antybiotyk beta-laktamowy stosowany w leczeniu szerokiego zakresu infekcji bakteryjnych.'),
-('Enrofloksacyna', 'Antybiotyk fluorochinolonowy stosowany w leczeniu infekcji bakteryjnych, takich jak zapalenie płuc i infekcje dróg moczowych.'),
-('Furosemid', 'Diuretyk stosowany w leczeniu obrzęków i niewydolności serca.');
+('Oxytetracycline', 'An antibiotic used to treat bacterial infections such as pneumonia and mastitis.'),
+('Flunixin Meglumine', 'A nonsteroidal anti-inflammatory drug (NSAID) used to relieve pain and inflammation.'),
+('Ivermectin', 'An antiparasitic drug used to treat and prevent infections caused by worms and external parasites.'),
+('Tylosin', 'A macrolide antibiotic used to treat pneumonia, mastitis, and other bacterial infections.'),
+('Ceftiofur', 'A beta-lactam antibiotic used to treat respiratory, urinary tract infections, and metritis.'),
+('Meloxicam', 'A nonsteroidal anti-inflammatory drug (NSAID) used to relieve pain and inflammation.'),
+('Fenbendazole', 'An antiparasitic drug used to treat gastrointestinal worm infections.'),
+('Penicillin', 'A beta-lactam antibiotic used to treat a wide range of bacterial infections.'),
+('Enrofloxacin', 'A fluoroquinolone antibiotic used to treat bacterial infections such as pneumonia and urinary tract infections.'),
+('Furosemide', 'A diuretic used to treat edema and heart failure.');

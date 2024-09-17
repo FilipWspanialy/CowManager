@@ -46,6 +46,15 @@ namespace CowManagerApp.Areas.Admin.Controllers
             var userCows = await _context.Cows
                 .Where(c => c.UserId == id)
                 .ToListAsync();
+            
+            foreach (var cow in userCows)
+            {
+                if (cow.DeathDate.HasValue && !cow.IsInactive)
+                {
+                    cow.IsInactive = true;
+                    _context.SaveChanges();
+                }
+            }
             if (!string.IsNullOrEmpty(searchString))
             {
                 userCows = userCows.Where(c => c.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();

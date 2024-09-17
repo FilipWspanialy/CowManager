@@ -24,6 +24,12 @@
             <th>
                 Comment
             </th>
+            <th>
+                Birth date
+            </th>
+            <th>
+                Death date
+            </th>
 
 
         </tr>
@@ -36,10 +42,23 @@
                     @item.Id
                 </td>
                 <td>
-                    @item.Name
+                    @if (item.DeathDate.HasValue)
+                    {
+                        <span class="strikethrough">@item.Name</span>
+                    }
+                    else
+                    {
+                        <span>@item.Name</span>
+                    }
                 </td>
                 <td>
                     @item.Comment
+                </td>
+                <td>
+                    @item.BirthDate
+                </td>
+                <td>
+                    @item.DeathDate
                 </td>
 
                 <td>
@@ -47,7 +66,7 @@
                     <a asp-action="Treat" asp-controller="Cow" asp-route-id="@item.Id">Treatment</a> |
                     <a asp-action="Edit" asp-controller="Cow" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-controller="Cow" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-controller="Cow"  asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Delete" asp-controller="Cow" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
 

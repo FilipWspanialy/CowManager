@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CowManagerApp.Areas.Admin.Controllers
-{ [Area("Admin")]
+{
+    [Area("Admin")]
     [Authorize(Roles = "Admin")]
-   
+
 
     public class HerdController : Controller
     {
@@ -43,7 +44,15 @@ namespace CowManagerApp.Areas.Admin.Controllers
             var herd = await _context.Herds
                 .Include(s => s.Cows)
                 .FirstOrDefaultAsync(m => m.Id == id);
-
+            
+            foreach (var cow in herd.Cows)
+            {
+                if (cow.DeathDate.HasValue && !cow.IsInactive)
+                {
+                    cow.IsInactive = true;
+                    _context.SaveChanges();
+                }
+            }
             if (herd == null)
             {
                 return NotFound();
@@ -190,40 +199,42 @@ namespace CowManagerApp.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+
             ViewBag.HerdId = Idh;
             return View(new Cow { Idherd = Idh, UserId = herd.UserId });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCow([Bind("Name,Idherd,Nameherd,Comment,UserId,UserName,BirthDate,DeathDate")] Cow cow, string previousUrl)
+        public async Task<IActionResult> AddCow([Bind("Cowid,Name,Idherd,Comment,UserId,BirthDate,DeathDate")] Cow cow, string previousUrl)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cow.Cowid);
-
-                if (isCowidExists)
-                {
-                    ModelState.AddModelError("Cowid", "Cowid already exists.");
-                }
-                else
-                {
-                    var user = await _userManager.FindByIdAsync(cow.UserId);
-                    cow.UserName = user.UserName;
-                    _context.Add(cow);
-                    await _context.SaveChangesAsync();
-                    return Redirect(previousUrl);
-                }
+                var herd = await _context.Herds.FindAsync(cow.Idherd);
+                ViewBag.HerdId = cow.Idherd;
+                return View(cow);
             }
 
-            var herd = await _context.Herds.FindAsync(cow.Idherd);
-            ViewBag.HerdId = cow.Idherd;
-            var idherd = await _context.Herds.FindAsync(cow.Idherd);
-            cow.Nameherd = idherd.Comment;
-            return View(cow);
+            bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cow.Cowid);
+            if (isCowidExists)
+            {
+                ModelState.AddModelError("Cowid", "Cow ID already exists.");
+                var herd = await _context.Herds.FindAsync(cow.Idherd);
+                ViewBag.HerdId = cow.Idherd;
+                return View(cow);
+            }
+
+            var user = await _userManager.FindByIdAsync(cow.UserId);
+            cow.UserName = user?.UserName;
+
+            _context.Add(cow);
+            await _context.SaveChangesAsync();
+
+            return Redirect(previousUrl ?? "/Herd");
         }
 
-    }
 
+    }
 }
+
 

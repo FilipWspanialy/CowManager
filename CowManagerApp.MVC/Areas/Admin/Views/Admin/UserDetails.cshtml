@@ -65,7 +65,16 @@
         {
             <tr>
                 <td>@item.Cowid</td>
-                <td>@item.Name</td>
+                <td>
+                    @if (item.DeathDate.HasValue)
+                    {
+                        <span class="strikethrough">@item.Name</span>
+                    }
+                    else
+                    {
+                        <span>@item.Name</span>
+                    }
+                </td>
                 <td>@item.Comment</td>
                 <td> @item.Nameherd</td>
                 <td>@item.BirthDate</td>

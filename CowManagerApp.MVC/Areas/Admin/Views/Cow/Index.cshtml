@@ -1,85 +1,90 @@
-﻿<link rel="stylesheet" href="~/css/List.css" asp-append-version="true" />
+﻿<link rel="stylesheet" href="/css/List.css" asp-append-version="true" />
 @model IEnumerable<CowManager.Models.Models.Cow>
 @{
     ViewData["Title"] = "List";
 }
+
 <h1>@ViewData["Title"]</h1>
 
-<form asp-action="Index" method="get">
-    <p>
-        Search by name: <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
-        <input type="submit" value="Search" class="btn btn-primary" />
-    </p>
-</form>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 
-
-<table class="table">
-        <thead>
+<table id="cow-list-table" style="background-color: #f0f0f0; color: #000; border: 1px solid #000;" class="table custom-table">
+    <thead>
         <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Herd
-            </th>
-            <th>
-                Birth date
-            </th>
-            <th>
-                Death date
-            </th>
-            
-
+            <th>Id</th>
+            <th>Name</th>
+            <th>Herd</th>
+            <th>Birth date</th>
+            <th>Death date</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Cowid
-                </td>
-                <td>
+                <tr>
+                    <td>@item.Cowid</td>
+                    <td>
                     @if (item.DeathDate.HasValue)
                     {
-                        <span class="strikethrough">@item.Name</span>
+                                <span class="strikethrough">@item.Name</span>
                     }
                     else
                     {
-                        <span>@item.Name</span>
+                                <span>@item.Name</span>
                     }
-                </td>
-                <td>
-                    @item.Nameherd
-                </td>
-                <td>
-                    @item.BirthDate
-                </td>
-                <td>
-                    @item.DeathDate
-                </td>
-
-
-
-
-                <td>
-                    <a asp-action="Diag" asp-route-id="@item.Id">Diagnosis</a> |
-                    <a asp-action="Treat" asp-route-id="@item.Id">Treatment</a> |
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-
-            </tr>
-
+                    </td>
+                    <td>@item.Nameherd</td>
+                    <td>@(item.BirthDate.HasValue ? item.BirthDate.Value.ToString("dd-MM-yyyy") : "")</td>
+                    <td>@(item.DeathDate.HasValue ? item.DeathDate.Value.ToString("dd-MM-yyyy") : "")</td>
+                    <td>
+                        <a asp-action="Diag" asp-route-id="@item.Id" class="btn btn-info btn-sm">Diagnosis</a>
+                        <a asp-action="Treat" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Treatment</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success btn-sm">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
         }
-     </tbody>
+    </tbody>
 </table>
 
+<style>
+    
+    #cow-list-table {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+    }
+
+    #cow-list-table th, #cow-list-table td {
+        border: 1px solid #000 !important; 
+    }
+
+    .strikethrough {
+        text-decoration: line-through;
+        color: red;
+    }
+   .custom-table {
+    --bs-table-color: #000 !important; /* Czarny kolor tekstu */
+    --bs-table-bg: #f0f0f0 !important; /* Jasnoszare tło */
+    --bs-table-border-color: #000 !important; /* Czarny obrys */
+    --bs-table-striped-bg: transparent !important; /* Wyłączenie paskowania */
+    --bs-table-hover-bg: transparent !important; /* Wyłączenie koloru podświetlenia */
+
+    border-width: 3px !important; /* Pogrubienie obramowania do 3px */
+    border-radius: 10px !important; /* Zaokrąglenie rogów do 10px */
+    border-style: solid !important; /* Styl obramowania */
+}
+
+.custom-table th, .custom-table td {
+    color: #000 !important; /* Czarny tekst */
+    background-color: #f0f0f0 !important; /* Jasnoszare tło */
+    border: 1px solid #000 !important; /* Czarny obrys dla komórek */
+    border-width: 2px !important; /* Pogrubienie obramowania dla komórek */
+}
+    .btn {
+        margin-right: 5px;
+    }
+</style>

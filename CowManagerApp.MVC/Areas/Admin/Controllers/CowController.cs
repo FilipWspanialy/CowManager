@@ -126,6 +126,16 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
             var user = await _userManager.FindByIdAsync(cows.UserId);
             cows.UserName = user.UserName;
+            if (user == null)
+            {
+                ModelState.AddModelError("", "User not found.");
+                
+            }
+            else if (string.IsNullOrEmpty(user.UserName))
+            {
+                ModelState.AddModelError("", "UserName is null or empty.");
+                
+            }
             var idherd = await _context.Herds.FindAsync(cows.Idherd);
             cows.Nameherd = idherd.Comment;
             if (ModelState.IsValid)
@@ -144,6 +154,16 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 }
             }
             var herds = await _context.Herds.ToListAsync();
+            if (herds == null)
+            {
+                ModelState.AddModelError("", "No herds!");
+
+            }
+            else if (string.IsNullOrEmpty(user.UserName))
+            {
+                ModelState.AddModelError("", "There is no herds");
+
+            }
             ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd);
 
             return View(cows);
@@ -204,14 +224,13 @@ namespace CowManagerApp.Areas.Admin.Controllers
                     {
                         _context.Update(cows);
                         await _context.SaveChangesAsync();
-                        // Ensure previousUrl is valid and not empty
                         if (!string.IsNullOrEmpty(previousUrl))
                         {
                             return Redirect(previousUrl);
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Home"); // or another appropriate action
+                            return RedirectToAction("Index", "Home"); 
                         }
                     }
                 }
@@ -228,7 +247,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 }
             }
 
-            // If we got this far, something failed, redisplay the form
             var herds = await _context.Herds.ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd);
             var user = await _userManager.FindByIdAsync(cows.UserId);

@@ -69,7 +69,6 @@ namespace CowManagerApp.Areas.Costumer.Controllers
                             .ToListAsync();
             ViewBag.Herds = new SelectList(herds, "Id", "Comment");
 
-            // Diagnostyka: sprawdź, czy ViewBag.Herds zawiera dane
             if (herds == null || !herds.Any())
             {
                 ViewBag.HerdsError = "No herds available.";
@@ -123,9 +122,11 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Nameherd,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
         {
             cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var idherd = await _context.Herds.FindAsync(cows.Idherd);
+            cows.Nameherd = idherd.Comment;
             if (id != cows.Id)
             {
                 return NotFound();
@@ -639,5 +640,46 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         //}
 
 
+
+        public async Task<IActionResult> Documentation(int id)
+        {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cow = await _context.Cows
+                .Include(c => c.IdherdNavigation)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (cow == null)
+            {
+                return NotFound();
+            }
+
+            var treats = await _context.Treatments
+                .Where(d => d.Idcow == id && d.DeleteTime != null)
+                .Include(d => d.IdmedicineNavigation)
+                .OrderBy(d => d.DeleteTime)
+                .ToListAsync();
+            var diags = await _context.Diagnoses
+                .Where(d => d.Idcow == id && d.DeleteTime != null)
+                .Include(d => d.IddiseaseNavigation)
+                .OrderBy(d => d.DeleteTime)
+                .ToListAsync();
+
+            var viewModel = new CowDocumentation
+            {
+                Cow = cow,
+                Treatments = treats,
+                Diagnosis = diags
+            };
+
+            return View(viewModel);
+        }
     }
 }

@@ -10,8 +10,7 @@
 
 <h4>Cow</h4>
 <hr />
-@if (User.IsInRole("Admin"))
-{
+
 
 
     <div class="row">
@@ -34,10 +33,8 @@
                     <a asp-action="HerdCreate" asp-controller="Herd">Create herd</a>
                     <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
                     <span asp-validation-for="Idherd" class="text-danger"></span>
-
                 </div>
-
-                    <div class="form-group">
+                 <div class="form-group">
                     <label asp-for="Comment" class="control-label"></label>
                     <input asp-for="Comment" class="form-control" />
                     <span asp-validation-for="Comment" class="text-danger"></span>
@@ -50,28 +47,6 @@
                     <label for="DeathDate">Death date</label>
                     <input type="date" class="form-control" id="DeathDate" name="DeathDate" value="@(Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "")" />
                 </div>
-                @if (ViewBag.Users == null || !ViewBag.Users.Any())
-                {
-                    <p class="text-danger">Users are not available.</p>
-                }
-                else
-                {
-                    <div class="form-group">
-                        <label asp-for="UserId" class="control-label">Assign to User</label>
-                        <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users"></select>
-                        <span asp-validation-for="UserId" class="text-danger"></span>
-                    </div>
-                }
-              
-                
-                
-               
-                
-                
-                
-                
-                    
-                
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />
                 </div>
@@ -82,13 +57,6 @@
     <div>
         <a asp-action="Index">Back to List</a>
     </div>
-}
-else
-{
-    <p style="text-align: center; font-size: 18px;">
-        You don't have access to Create ;(
-    </p>
-}
 
 @section Scripts {
     @{
