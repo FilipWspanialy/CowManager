@@ -640,6 +640,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         //}
 
 
+        // ********************************************************************************* documentation
 
         public async Task<IActionResult> Documentation(int id)
         {
@@ -665,13 +666,12 @@ namespace CowManagerApp.Areas.Costumer.Controllers
                 .Where(d => d.Idcow == id && d.DeleteTime != null)
                 .Include(d => d.IdmedicineNavigation)
                 .OrderBy(d => d.DeleteTime)
-                .ToListAsync();
+                .ToListAsync() ?? new List<Treatment>(); 
             var diags = await _context.Diagnoses
                 .Where(d => d.Idcow == id && d.DeleteTime != null)
                 .Include(d => d.IddiseaseNavigation)
                 .OrderBy(d => d.DeleteTime)
-                .ToListAsync();
-
+                .ToListAsync() ?? new List<Diagnosis>();
             var viewModel = new CowDocumentation
             {
                 Cow = cow,
