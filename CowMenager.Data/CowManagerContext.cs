@@ -17,7 +17,7 @@ public partial class CowManagerContext : IdentityDbContext
         : base(options)
     {
     }
-   
+   public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; } 
 
     public virtual DbSet<Cow> Cows { get; set; }
 

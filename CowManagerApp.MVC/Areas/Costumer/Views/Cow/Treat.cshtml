@@ -1,30 +1,88 @@
 ﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
 @model CowManager.Models.Models.CowTreat
 
-<h2>@Model.Cow.Name</h2>
-<p>Comments: @Model.Cow.Comment</p>
+@{
+    ViewData["Title"] = $"Cow Treatment - {Model.Cow.Name}";
+}
 
-    <h3>Treatment</h3>
-<a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id">Documentation</a>
-    @if (Model.Treatments.Any())
+<style>
+    .page-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000;
+    }
+
+    h2 {
+        color: #000;
+    }
+
+    p {
+        color: #000;
+    }
+
+    .btn {
+        margin: 5px;
+    }
+
+    
+</style>
+
+<div class="page-container">
+    <h2>@Model.Cow.Name</h2>
+    <p>Comments: @Model.Cow.Comment</p>
+
+    @if (User.IsInRole("Admin"))
     {
-        <ul>
-            @foreach (var treats in Model.Treatments)
-            {
-                <li>
-                    Medicine: @treats.NameOfMedicine
-                    <br />
-                    Comment: @treats.Comment
-                    <br />
-                    <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
- 
-                </li>
-            }
-        </ul>
+            <h3>Treatment</h3>
+            <div>
+            @Html.ActionLink("Add Treatment", "TreatAdd", "Cow", new { id = Model.Cow.Id }, new { @class = "btn btn-primary" })
+            </div>
+        @if (Model.Treatments.Any())
+        {
+                    <ul>
+                @foreach (var treats in Model.Treatments)
+                {
+                                <li>
+                                    <strong>Medicine:</strong> @treats.NameOfMedicine
+                                    <br />
+                                    <strong>Comment:</strong> @treats.Comment
+                                    <br />
+                                    <a class="btn btn-info" asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
+                                    <a class="btn btn-danger" asp-action="TreatRemove" asp-route-id="@treats.Id">Delete</a>
+                                    <a class="btn btn-warning" asp-action="TreatEdit" asp-route-id="@treats.Id">Edit</a>
+                                </li>
+                }
+                    </ul>
+        }
+        else
+        {
+                    <p>No treatments found for this cow.</p>
+        }
     }
     else
     {
-        <p>No diagnoses found for this cow.</p>
+            <h3>Treatment</h3>
+        @if (Model.Treatments.Any())
+        {
+                    <ul>
+                @foreach (var treats in Model.Treatments)
+                {
+                                <li>
+                                    <strong>Medicine:</strong> @treats.NameOfMedicine
+                                    <br />
+                                    <strong>Comment:</strong> @treats.Comment
+                                    <br />
+                                    <a class="btn btn-info" asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
+                                </li>
+                }
+                    </ul>
+        }
+        else
+        {
+                    <p>No treatments found for this cow.</p>
+        }
+            <a class="btn btn-secondary" asp-action="Index">Back to List</a>
     }
-
-
+</div>

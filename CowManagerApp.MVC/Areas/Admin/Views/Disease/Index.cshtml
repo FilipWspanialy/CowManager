@@ -3,40 +3,57 @@
 @{
     ViewData["Title"] = "List";
 }
-<h1>@ViewData["Title"]</h1>
-<a asp-action="DiseaseCreate">Create</a>
+<h1 style="color: black;">@ViewData["Title"]</h1>
 
-<table class="table">
+<a asp-action="DiseaseCreate" class="btn btn-primary">Create</a>
+
+
+<table id="disease-list-table" class="table custom-table">
     <thead>
         <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            
-
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Id
-                </td>
-                <td>
-                    @item.Name
-                </td>
-                
-                <td>
-                    <a asp-action="DiseaseDetails" asp-route-id="@item.Id">Details</a>|
-                    <a asp-action="DiseaseEdit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="DiseaseDelete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>
+                            <a asp-action="DiseaseDetails" asp-route-id="@item.Id" class="btn btn-success btn-sm">Details</a> |
+                            <a asp-action="DiseaseEdit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a> |
+                            <a asp-action="DiseaseDelete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
         }
     </tbody>
 </table>
+
+
+<style>
+    .custom-table {
+        --bs-table-color: #000 !important; 
+        --bs-table-bg: #f0f0f0 !important; 
+        --bs-table-border-color: #000 !important; 
+        --bs-table-striped-bg: transparent !important; 
+        --bs-table-hover-bg: transparent !important; 
+
+        border-width: 3px !important; 
+        border-radius: 10px !important; 
+        border-style: solid !important; 
+    }
+
+    .custom-table th, .custom-table td {
+        color: #000 !important;
+        background-color: #f0f0f0 !important;
+        border: 1px solid #000 !important;
+        border-width: 2px !important; 
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>

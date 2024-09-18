@@ -5,40 +5,16 @@
       "PackagePath": "staticwebassets\\CowManagerApp.bundle.scp.css"
     },
     {
+      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\Back.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Back.jpeg"
+    },
+    {
       "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\CreateCow1.jpeg",
       "PackagePath": "staticwebassets\\Images\\CreateCow1.jpeg"
     },
     {
-      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\DeleteCow2.jpeg",
-      "PackagePath": "staticwebassets\\Images\\DeleteCow2.jpeg"
-    },
-    {
-      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\DiagnosisCow.jpeg",
-      "PackagePath": "staticwebassets\\Images\\DiagnosisCow.jpeg"
-    },
-    {
-      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\DiseaseCow.jpg",
-      "PackagePath": "staticwebassets\\Images\\DiseaseCow.jpg"
-    },
-    {
-      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\HerdCow.jpeg",
-      "PackagePath": "staticwebassets\\Images\\HerdCow.jpeg"
-    },
-    {
       "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\HomePageCow.jpeg",
       "PackagePath": "staticwebassets\\Images\\HomePageCow.jpeg"
-    },
-    {
-      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\ListCow.jpeg",
-      "PackagePath": "staticwebassets\\Images\\ListCow.jpeg"
-    },
-    {
-      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\MedicineCow.jpeg",
-      "PackagePath": "staticwebassets\\Images\\MedicineCow.jpeg"
-    },
-    {
-      "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\Images\\WheelCow.jpeg",
-      "PackagePath": "staticwebassets\\Images\\WheelCow.jpeg"
     },
     {
       "Id": "D:\\test\\CowManager\\CowManagerApp.MVC\\wwwroot\\css\\About.css",

@@ -5,36 +5,68 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit medicine</h1>
+<style>
+    .form-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000; /* Black text */
+    }
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="MedicineEdit" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
+    h1 {
+        color: #000; /* Black text for headings */
+    }
 
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+    .form-group label {
+        font-weight: bold;
+    }
 
-            <div class="form-group">
-                <label asp-for="Comment" class="control-label"></label>
-                <input asp-for="Comment" class="form-control" />
-                <span asp-validation-for="Comment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .btn-primary {
+        margin-right: 10px;
+    }
+
+    .return-btn {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="form-container">
+    <h1>Edit Medicine @Model.Name</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="MedicineEdit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Comment" class="control-label">Comment</label>
+                    <input asp-for="Comment" class="form-control" />
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
+    <div class="return-btn">
+        <a href="@ViewBag.PreviousUrl" class="btn btn-secondary">Return</a>
+    </div>
 </div>
 
 @section Scripts {

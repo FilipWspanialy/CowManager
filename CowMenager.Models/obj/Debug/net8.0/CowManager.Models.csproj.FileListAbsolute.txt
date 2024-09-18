@@ -56,3 +56,17 @@ D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\refint\CowManager.Models.d
 D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
 D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
 D:\test\CowManager\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.deps.json
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.runtimeconfig.json
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.dll
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\bin\Debug\net8.0\CowManager.Models.pdb
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.AssemblyReference.cache
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfoInputs.cache
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.AssemblyInfo.cs
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.csproj.CoreCompileInputs.cache
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.dll
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\refint\CowManager.Models.dll
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.pdb
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\CowManager.Models.genruntimeconfig.cache
+D:\ProjektTSWM\CowManager-main\CowManager-main\CowMenager.Models\obj\Debug\net8.0\ref\CowManager.Models.dll

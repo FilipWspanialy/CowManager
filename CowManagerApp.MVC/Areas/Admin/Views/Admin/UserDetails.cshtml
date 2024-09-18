@@ -1,55 +1,58 @@
-﻿@model CowManager.Models.Models.UserDetailsViewModel
+﻿<link rel="stylesheet" href="~/css/Create.css" asp-append-version="true" />
+@model CowManager.Models.Models.UserDetailsViewModel
 
 <h1>User Details: @Model.User.UserName</h1>
 <p>
-    <a asp-area="Admin" asp-controller="Admin" asp-action="UsersList">Back to List</a>
-</p>
-<h2>Herds</h2>
-<p>
-    <a asp-controller="Herd" asp-action="HerdCreate">Create New</a>
+    <a asp-area="Admin" asp-controller="Admin" asp-action="UsersList" class="btn btn-secondary">Back to List</a>
 </p>
 
-<table class="table">
+<h2>Herds</h2>
+<p>
+    <a asp-controller="Herd" asp-action="HerdCreate" class="btn btn-primary">Create New Herd</a>
+</p>
+
+
+<table id="herd-list-table" style="background-color: #f0f0f0; color: #000; border: 1px solid #000;" class="table custom-table">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Comment</th>
             <th>Amount of cows</th>
-
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Herd)
         {
-            <tr>
-                <td><a asp-controller="Herd" asp-action="HerdDetails" asp-route-id="@item.Id">@item.Id</a></td>
-                <td><a asp-controller="Herd" asp-action="HerdDetails" asp-route-id="@item.Id">@item.Comment</a></td>
-                <td>@item.AmountOfCows</td>
-            <td>
-                <a asp-controller="Herd" asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|
-                <a asp-controller="Herd" asp-action="HerdEdit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-controller="Herd" asp-action="HerdDelete" asp-route-id="@item.Id">Delete</a>
-            </td>
-            </tr>
+                <tr>
+                    <td><a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a></td>
+                    <td><a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Comment</a></td>
+                    <td>@item.AmountOfCows</td>
+                    <td>
+                        <a asp-controller="Herd" asp-action="AddCow" asp-route-id="@item.Id" class="btn btn-info btn-sm">Add Cow</a>
+                        <a asp-controller="Herd" asp-action="HerdEdit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-controller="Herd" asp-action="HerdDelete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
         }
     </tbody>
 </table>
 
 <h2>Cows</h2>
-
 <p>
-    <a asp-controller="Cow" asp-action="Create">Create New</a>
+    <a asp-controller="Cow" asp-action="Create" class="btn btn-primary">Create New Cow</a>
 </p>
-<form asp-action="UserDetails" method="get">
+
+
+<form asp-action="Index" method="get">
     <p>
         Search by name: <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
         <input type="submit" value="Search" class="btn btn-primary" />
     </p>
 </form>
-@* <p>
-    <a asp-controller="Cow" asp-action="Create" asp-route="@Model.User.Id">Create New</a>
-</p> *@
-<table class="table">
+
+
+<table id="cow-list-table" style="background-color: #f0f0f0; color: #000; border: 1px solid #000;" class="table custom-table">
     <thead>
         <tr>
             <th>ID</th>
@@ -58,37 +61,62 @@
             <th>Herd</th>
             <th>Birth date</th>
             <th>Death date</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Cows)
         {
-            <tr>
-                <td>@item.Cowid</td>
-                <td>
-                    @if (item.DeathDate.HasValue)
-                    {
-                        <span class="strikethrough">@item.Name</span>
-                    }
-                    else
-                    {
-                        <span>@item.Name</span>
-                    }
-                </td>
-                <td>@item.Comment</td>
-                <td> @item.Nameherd</td>
-                <td>@item.BirthDate</td>
-                <td>@item.DeathDate</td>
-
-            <td>
-                <a asp-controller="Cow" asp-action="Diag" asp-route-id="@item.Id">Diagnosis</a> |
-                <a asp-controller="Cow" asp-action="Treat" asp-route-id="@item.Id">Treatment</a> |
-                <a asp-controller="Cow" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-controller="Cow" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-controller="Cow" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-            </tr>
-        
+                <tr>
+                    <td>@item.Cowid</td>
+                    <td>@item.Name</td>
+                    <td>@item.Comment</td>
+                    <td>@item.Nameherd</td>
+                    <td>@item.BirthDate</td>
+                    <td>@item.DeathDate</td>
+                    <td>
+                        <a asp-controller="Cow" asp-action="Diag" asp-route-id="@item.Id" class="btn btn-info btn-sm">Diagnosis</a>
+                        <a asp-controller="Cow" asp-action="Treat" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Treatment</a>
+                        <a asp-controller="Cow" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-controller="Cow" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success btn-sm">Details</a>
+                        <a asp-controller="Cow" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
         }
     </tbody>
 </table>
+
+
+<style>
+    #herd-list-table, #cow-list-table {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+    }
+
+    #herd-list-table th, #cow-list-table th, 
+    #herd-list-table td, #cow-list-table td {
+        border: 1px solid #000 !important;
+    }
+
+    .custom-table {
+        --bs-table-color: #000 !important;
+        --bs-table-bg: #f0f0f0 !important;
+        --bs-table-border-color: #000 !important;
+        --bs-table-striped-bg: transparent !important;
+        --bs-table-hover-bg: transparent !important;
+        border-width: 3px !important;
+        border-radius: 10px !important;
+        border-style: solid !important;
+    }
+
+    .custom-table th, .custom-table td {
+        color: #000 !important;
+        background-color: #f0f0f0 !important;
+        border: 1px solid #000 !important;
+        border-width: 2px !important;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>

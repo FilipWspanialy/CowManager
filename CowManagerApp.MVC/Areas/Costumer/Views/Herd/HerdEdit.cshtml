@@ -4,25 +4,60 @@
 @{
     ViewData["Title"] = "Edit";
 }
-@if (User.IsInRole("Admin"))
-{
-    
 
-<h1>Edit</h1>
+<style>
+    .edit-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        color: #000;
+    }
 
-<h1>Herd @Model.Id</h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    .edit-grid-item {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+</style>
+
+<h1 style="color: black;">Edit Herd @Model.Id</h1>
+
+<div class="edit-grid">
+    <div class="edit-grid-item">
         <form asp-action="HerdEdit" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-           
+            <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
+
             <div class="form-group">
                 <label asp-for="Comment" class="control-label"></label>
                 <input asp-for="Comment" class="form-control" />
                 <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label">Assign to User</label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -30,16 +65,10 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-    </div>
-}
-else
-{
-    <p style="text-align: center; font-size: 18px;">
-        You don't have access to Create ;(
-    </p>
-}
+<div class="form-group">
+    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
+</div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

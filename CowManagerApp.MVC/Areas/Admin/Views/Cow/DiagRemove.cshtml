@@ -1,26 +1,68 @@
 ﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
 @model CowManager.Models.Models.Diagnosis
 
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000; 
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .confirmation-message {
+        font-size: 18px;
+        color: #000; 
+    }
+
+    .no-access {
+        text-align: center;
+        font-size: 18px;
+        color: #dc3545;
+    }
+
+    h2, h4, h5 {
+        color: #000;
+    }
+</style>
+
 <h2>Remove Diagnosis</h2>
 
 @if (User.IsInRole("Admin"))
 {
-    
+        <div class="form-container">
+            <h4 class="confirmation-message">Are you sure you want to remove this diagnosis?</h4>
 
-<h4>Are you sure you want to remove this diagnosis?</h4>
+            <div>
+                <h5>Disease: @Model.NameOfDisease</h5>
+                <h5>Comment: @Model.Comment</h5>
+            </div>
 
-<div>
-    <h5>Disease: @Model.NameOfDisease</h5>
-    <h5>Comment: @Model.Comment</h5>
-</div>
-
-    <form asp-action="DiagRemove" method="post">
-    <input type="hidden" asp-for="Id" />
-    <input type="submit" value="Remove" class="btn btn-danger" />
-        <a asp-action="Diag" asp-route-id="@Model.Idcow">Return</a>
-</form>
-}else
+            <form asp-action="DiagRemove" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <input type="submit" value="Remove" class="btn btn-danger" />
+                    <a asp-action="Diag" asp-route-id="@Model.Idcow" class="btn btn-secondary">Return</a>
+                </div>
+            </form>
+        </div>
+}
+else
 {
-    <h4>You don't have access to this commend</h4>
-
+        <p class="no-access">You don't have access to this command</p>
 }

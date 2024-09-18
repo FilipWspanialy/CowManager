@@ -1,15 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|c:\\users\\kuba sornek\\desktop\\filip\\cowmanager\\cowmanagerapp.mvc\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29930C07-E87D-479F-8718-60F893126A9D}|CowManagerApp.MVC\\CowManagerApp.csproj|solutionrelative:cowmanagerapp.mvc\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 104,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +35,57 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAgwNwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T12:34:03.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-18T12:33:15.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Views\\Admin\\UserDetails.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-18T12:08:01.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Kuba Sornek\\Desktop\\Filip\\CowManager\\CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "CowManagerApp.MVC\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAiwDkAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T12:08:37.295Z"
             }
           ]
         }

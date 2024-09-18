@@ -1,66 +1,140 @@
 ﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
 @model CowManager.Models.Models.CowTreat
 
-<h2>@Model.Cow.Name</h2>
-<p>Comments: @Model.Cow.Cowid</p>
-@if (User.IsInRole("Admin"))
-{
-    
+<style>
+    .page-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000;
+    }
 
+    h2, h3 {
+        color: #000;
+    }
 
-    <h3>Treatment</h3>
-    <div>
-    @Html.ActionLink("Add Treatment", "TreatAdd", "Cow", new { id = Model.Cow.Id }, new { @class = "btn btn-primary" })
-    </div>
-    <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id">Documentation</a>
-    @if (Model.Treatments.Any())
+    .treatment-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .treatment-item {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .treatment-item h4 {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .btn {
+        margin: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    .btn-info:hover {
+        background-color: #117a8b;
+        border-color: #10707f;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+</style>
+
+<div class="page-container">
+    <h2>@Model.Cow.Name</h2>
+    <p>Comments: @Model.Cow.Comment</p>
+
+    @if (User.IsInRole("Admin"))
     {
-    <ul>
-        @foreach (var treats in Model.Treatments)
+            <h3>Treatment</h3>
+            <div>
+            @Html.ActionLink("Add Treatment", "TreatAdd", "Cow", new { id = Model.Cow.Id }, new { @class = "btn btn-primary" })
+            </div>
+            <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id" class="btn btn-primary">Documentation</a>
+
+        @if (Model.Treatments.Any())
         {
-            <li>
-                Medicine: @treats.NameOfMedicine
-                <br />
-                Comment: @treats.Comment
-                <br />
-                <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
-                <a asp-action="TreatRemove" asp-route-id="@treats.Id">Delete</a>
-                <a asp-action="TreatEdit" asp-route-id="@treats.Id">Edit</a>
-            </li>
+                    <div class="treatment-grid">
+                @foreach (var treats in Model.Treatments)
+                {
+                                <div class="treatment-item">
+                                    <h4>Medicine: @treats.NameOfMedicine</h4>
+                                    <p>Comment: @treats.Comment</p>
+                                    <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine" class="btn btn-info">Details</a>
+                                    <a asp-action="TreatRemove" asp-route-id="@treats.Id" class="btn btn-danger">Delete</a>
+                                    <a asp-action="TreatEdit" asp-route-id="@treats.Id" class="btn btn-secondary">Edit</a>
+                                </div>
+                }
+                    </div>
         }
-    </ul>
+        else
+        {
+                    <p>No treatments found for this cow.</p>
+        }
 
+            <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
     }
     else
     {
-        <p>No diagnoses found for this cow.</p>
-    }
-    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
-}
-else
-{
-    <h3>Treatment</h3>
-    
-    @if (Model.Treatments.Any())
-    {
-        <ul>
-            @foreach (var treats in Model.Treatments)
-            {
-                <li>
-                    Medicine: @treats.NameOfMedicine
-                    <br />
-                    Comment: @treats.Comment
-                    <br />
-                    <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
- 
-                </li>
-            }
-        </ul>
-    }
-    else
-    {
-        <p>No diagnoses found for this cow.</p>
-    }
-    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
+            <h3>Treatment</h3>
 
-}
+        @if (Model.Treatments.Any())
+        {
+                    <div class="treatment-grid">
+                @foreach (var treats in Model.Treatments)
+                {
+                                <div class="treatment-item">
+                                    <h4>Medicine: @treats.NameOfMedicine</h4>
+                                    <p>Comment: @treats.Comment</p>
+                                    <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine" class="btn btn-info">Details</a>
+                                </div>
+                }
+                    </div>
+        }
+        else
+        {
+                    <p>No treatments found for this cow.</p>
+        }
+
+            <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
+    }
+</div>

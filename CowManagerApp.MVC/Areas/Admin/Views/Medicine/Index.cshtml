@@ -3,40 +3,57 @@
 @{
     ViewData["Title"] = "List";
 }
-<h1>@ViewData["Title"]</h1>
-<a asp-action="MedicineCreate">Create</a>
+<h1 style="color: black;">@ViewData["Title"]</h1>
 
-<table class="table">
+<a asp-action="MedicineCreate" class="btn btn-primary">Create</a>
+
+<!-- Zastosowanie klasy custom-table do nadpisania stylów -->
+<table id="medicine-list-table" class="table custom-table">
     <thead>
         <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-
-
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Id
-                </td>
-                <td>
-                    @item.Name
-                </td>
-
-                <td>
-                    <a asp-action="MedicineDetails" asp-route-id="@item.Id">Details</a>|
-                    <a asp-action="MedicineEdit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="MedicineDelete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>
+                            <a asp-action="MedicineDetails" asp-route-id="@item.Id" class="btn btn-success btn-sm">Details</a> |
+                            <a asp-action="MedicineEdit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a> |
+                            <a asp-action="MedicineDelete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
         }
     </tbody>
 </table>
+
+<!-- Stylowanie nadpisujące zmienne Bootstrap dla konkretnej tabeli -->
+<style>
+    .custom-table {
+        --bs-table-color: #000 !important; /* Czarny kolor tekstu */
+        --bs-table-bg: #f0f0f0 !important; /* Jasnoszare tło */
+        --bs-table-border-color: #000 !important; /* Czarny obrys */
+        --bs-table-striped-bg: transparent !important; /* Wyłączenie paskowania */
+        --bs-table-hover-bg: transparent !important; /* Wyłączenie koloru podświetlenia */
+
+        border-width: 3px !important; /* Pogrubienie obramowania */
+        border-radius: 10px !important; /* Zaokrąglenie rogów */
+        border-style: solid !important; /* Styl obramowania */
+    }
+
+    .custom-table th, .custom-table td {
+        color: #000 !important;
+        background-color: #f0f0f0 !important;
+        border: 1px solid #000 !important;
+        border-width: 2px !important; /* Pogrubienie obramowania dla komórek */
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>

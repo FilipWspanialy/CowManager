@@ -6,15 +6,15 @@
 }
 @if (User.IsInRole("Admin")){
 <div class="container">
-    <h2>Delete</h2>
+        <h2 style="color: black;">Delete</h2>
     <div class="row">
         <div class="col-md-6">
             <dl class="row">
                 <dt class="col-sm-4">Id</dt>
                     <dd class="col-sm-8">@Model.Cowid</dd>
 
-                <dt class="col-sm-4">Herd</dt>
-                <dd class="col-sm-8">@Model.Nameherd</dd>
+                <dt class="col-sm-4">Herd Id</dt>
+                <dd class="col-sm-8">@Model.Idherd</dd>
 
                 <dt class="col-sm-4">Name</dt>
                 <dd class="col-sm-8">@Model.Name</dd>

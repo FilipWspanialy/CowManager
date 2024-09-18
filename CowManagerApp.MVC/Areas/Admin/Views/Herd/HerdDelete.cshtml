@@ -5,8 +5,35 @@
     ViewData["Title"] = "Delete";
 }
 
-<div class="container">
-    <h2>Delete</h2>
+<style>
+    .form-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000; /* Black text */
+    }
+
+    h2 {
+        color: #000; /* Black text for headings */
+    }
+
+    .row dt {
+        font-weight: bold;
+    }
+
+    .btn-danger {
+        margin-right: 10px;
+    }
+
+    .return-btn {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="form-container">
+    <h2>Delete Herd</h2>
+    <hr />
     <div class="row">
         <div class="col-md-6">
             <dl class="row">
@@ -21,9 +48,15 @@
     <div class="form-group">
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
             <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
-            <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a href="@ViewBag.PreviousUrl" class="btn btn-secondary return-btn">Return</a>
         </form>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

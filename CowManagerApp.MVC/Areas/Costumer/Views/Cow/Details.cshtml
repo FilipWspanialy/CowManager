@@ -5,38 +5,70 @@
     ViewData["Title"] = "Details";
 }
 
-<div class="container">
+<style>
+    .page-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000;
+    }
+
+    h2 {
+        color: #000;
+    }
+
+    dl {
+        margin-top: 20px;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    dd {
+        background-color: #e9ecef;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin: 5px;
+    }
+</style>
+
+<div class="page-container">
     <h2>Details</h2>
     <div class="row">
         <div class="col-md-6">
-            <dl class="row">
-                <dt class="col-sm-4">Id</dt>
-                <dd class="col-sm-8">@Model.Cowid</dd>
+            <dl>
+                <dt>Id</dt>
+                <dd>@Model.Cowid</dd>
 
-                <dt class="col-sm-4">Herd Id</dt>
-                <dd class="col-sm-8">@Model.Nameherd</dd>
+                <dt>Herd Id</dt>
+                <dd>@Model.Idherd</dd>
 
-                <dt class="col-sm-4">Name</dt>
-                <dd class="col-sm-8">@Model.Name</dd>
+                <dt>Name</dt>
+                <dd>@Model.Name</dd>
 
-                <dt class="col-sm-4">Comment</dt>
-                <dd class="col-sm-8">@Model.Comment</dd>
+                <dt>Comment</dt>
+                <dd>@Model.Comment</dd>
 
-                <dt class="col-sm-4">Birth Date</dt>
-                <dd class="col-sm-8">
+                <dt>Birth Date</dt>
+                <dd>
                     @(Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "N/A")
                 </dd>
 
-                <dt class="col-sm-4">Death Date</dt>
-                <dd class="col-sm-8">
+                <dt>Death Date</dt>
+                <dd>
                     @(Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "N/A")
                 </dd>
             </dl>
         </div>
     </div>
-    <div class="form-group">
-        <a asp-action="Edit" asp-route-id="@Model?.Id"  class="btn btn-primary">Edit</a>
-        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <div>
+        <a class="btn btn-secondary" asp-action="Index">Back to List</a>
     </div>
 </div>
-

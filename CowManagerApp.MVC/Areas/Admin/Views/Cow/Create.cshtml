@@ -1,91 +1,138 @@
-﻿<link rel="stylesheet" href="~/css/Create.css" asp-append-version="true" />
+﻿<link rel="stylesheet" href="/css/Create.css" asp-append-version="true" />
 @model CowManager.Models.Models.Cow
 
-@{
-    ViewData["Title"] = "Create";
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-}
+    .card {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-<h1>Create</h1>
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        padding: 15px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 
-<h4>Cow</h4>
-<hr />
-@if (User.IsInRole("Admin"))
-{
+    .card-body {
+        padding: 20px;
+    }
 
+    .card-footer {
+        background-color: #f8f9fa;
+        padding: 10px;
+        text-align: right;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
-                <div class="form-group">
-                    <label asp-for="Cowid" class="control-label"></label>
-                    <input asp-for="Cowid" class="form-control" />
-                    <span asp-validation-for="Cowid" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
+    .form-group label {
+        font-weight: bold;
+    }
 
-                <div class="form-group">
-                    <label asp-for="Idherd" class="control-label">Choose the herd</label>
-                    <a asp-action="HerdCreate" asp-controller="Herd">Create herd</a>
-                    <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
-                    <span asp-validation-for="Idherd" class="text-danger"></span>
+    .btn {
+        margin-right: 10px;
+    }
 
-                </div>
-                <div class="form-group">
-                    <label asp-for="Comment" class="control-label"></label>
-                    <input asp-for="Comment" class="form-control" />
-                    <span asp-validation-for="Comment" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="BirthDate">Birth date</label>
-                    <input type="date" class="form-control" id="BirthDate" name="BirthDate" value="@(Model != null && Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "")" />
-                </div>
-                <div class="form-group">
-                    <label for="DeathDate">Death date</label>
-                    <input type="date" class="form-control" id="DeathDate" name="DeathDate" value="@(Model != null && Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "")" />
-                </div>
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
 
-                @if (ViewBag.Users == null || ViewBag.UsersError != null)
-                {
-                    <p class="text-danger">Users are not available.</p>
-                }
-                else
-                {
-                    <div class="form-group">
-                        <label asp-for="UserId" class="control-label">Assign to User</label>
-                        <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users"></select>
-                        <span asp-validation-for="UserId" class="text-danger"></span>
-                    </div>
-                }
+<h1 style="color: black;">Create Cow</h1>
 
-                
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-                <div>
-                    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
-                </div>
-            </form>
+<div class="form-container">
+    <div class="card">
+        <div class="card-header">
+            Cow Information
+        </div>
+        <div class="card-body">
+            @if (User.IsInRole("Admin"))
+            {
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
+
+                        <div class="form-group">
+                            <label asp-for="Cowid" class="control-label"></label>
+                            <input asp-for="Cowid" class="form-control" />
+                            <span asp-validation-for="Cowid" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Idherd" class="control-label">Choose the herd</label>
+                                <button asp-action="HerdCreate" asp-controller="Herd" class="btn btn-primary">Create herd</button>
+                            <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
+                            <span asp-validation-for="Idherd" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Comment" class="control-label"></label>
+                            <input asp-for="Comment" class="form-control" />
+                            <span asp-validation-for="Comment" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="BirthDate">Birth date</label>
+                            <input type="date" class="form-control" id="BirthDate" name="BirthDate" value="@(Model != null && Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "")" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="DeathDate">Death date</label>
+                            <input type="date" class="form-control" id="DeathDate" name="DeathDate" value="@(Model != null && Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "")" />
+                        </div>
+
+                    @if (ViewBag.Users == null || ViewBag.UsersError != null)
+                    {
+                                <p class="text-danger">Users are not available.</p>
+                    }
+                    else
+                    {
+                                <div class="form-group">
+                                    <label asp-for="UserId" class="control-label">Assign to User</label>
+                                    <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users"></select>
+                                    <span asp-validation-for="UserId" class="text-danger"></span>
+                                </div>
+                    }
+
+                        <div class="card-footer">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                            <a href="@ViewBag.PreviousUrl" class="btn btn-secondary">Return</a>
+                        </div>
+                    </form>
+            }
+            else
+            {
+                    <p class="text-center text-danger">
+                        You don't have access to Create ;(
+                    </p>
+            }
         </div>
     </div>
-
-}
-else
-{
-    <p style="text-align: center; font-size: 18px;">
-        You don't have access to Create ;(
-    </p>
-}
+</div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-

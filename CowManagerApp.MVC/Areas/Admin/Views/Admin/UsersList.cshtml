@@ -1,8 +1,9 @@
-﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+﻿<link rel="stylesheet" href="~/css/Create.css" asp-append-version="true" />
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
 
-<h2>Lista użytkowników</h2>
+<h2 style="color: black;">User List</h2>
 
-<table class="table">
+<table id="user-list-table" style="background-color: #f0f0f0; color: #000; border: 1px solid #000;" class="table custom-table">
     <thead>
         <tr>
             <th>Email</th>
@@ -13,13 +14,49 @@
     <tbody>
         @foreach (var user in Model)
         {
-            <tr>
-                <td>@user.Email</td>
-                <td>
-
-                    <a href="@Url.Action("UserDetails", "Admin", new { id = user.Id })">@user.UserName</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>@user.Email</td>
+                    <td>
+                        <a href="@Url.Action("UserDetails", "Admin", new { id = user.Id })">@user.UserName</a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EditUser", "Admin", new { id = user.Id })" class="btn btn-primary btn-sm">Edytuj</a>
+                        <a href="@Url.Action("DeleteUser", "Admin", new { id = user.Id })" class="btn btn-danger btn-sm">Usuń</a>
+                    </td>
+                </tr>
         }
     </tbody>
 </table>
+
+<style>
+    #user-list-table {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+    }
+
+    #user-list-table th, #user-list-table td {
+        border: 1px solid #000 !important;
+    }
+
+    .custom-table {
+        --bs-table-color: #000 !important;
+        --bs-table-bg: #f0f0f0 !important;
+        --bs-table-border-color: #000 !important;
+        --bs-table-striped-bg: transparent !important;
+        --bs-table-hover-bg: transparent !important;
+        border-width: 3px !important;
+        border-radius: 10px !important;
+        border-style: solid !important;
+    }
+
+    .custom-table th, .custom-table td {
+        color: #000 !important;
+        background-color: #f0f0f0 !important;
+        border: 1px solid #000 !important;
+        border-width: 2px !important;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>

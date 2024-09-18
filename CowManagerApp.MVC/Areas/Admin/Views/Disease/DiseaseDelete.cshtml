@@ -5,8 +5,44 @@
     ViewData["Title"] = "Delete";
 }
 
-<div class="container">
-    <h2>Delete</h2>
+<style>
+    .form-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000; 
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-top: 20px;
+    }
+
+    .btn-danger {
+        margin-right: 10px;
+    }
+
+    h2 {
+        color: #000; 
+    }
+
+    dt, dd {
+        color: #000; 
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="form-container">
+    <h2>Delete Disease</h2>
     <div class="row">
         <div class="col-md-6">
             <dl class="row">
@@ -24,8 +60,8 @@
     <div class="form-group">
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            <a asp-action="Index">Back to List</a>
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
         </form>
     </div>
 </div>

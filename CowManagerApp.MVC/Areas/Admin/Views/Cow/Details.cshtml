@@ -5,43 +5,93 @@
     ViewData["Title"] = "Details";
 }
 
+<style>
+    .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        color: #000;
+    }
+
+    .details-grid-item {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .details-grid-item dt {
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-top: 20px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+</style>
+
 <div class="container">
-    <h2>Details</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <dl class="row">
-                <dt class="col-sm-4">Id</dt>
-                <dd class="col-sm-8">@Model.Cowid</dd>
+    <h2 style="color: black;">Details</h2>
+    <div class="details-grid">
+        <div class="details-grid-item">
+            <dl>
+                <dt>Id</dt>
+                <dd>@Model.Cowid</dd>
+            </dl>
+        </div>
 
-                <dt class="col-sm-4">Herd</dt>
-                <dd class="col-sm-8">@Model.Nameherd</dd>
+        <div class="details-grid-item">
+            <dl>
+                <dt>Herd Id</dt>
+                <dd>@Model.Idherd</dd>
+            </dl>
+        </div>
 
-                <dt class="col-sm-4">Name</dt>
-                <dd class="col-sm-8">@Model.Name</dd>
+        <div class="details-grid-item">
+            <dl>
+                <dt>Name</dt>
+                <dd>@Model.Name</dd>
+            </dl>
+        </div>
 
-                <dt class="col-sm-4">Comment</dt>
-                <dd class="col-sm-8">@Model.Comment</dd>
+        <div class="details-grid-item">
+            <dl>
+                <dt>Comment</dt>
+                <dd>@Model.Comment</dd>
+            </dl>
+        </div>
 
-                <dt class="col-sm-4">Owner</dt>
-                <dd class="col-sm-8">@ViewBag.UserName</dd>
+        <div class="details-grid-item">
+            <dl>
+                <dt>Owner</dt>
+                <dd>@ViewBag.UserName</dd>
+            </dl>
+        </div>
 
-                <dt class="col-sm-4">Birth Date</dt>
-                <dd class="col-sm-8">
-                    @(Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "N/A")
-                </dd>
+        <div class="details-grid-item">
+            <dl>
+                <dt>Birth Date</dt>
+                <dd>@(Model.BirthDate.HasValue ? Model.BirthDate.Value.ToString("yyyy-MM-dd") : "N/A")</dd>
+            </dl>
+        </div>
 
-                <dt class="col-sm-4">Death Date</dt>
-                <dd class="col-sm-8">
-                    @(Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "N/A")
-                </dd>
-
-
+        <div class="details-grid-item">
+            <dl>
+                <dt>Death Date</dt>
+                <dd>@(Model.DeathDate.HasValue ? Model.DeathDate.Value.ToString("yyyy-MM-dd") : "N/A")</dd>
             </dl>
         </div>
     </div>
+
     <div class="form-group">
-        <a asp-action="Edit" asp-route-id="@Model?.Id"  class="btn btn-primary">Edit</a>
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
         <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
     </div>
 </div>
-

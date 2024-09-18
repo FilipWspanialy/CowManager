@@ -1,16 +1,66 @@
 ﻿<link rel="stylesheet" href="~/css/Medicine.css" asp-append-version="true" />
 @model CowManager.Models.Models.Medicine
 
-@{
-    ViewData["Title"] = "Details";
-}
+<style>
+    .details-container {
+        width: 100%;
+        border: 2px solid #000; 
+        padding: 20px;
+        margin-top: 20px;
+        background-color: #fff; 
+        color: #000; 
+    }
 
+    .details-container dt {
+        font-weight: bold;
+        color: #000;
+    }
 
-<div class="container">
+    .details-container dd {
+        margin-bottom: 10px;
+    }
+
+    .details-container dl {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .details-container .col-sm-4 {
+        font-weight: bold;
+        background-color: #f0f0f0;
+        padding: 10px;
+    }
+
+    .details-container .col-sm-8 {
+        background-color: #f9f9f9; 
+        padding: 10px;
+        border: 2px solid #000;
+    }
+
+    h2 {
+        color: black;
+        margin-bottom: 20px;
+        font-size: 32px; 
+        text-align: center; 
+    }
+
+    .form-group a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .form-group a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="container details-container">
     <h2>Details</h2>
     <div class="row">
         <div class="col-md-6">
             <dl class="row">
+                <dt class="col-sm-4">Id</dt>
+                <dd class="col-sm-8">@Model.Id</dd>
 
                 <dt class="col-sm-4">Name</dt>
                 <dd class="col-sm-8">@Model.Name</dd>
@@ -20,7 +70,7 @@
             </dl>
         </div>
     </div>
-    <div class="form-group">
-        <a asp-action="Index">Back to List</a>
-    </div>
+ <div class="form-group" style="display: flex; justify-content: center;">
+    <button onclick="window.location.href='@Url.Action("Index")'" class="btn btn-primary">Back to List</button>
+</div>
 </div>

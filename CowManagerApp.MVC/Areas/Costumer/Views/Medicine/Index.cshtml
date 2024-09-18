@@ -1,35 +1,72 @@
 ﻿<link rel="stylesheet" href="~/css/Medicine.css" asp-append-version="true" />
 @model IEnumerable<CowManager.Models.Models.Medicine>
-@{
-    ViewData["Title"] = "List";
-}
-<h1>@ViewData["Title"]</h1>
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 2px solid #000; /* Pogrubione czarne obramowanie tabeli */
+        margin-top: 20px;
+    }
+
+    .table th, .table td {
+        border: 2px solid #000; /* Pogrubione czarne obramowanie dla komórek */
+        padding: 10px;
+        text-align: left;
+        background-color: #fff; /* Białe tło */
+        color: #000; /* Czarny tekst */
+    }
+
+    .table th {
+        background-color: #f0f0f0; /* Jasno szare tło dla nagłówków */
+        font-weight: bold; /* Pogrubiona czcionka dla nagłówków */
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9; /* Bardzo delikatny szary dla co drugiego wiersza */
+    }
+
+    .table tr:hover {
+        background-color: #e9e9e9; /* Kolor wiersza przy najechaniu */
+    }
+
+    h1 {
+        color: black;
+        margin-bottom: 20px;
+        font-size: 32px; /* Powiększony rozmiar czcionki */
+        text-align: center; /* Wyśrodkowanie nagłówka */
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<h1>List of Medicine</h1> 
 
 <table class="table">
     <thead>
         <tr>
-            
-            <th>
-                Name
-            </th>
-
-
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                
-                <td>
-                    @item.Name
-                </td>
-
-                <td>
-                    <a asp-action="MedicineDetails" asp-route-id="@item.Id">Details</a>
-                </td>
-            </tr>
-
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                       <td>
+        <button onclick="window.location.href='@Url.Action("MedicineDetails", new { id = @item.Id })'" class="btn btn-primary">Details</button>
+    </td>
+                </tr>
         }
     </tbody>
 </table>

@@ -3,48 +3,61 @@
 @{
     ViewData["Title"] = "List of herds";
 }
-<h1>@ViewData["Title"]</h1>
+<h1 style="color: black;">@ViewData["Title"]</h1>
 
-<a asp-action="HerdCreate">Create</a>
-<table class="table">
+
+
+
+<table id="herd-list-table" class="table custom-table">
     <thead>
         <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Amount Of Cows
-            </th>
-            <th>
-                Comment
-            </th>
-
-
+            <th>Id</th>
+            <th>Amount Of Cows</th>
+            <th>Name</th>
+            <th>Owner</th>
+           
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a>)
-                </td>
-                <td>
-                    @item.AmountOfCows
-                </td>
-                <td>
-                    @item.Comment
-                </td>
-                <td>
-                    <a asp-action="AddCow" asp-route-idh="@item.Id">Add Cow</a>|
-                    <a asp-action="HerdEdit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="HerdDelete" asp-route-id="@item.Id">Delete</a>
-                </td>
-
-            </tr>
-
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a>
+                        </td>
+                        <td>@item.AmountOfCows</td>
+                        <td>
+                            <a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Comment</a>
+                        </td>
+                        <td>@item.UserId</td>
+                     
+                    </tr>
         }
     </tbody>
 </table>
 
 
+<style>
+    .custom-table {
+        --bs-table-color: #000 !important; 
+        --bs-table-bg: #f0f0f0 !important; 
+        --bs-table-border-color: #000 !important; 
+        --bs-table-striped-bg: transparent !important; 
+        --bs-table-hover-bg: transparent !important; 
+
+        border-width: 3px !important; 
+        border-radius: 10px !important; 
+        border-style: solid !important; 
+    }
+
+    .custom-table th, .custom-table td {
+        color: #000 !important;
+        background-color: #f0f0f0 !important;
+        border: 1px solid #000 !important;
+        border-width: 2px !important; 
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>

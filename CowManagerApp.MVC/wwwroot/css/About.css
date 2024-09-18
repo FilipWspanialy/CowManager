@@ -1,6 +1,6 @@
 
 body {
-    background-image: url('/Images/CreateCow1.jpeg'); /* Dodaj tutaj link do zdjęcia */
+    background-image: url('/Images/CreateCow1.jpeg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

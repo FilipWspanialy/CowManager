@@ -1,10 +1,38 @@
 ﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
 @model CowManager.Models.Models.Treatment
-<h2>Remove</h2>
 
-@if (true)
-{
-    <h4>Are you sure you want to remove this?</h4>
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000; 
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .confirmation-message {
+        font-size: 18px;
+        color: #000; 
+    }
+</style>
+
+<div class="form-container">
+    <h4 class="confirmation-message">Are you sure you want to remove this?</h4>
 
     <div>
         <h5>Disease: @Model.NameOfMedicine</h5>
@@ -13,9 +41,9 @@
 
     <form asp-action="TreatRemove" method="post">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Remove" class="btn btn-danger" />
-        <a asp-action="Treat" asp-route-id="@Model.Idcow">Return</a>
+        <div class="form-group">
+            <input type="submit" value="Remove" class="btn btn-danger" />
+            <a asp-action="Treat" asp-route-id="@Model.Idcow" class="btn btn-secondary">Return</a>
+        </div>
     </form>
-
-}
-
+</div>
