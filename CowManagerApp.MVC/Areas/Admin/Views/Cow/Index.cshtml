@@ -5,7 +5,9 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-
+<form asp-controller="PDF" asp-action="GeneratePDF" method="get">
+    <button type="submit" class="btn btn-primary">Generuj PDF</button>
+</form>
 <p>
     <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>

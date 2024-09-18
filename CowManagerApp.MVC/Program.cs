@@ -11,6 +11,9 @@ using static System.Collections.Specialized.BitVector32;
 using Microsoft.Extensions.Options;
 using Microsoft.CodeAnalysis;
 using CowManager.Models.Models;
+using Rotativa.AspNetCore;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,7 +50,11 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+// Dodaj singleton dla DinkToPdf
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
 var app = builder.Build();
+
 
 if (!app.Environment.IsDevelopment())
 {

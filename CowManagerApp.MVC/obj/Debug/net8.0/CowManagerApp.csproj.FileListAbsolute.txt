@@ -1170,3 +1170,13 @@ D:\test\CowManager\CowManagerApp.MVC\obj\Debug\net8.0\refint\CowManagerApp.dll
 D:\test\CowManager\CowManagerApp.MVC\obj\Debug\net8.0\CowManagerApp.pdb
 D:\test\CowManager\CowManagerApp.MVC\obj\Debug\net8.0\CowManagerApp.genruntimeconfig.cache
 D:\test\CowManager\CowManagerApp.MVC\obj\Debug\net8.0\ref\CowManagerApp.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\DinkToPdf.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\System.Web.Mvc.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\System.Web.Razor.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\System.Web.Helpers.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\System.Web.WebPages.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\Rotativa.dll
+D:\test\CowManager\CowManagerApp.MVC\bin\Debug\net8.0\Rotativa.AspNetCore.dll
