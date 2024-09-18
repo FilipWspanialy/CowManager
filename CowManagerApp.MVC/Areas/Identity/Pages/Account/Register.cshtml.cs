@@ -103,14 +103,10 @@ namespace CowManagerApp.MVC.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            // Dodaj pole Nickname
-            //[Required]
-            //[Display(Name = "Nickname")]
-            //public string Nickname { get; set; }
+            [Display(Name = "Admin Code")]
+            public string VetCode { get; set; }
 
-            public string? Role { get; set; }
-            [ValidateNever]
-            public IEnumerable<SelectListItem> RoleList { get; set; }
+
 
         }
 
@@ -118,7 +114,7 @@ namespace CowManagerApp.MVC.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
 
-            
+
             if (!await _roleManager.RoleExistsAsync(CowManagerRole.Role_Admin))
             {
                 await _roleManager.CreateAsync(new IdentityRole(CowManagerRole.Role_Admin));
@@ -129,15 +125,8 @@ namespace CowManagerApp.MVC.Areas.Identity.Pages.Account
                 await _roleManager.CreateAsync(new IdentityRole(CowManagerRole.Role_Costumer));
             }
 
-            Input = new()
-            {
-                RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
-                {
-                    Text = i,
-            
-                    Value = i
-                })
-            };
+            Input = new InputModel();
+
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -157,42 +146,42 @@ namespace CowManagerApp.MVC.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                    if (!String.IsNullOrEmpty(Input.Role))
+                    string adminCodeFromConfig = "321";
+                    if (!string.IsNullOrEmpty(Input.VetCode) && Input.VetCode == adminCodeFromConfig)
                     {
-                        await _userManager.AddToRoleAsync(user, Input.Role);
+                        await _userManager.AddToRoleAsync(user, CowManagerRole.Role_Admin);
                     }
                     else
                     {
                         await _userManager.AddToRoleAsync(user, CowManagerRole.Role_Costumer);
+
                     }
-                
-                
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                     var callbackUrl = Url.Page(
-                    "/Account/ConfirmEmail",
-                    pageHandler: null,
-                    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
-                    protocol: Request.Scheme);
+                    code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                    var callbackUrl = Url.Page(
+                   "/Account/ConfirmEmail",
+                   pageHandler: null,
+                   values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                   protocol: Request.Scheme);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-                if (_userManager.Options.SignIn.RequireConfirmedAccount)
-                {
-                    return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
+                    {
+                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                    }
+                    else
+                    {
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return LocalRedirect(returnUrl);
+                    }
                 }
-                else
+                foreach (var error in result.Errors)
                 {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return LocalRedirect(returnUrl);
-                }
-            }
-            foreach (var error in result.Errors)
-            {
                     ModelState.AddModelError(string.Empty, error.Description);
-            }
+                }
             }
 
             // If we got this far, something failed, redisplay form
@@ -223,3 +212,9 @@ namespace CowManagerApp.MVC.Areas.Identity.Pages.Account
         }
     }
 }
+
+
+
+
+
+
