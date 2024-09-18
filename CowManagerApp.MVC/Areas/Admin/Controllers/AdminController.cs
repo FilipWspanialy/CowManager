@@ -40,33 +40,33 @@ namespace CowManagerApp.Areas.Admin.Controllers
             }
 
             var userHerds = await _context.Herds
-                .Where(h => h.UserId == id) 
+                .Where(h => h.UserId == id)
                 .ToListAsync();
 
             var userCows = await _context.Cows
-                .Where(c => c.UserId == id)
+                .Where(c => c.UserId == id &&
+                            (string.IsNullOrEmpty(searchString) || c.Name.Contains(searchString)))
                 .ToListAsync();
-            
+
             foreach (var cow in userCows)
             {
                 if (cow.DeathDate.HasValue && !cow.IsInactive)
                 {
                     cow.IsInactive = true;
-                    _context.SaveChanges();
                 }
             }
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                userCows = userCows.Where(c => c.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
+            await _context.SaveChangesAsync();
+
             var userDiagnoses = await _context.Diagnoses
                 .Where(d => userCows.Select(c => c.Id).Contains(d.Idcow))
                 .ToListAsync();
 
+            ViewData["CurrentFilter"] = searchString;
+
             var model = new UserDetailsViewModel
             {
                 User = user,
-                Herd = userHerds, 
+                Herd = userHerds,
                 Cows = userCows,
                 Diagnoses = userDiagnoses,
                 CurrentUserId = id
@@ -74,7 +74,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
             return View(model);
         }
 
-       
+
+
 
 
     }

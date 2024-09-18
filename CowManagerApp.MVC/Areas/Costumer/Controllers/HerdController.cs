@@ -196,7 +196,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCow([Bind("Cowid,Name,Idherd,Comment")] Cow cow, string previousUrl)
+        public async Task<IActionResult> AddCow([Bind("Cowid,Name,Idherd,UserId,UserName,Comment,BirthDate,DeathDate")] Cow cow, string previousUrl)
         {
 
             cow.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -224,7 +224,9 @@ namespace CowManagerApp.Areas.Costumer.Controllers
                     
                 }
             }
+            
             var herd = await _context.Herds.FindAsync(cow.Idherd);
+            cow.UserId = herd.UserId;
             ViewBag.HerdId = cow.Idherd;
             return View(cow);
         }

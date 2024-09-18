@@ -153,21 +153,32 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> DiseaseDeleteConfirmed(int id)
         {
             var dis = await _context.Diseases
-               .FirstOrDefaultAsync(h => h.Id == id);
-            var diag =  _context.Diagnoses
-                .Where(h => h.Iddisease == id);
+                .FirstOrDefaultAsync(h => h.Id == id);
+
+            var diag = await _context.Diagnoses
+                .Where(h => h.Iddisease == id)
+                .ToListAsync();
 
             if (dis != null)
             {
-                if (diag != null)
+                if (diag != null && diag.Any())
                 {
+                    var diagIds = diag.Select(d => d.Id).ToList();
+
+                    var treatfordiag = await _context.Treatments
+                        .Where(t => t.Iddiagnosis.HasValue && diagIds.Contains(t.Iddiagnosis.Value))
+                        .ToListAsync();
+
                     _context.Diagnoses.RemoveRange(diag);
+                    _context.Treatments.RemoveRange(treatfordiag);
                 }
+
                 _context.Diseases.Remove(dis);
                 await _context.SaveChangesAsync();
             }
 
             return RedirectToAction(nameof(Index));
+
         }
 
         private bool DiseaseExists(int id)
@@ -176,3 +187,4 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
     }
 }
+

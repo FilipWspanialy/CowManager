@@ -1,9 +1,10 @@
 ﻿@model CowManager.Models.Models.CowDocumentation
 
-<h2>@Model.Cow.Name</h2>
 
 {
     <h3>History of diagnoses</h3>
+    <h2>@Model.Cow.Name</h2>
+    <h2>@Model.Cow.Cowid</h2>
     
     @if (Model.Diagnosis.Any())
     {

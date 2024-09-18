@@ -1,11 +1,11 @@
 ﻿<link rel="stylesheet" href="~/css/Herd.css" asp-append-version="true" />
 @model CowManager.Models.Models.Herd
 
-<h1>Cows in herd: @Model.Id</h1>
+<h1>Cows in herd: @Model.Comment</h1>
 <p>Total Cows: @Model.AmountOfCows</p>
 
-
-<a asp-action="Index" asp-controller="Herd" >Back to Herds</a>|
+<input type="hidden" name="previousUrl" value="@ViewBag.PreviousUrl" />
+<a href="@ViewBag.PreviousUrl" >Return</a>|
 <a asp-action="HerdEdit" asp-route-id="@Model.Id">Edit</a> |
 <a asp-action="HerdDelete" asp-route-id="@Model.Id">Delete</a> |
 <a asp-action="AddCow" asp-route-idh="@Model.Id" >Add Cow</a>

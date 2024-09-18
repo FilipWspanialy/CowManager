@@ -2,6 +2,7 @@
 @model CowManager.Models.Models.CowDiagAdd
 
 <h2>Add Diagnosis for @Model.CowName</h2>
+<h2>@Model.CowId</h2>
 <a asp-action="Diag" asp-route-id="@Model.CowId">Back to diagnosis</a>
 @if (User.IsInRole("Admin"))
 {

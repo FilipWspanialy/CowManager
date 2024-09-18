@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CowManager.Data.Migrations
 {
     [DbContext(typeof(CowManagerContext))]
-    [Migration("20240916202848_InitialCreate")]
+    [Migration("20240917194424_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

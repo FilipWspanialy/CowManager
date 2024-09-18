@@ -39,7 +39,16 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> HerdDetails(int id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            ViewBag.PreviousUrl = referer;
+            if (!string.IsNullOrEmpty(referer) && (referer.Contains("Index") || referer.Contains("UserDetails")))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
 
             var herd = await _context.Herds
                 .Include(s => s.Cows)
@@ -206,11 +215,10 @@ namespace CowManagerApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCow([Bind("Cowid,Name,Idherd,Comment,UserId,BirthDate,DeathDate")] Cow cow, string previousUrl)
+        public async Task<IActionResult> AddCow([Bind("Cowid,Name,Idherd,Comment,UserId,UserName,BirthDate,DeathDate")] Cow cow, string previousUrl)
         {
             if (!ModelState.IsValid)
             {
-                var herd = await _context.Herds.FindAsync(cow.Idherd);
                 ViewBag.HerdId = cow.Idherd;
                 return View(cow);
             }
@@ -219,11 +227,13 @@ namespace CowManagerApp.Areas.Admin.Controllers
             if (isCowidExists)
             {
                 ModelState.AddModelError("Cowid", "Cow ID already exists.");
-                var herd = await _context.Herds.FindAsync(cow.Idherd);
                 ViewBag.HerdId = cow.Idherd;
                 return View(cow);
             }
 
+            var herd = await _context.Herds.FindAsync(cow.Idherd);
+            cow.UserId = herd.UserId;
+            cow.Nameherd = herd.Comment;
             var user = await _userManager.FindByIdAsync(cow.UserId);
             cow.UserName = user?.UserName;
 
