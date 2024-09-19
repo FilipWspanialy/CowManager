@@ -9,7 +9,7 @@ namespace CowManager.Models.Models
 {
     public partial class ApplicationUser:IdentityUser
     {
-        public string NickName { get; set; }
+        public string Nickname { get; set; }
 
     }
 }

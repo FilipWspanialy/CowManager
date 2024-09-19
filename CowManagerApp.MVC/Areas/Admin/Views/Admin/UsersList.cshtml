@@ -6,7 +6,7 @@
 <table id="user-list-table" style="background-color: #f0f0f0; color: #000; border: 1px solid #000;" class="table custom-table">
     <thead>
         <tr>
-            <th>Email</th>
+            
             <th>Name</th>
             
         </tr>
@@ -15,8 +15,8 @@
         @foreach (var user in Model)
         {
                 <tr>
-                    <td>@user.Email</td>
-                    <td>
+                
+                <td>
                         <a href="@Url.Action("UserDetails", "Admin", new { id = user.Id })">@user.UserName</a>
                     </td>
                    
