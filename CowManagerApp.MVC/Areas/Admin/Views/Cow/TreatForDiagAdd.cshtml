@@ -44,7 +44,7 @@
 
                 <div class="form-group">
                     <label asp-for="SelectedMedicinetId" class="control-label">Medicine</label>
-                      <button asp-controller="Medicine" asp-action="MedicineCreate" class="btn btn-primary">Add medicine</button>
+                <a asp-controller="Medicine" asp-action="MedicineCreate" class="btn btn-link">Add medicine</a>
                     <select asp-for="SelectedMedicinetId" class="form-control" asp-items="@(new SelectList(Model.Medicines, "Id", "Name"))">
                         <option value="">Select medicine</option>
                     </select>
