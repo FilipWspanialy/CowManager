@@ -1,15 +1,12 @@
 ﻿<link rel="stylesheet" href="~/css/Diagnosis.css" asp-append-version="true" />
 @model CowManager.Models.Models.CowTreat
 
-<h2>@Model.Cow.Name</h2>
-<p>Comments: @Model.Cow.Comment</p>
 <a asp-action="Diag" asp-route-id="@Model.Cow.Id">Back to diagnosis</a>
 <h2>@ViewBag.Disease</h2>
 @if (User.IsInRole("Admin"))
 {
     
 
-    <h3>Treatment</h3>
     <a asp-action="TreatForDiagAdd" asp-controller="Cow" asp-route-idd="@ViewBag.idd" asp-route-idk="@Model.Cow.Id">Add medicine</a>
     @if (Model.Treatments.Any())
     {
@@ -20,6 +17,8 @@
                 Medicine: @treats.NameOfMedicine
                 <br />
                 Comment: @treats.Comment
+                <br />
+                Date of entry: @treats.CreateTime
                 <br />
                 <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
                 <a asp-action="TreatRemove" asp-route-id="@treats.Id">Delete</a>
@@ -36,7 +35,6 @@
 }
 else
 {
-    <h3>Treatment</h3>
     <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id" class="btn btn-secondary">Documentation</a>
     @if (Model.Treatments.Any())
     {
@@ -47,6 +45,8 @@ else
                     Medicine: @treats.NameOfMedicine
                     <br />
                     Comment: @treats.Comment
+                    <br />
+                    Date of entry: @treats.CreateTime
                     <br />
                     <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine">Details</a>
                    

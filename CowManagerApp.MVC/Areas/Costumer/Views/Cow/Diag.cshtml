@@ -49,6 +49,8 @@
                             <br />
                             <strong>Comment:</strong> @diagnosis.Comment
                             <br />
+                            <strong>Date of entry:</strong> @diagnosis.CreateTime
+                            <br />
                             <a class="btn btn-info" asp-action="TreatForDiag" asp-controller="Cow" asp-route-idd="@diagnosis.Id" asp-route-idk="@Model.Cow.Id">Treatment</a>
                             <a class="btn btn-info" asp-action="DiseaseDetails" asp-controller="Disease" asp-route-id="@diagnosis.Iddisease">Details</a>
                         </li>

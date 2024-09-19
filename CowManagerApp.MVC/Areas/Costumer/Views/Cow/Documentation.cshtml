@@ -1,53 +1,84 @@
 ﻿@model CowManager.Models.Models.CowDocumentation
+<style>
+    .page-container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000;
+    }
 
-<h2>@Model.Cow.Name</h2>
+    h2 {
+        color: #000;
+    }
 
-{
-    <h3>History of diagnoses</h3>
-    
-    @if (Model.Diagnosis.Any())
-    {
-        <ul>
-            @foreach (var item in Model.Diagnosis)
+    dl {
+        margin-top: 20px;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    dd {
+        background-color: #e9ecef;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin: 5px;
+    }
+</style>
+<div class="form-container">
+    <div class="card">
+        <div class="card-header">
+            Cow's name: @Model.Cow.Name
+        </div>
+        <div class="card-body">
+            <h3>History of Diagnoses</h3>
+            @if (Model.Diagnosis != null)
             {
-                <li>
-                    Disease: @item.NameOfDisease
-                    <br />
-                    Comment: @item.Comment
-                    <br />
-                    Create Time: @item.CreateTime
-                    <br />
-                    Delete Time: @item.DeleteTime
-                </li>
+                <ul>
+                    @foreach (var item in Model.Diagnosis)
+                    {
+                        <li>
+                            <strong>Disease:</strong> @item.IddiseaseNavigation.Name
+                            <br />
+                            <strong>Comment:</strong> @item.Comment
+                            <br />
+                            <strong>Create Time:</strong> @item.CreateTime?.ToString("yyyy-MM-dd HH:mm")
+                            <br />
+                            <strong>Delete Time:</strong> @item.DeleteTime?.ToString("yyyy-MM-dd HH:mm")
+                        </li>
+                    }
+                </ul>
             }
-        </ul>
-    }
-    else
-    {
-        <p>No diagnoses found for this cow.</p>
-    }
-    <h3>History of treatment</h3>
+            
 
-    @if (Model.Treatments.Any())
-    {
-        <ul>
-            @foreach (var item in Model.Treatments)
+            <h3>History of Treatments</h3>
+            @if (Model.Treatments != null && Model.Treatments.Count > 0)
             {
-                <li>
-                    Medicine: @item.NameOfMedicine
-                    <br />
-                    Comment: @item.Comment
-                    <br />
-                    Create Time: @item.CreateTime
-                    <br />
-                    Delete Time: @item.DeleteTime
-                </li>
+                <ul>
+                    @foreach (var item in Model.Treatments)
+                    {
+                        <li>
+                            <strong>Medicine:</strong> @item.IdmedicineNavigation.Name
+                            <br />
+                            <strong>Comment:</strong> @item.Comment
+                            <br />
+                            <strong>Create Time:</strong> @item.CreateTime?.ToString("yyyy-MM-dd HH:mm")
+                            <br />
+                            <strong>Delete Time:</strong> @item.DeleteTime?.ToString("yyyy-MM-dd HH:mm")
+                        </li>
+                    }
+                </ul>
             }
-        </ul>
-    }
-    else
-    {
-        <p>No treatments found for this cow.</p>
-    }
-    <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
-}
+            
+
+            <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
+        </div>
+    </div>
+</div>

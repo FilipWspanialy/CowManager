@@ -59,17 +59,15 @@
 <div class="form-container">
     <div class="card">
         <div class="card-header">
-            @Model.Cow.Name
+            @ViewBag.Disease
         </div>
         <div class="card-body">
-            <p>@Model.Cow.Cowid</p>
             <a asp-action="Diag" asp-route-id="@Model.Cow.Id" class="btn btn-secondary">Back to diagnosis</a>
             <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id" class="btn btn-secondary">Documentation</a>
-            <h2>@ViewBag.Disease</h2>
+            
 
             @if (User.IsInRole("Admin"))
             {
-                    <h3>Treatment</h3>
                     <a asp-action="TreatForDiagAdd" asp-controller="Cow" asp-route-idd="@ViewBag.idd" asp-route-idk="@Model.Cow.Id" class="btn btn-primary">Add medicine</a>
 
                 @if (Model.Treatments.Any())
@@ -82,7 +80,9 @@
                                             <br />
                                             <strong>Comment:</strong> @treats.Comment
                                             <br />
-                                            <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine" class="btn btn-link">Details</a>
+                                            <strong>Date of entry:</strong> @treats.CreateTime
+                                            <br />
+                                <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine" class="btn btn-info">Details</a>
                                             <a asp-action="TreatRemove" asp-route-id="@treats.Id" class="btn btn-danger">Delete</a>
                                             <a asp-action="TreatEdit" asp-route-id="@treats.Id" class="btn btn-primary">Edit</a>
                                         </li>
@@ -96,7 +96,6 @@
             }
             else
             {
-                    <h3>Treatment</h3>
                 @if (Model.Treatments.Any())
                 {
                             <ul>
@@ -106,6 +105,8 @@
                                             <strong>Medicine:</strong> @treats.NameOfMedicine
                                             <br />
                                             <strong>Comment:</strong> @treats.Comment
+                                            <br />
+                                            <strong>Date of entry:</strong> @treats.CreateTime
                                             <br />
                                             <a asp-action="MedicineDetails" asp-controller="Medicine" asp-route-id="@treats.Idmedicine" class="btn btn-link">Details</a>
                                         </li>

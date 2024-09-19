@@ -6,6 +6,8 @@ using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using CowManager.Models.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using System.Linq;
+
 
 namespace CowManagerApp.Areas.Costumer.Controllers
 { [Area("Costumer")]
@@ -257,7 +259,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             }
 
             var diagnoses = await _context.Diagnoses
-                .Where(d => d.Idcow == id)
+                .Where(d => d.Idcow == id && d.DeleteTime == null)
                 .Include(d => d.IddiseaseNavigation)
                 .ToListAsync();
 
@@ -435,7 +437,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             }
 
             var treats = await _context.Treatments
-                .Where(d => d.Idcow == id)
+                .Where(d => d.Idcow == id && d.DeleteTime == null)
                 .Include(d => d.IdmedicineNavigation)
                 .ToListAsync();
 
@@ -593,7 +595,7 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             }
 
             var treats = await _context.Treatments
-                .Where(d => d.Idcow == idk)
+                .Where(d => d.Idcow == idk && d.DeleteTime == null)
                 .Where(d => d.Iddiagnosis == idd)
                 .Include(d => d.IdmedicineNavigation)
                 .ToListAsync();
@@ -694,12 +696,12 @@ namespace CowManagerApp.Areas.Costumer.Controllers
                 .Where(d => d.Idcow == id && d.DeleteTime != null)
                 .Include(d => d.IdmedicineNavigation)
                 .OrderBy(d => d.DeleteTime)
-                .ToListAsync() ?? new List<Treatment>(); 
+                .ToListAsync();
             var diags = await _context.Diagnoses
                 .Where(d => d.Idcow == id && d.DeleteTime != null)
                 .Include(d => d.IddiseaseNavigation)
                 .OrderBy(d => d.DeleteTime)
-                .ToListAsync() ?? new List<Diagnosis>();
+                .ToListAsync();
             var viewModel = new CowDocumentation
             {
                 Cow = cow,

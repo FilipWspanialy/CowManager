@@ -1,57 +1,35 @@
-﻿model CowManager.Models.Models.CowDocumentation
-
+﻿@model CowManager.Models.Models.CowDocumentation
 <style>
-    .form-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .page-container {
         background-color: #f8f9fa;
         padding: 30px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000;
     }
 
-    .card {
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    h2 {
+        color: #000;
     }
 
-    .card-header {
-        background-color: #007bff;
-        color: white;
+    dl {
+        margin-top: 20px;
+    }
+
+    dt {
         font-weight: bold;
-        padding: 15px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        color: #343a40;
     }
 
-    .card-body {
-        padding: 20px;
-    }
-
-    ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-
-    ul li {
-        margin-bottom: 15px;
-        padding: 15px;
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .no-data {
-        font-style: italic;
-        color: #888;
+    dd {
+        background-color: #e9ecef;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
     }
 
     .btn {
-        margin-top: 20px;
+        margin: 5px;
     }
 </style>
 <div class="form-container">
@@ -78,10 +56,7 @@
                     }
                 </ul>
             }
-            else
-            {
-                <p class="no-data">No diagnoses found for this cow.</p>
-            }
+            
 
             <h3>History of Treatments</h3>
             @if (Model.Treatments != null && Model.Treatments.Count > 0)
@@ -101,10 +76,7 @@
                     }
                 </ul>
             }
-            else
-            {
-                <p class="no-data">No treatments found for this cow.</p>
-            }
+            
 
             <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>
         </div>
