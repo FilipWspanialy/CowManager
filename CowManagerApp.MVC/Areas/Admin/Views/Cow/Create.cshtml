@@ -81,7 +81,7 @@
 
                         <div class="form-group">
                             <label asp-for="Idherd" class="control-label">Choose the herd</label>
-                                <button asp-action="HerdCreate" asp-controller="Herd" class="btn btn-primary">Create herd</button>
+                                <a asp-action="HerdCreate" asp-controller="Herd" class="btn btn-primary">Create herd</a>
                             <select asp-for="Idherd" class="form-control" asp-items="ViewBag.Herds"></select>
                             <span asp-validation-for="Idherd" class="text-danger"></span>
                         </div>

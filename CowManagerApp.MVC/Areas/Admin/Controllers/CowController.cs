@@ -44,9 +44,8 @@ namespace CowManagerApp.Areas.Admin.Controllers
             }
             foreach (var cow in cows)
             {
-                if (cow.DeathDate.HasValue && !cow.IsInactive)
+                if (cow.DeathDate.HasValue)
                 {
-                    cow.IsInactive = true;
                     _context.SaveChanges();
                 }
             }
