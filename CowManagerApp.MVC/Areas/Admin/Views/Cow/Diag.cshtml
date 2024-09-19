@@ -52,7 +52,7 @@
 </style>
 
 <h2 style="color: black;">@Model.Cow.Name</h2>
-<p style="color: black;">Comments: @Model.Cow.Comment</p>
+<p style="color: black;">@Model.Cow.Cowid</p>
 
 <div class="card-container">
     <div class="card">
@@ -65,7 +65,7 @@
                     <div>
                     @Html.ActionLink("Add Diagnosis", "DiagAdd", "Cow", new { id = Model.Cow.Id }, new { @class = "btn btn-primary" })
                     </div>
-                        <button asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id" class="btn btn-primary">Documentation</button>
+                <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id" class="btn btn-secondary">Documentation</a>
 
                 @if (Model.Diagnoses.Any())
                 {

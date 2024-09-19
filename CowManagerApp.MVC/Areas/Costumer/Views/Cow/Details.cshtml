@@ -47,14 +47,14 @@
                 <dt>Id</dt>
                 <dd>@Model.Cowid</dd>
 
-                <dt>Herd Id</dt>
-                <dd>@Model.Idherd</dd>
-
                 <dt>Name</dt>
                 <dd>@Model.Name</dd>
 
                 <dt>Comment</dt>
                 <dd>@Model.Comment</dd>
+
+                <dt>Herd</dt>
+                <dd>@Model.Nameherd</dd>
 
                 <dt>Birth Date</dt>
                 <dd>
@@ -69,6 +69,6 @@
         </div>
     </div>
     <div>
-        <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+        <a href="@ViewBag.PreviousUrl" class="btn btn-secondary">Return</a>
     </div>
 </div>

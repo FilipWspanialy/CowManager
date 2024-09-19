@@ -49,7 +49,7 @@
         </div>
     </div>
     <div>
-        <a href="@Url.Action("MedicineEdit", new { id = @Model.Id })" class="btn btn-secondary">Edit</a>
+        <a asp-action="MedicineEdit" asp-route-id="@Model.Id" class="btn btn-secondary">Edit</a>
     </div>
     <div class="form-group">
         <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>

@@ -256,54 +256,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
             return View(cows);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("Cowid,Name,Idherd,Nameherd,Comment,UserId,UserName,BirthDate,DeathDate")] Cow cows, string previousUrl)
-        //{
-        //    if (id != cows.Id)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            var existingCow = await _context.Cows
-        //                .Where(c => c.Cowid == cows.Cowid && c.Id != cows.Id)
-        //                .FirstOrDefaultAsync();
-
-        //            if (existingCow != null)
-        //            {
-        //                ModelState.AddModelError("Cowid", "Cowid already exists.");
-        //            }
-        //            else
-        //            {
-        //                _context.Update(cows);
-        //                await _context.SaveChangesAsync();
-        //                return Redirect(previousUrl);
-        //            }
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!CowExists(cows.Id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //    }
-        //    var herds = await _context.Herds.ToListAsync();
-        //    ViewBag.Herds = new SelectList(herds, "Id", "Comment", cows.Idherd); 
-        //    var user = await _userManager.FindByIdAsync(cows.UserId);
-        //    cows.UserName = user.UserName;
-        //    var idherd = await _context.Herds.FindAsync(cows.Idherd);
-        //    cows.Nameherd = idherd.Comment;
-        //    return View(cows);
-        //}
+        
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -366,7 +319,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Diag(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag") && !referer.Contains("Documentation"))
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("DiagAdd") && !referer.Contains("TreatForDiag") && !referer.Contains("Documentation") && !referer.Contains("DiseaseDetails") && !referer.Contains("DiagRemove") && !referer.Contains("DiagEdit"))
             {
                 HttpContext.Session.SetString("PreviousUrl", referer);
                 ViewBag.PreviousUrl = referer;
@@ -553,7 +506,7 @@ namespace CowManagerApp.Areas.Admin.Controllers
         public async Task<IActionResult> Treat(int? id)
         {
             var referer = Request.Headers["Referer"].ToString();
-            if (!string.IsNullOrEmpty(referer) && !referer.Contains("TreatAdd") && !referer.Contains("TreatForDiag") && !referer.Contains("Documentation"))
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("TreatAdd") && !referer.Contains("TreatForDiag") && !referer.Contains("Documentation") && !referer.Contains("MedicineDetails") && !referer.Contains("TreatRemove") && !referer.Contains("TreatEdit"))
             {
                 HttpContext.Session.SetString("PreviousUrl", referer);
                 ViewBag.PreviousUrl = referer;
@@ -847,12 +800,12 @@ namespace CowManagerApp.Areas.Admin.Controllers
                 .Where(d => d.Idcow == id && d.DeleteTime != null)
                 .Include(d => d.IdmedicineNavigation)
                 .OrderBy(d => d.DeleteTime)
-                .ToListAsync() ?? new List<Treatment>();
+                .ToListAsync();
             var diags = await _context.Diagnoses
                 .Where(d => d.Idcow == id && d.DeleteTime != null)
                 .Include(d => d.IddiseaseNavigation)
                 .OrderBy(d => d.DeleteTime)
-                .ToListAsync() ?? new List<Diagnosis>();
+                .ToListAsync();
 
             var viewModel = new CowDocumentation
             {

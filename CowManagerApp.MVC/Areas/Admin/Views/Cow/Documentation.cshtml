@@ -54,57 +54,56 @@
         margin-top: 20px;
     }
 </style>
-
 <div class="form-container">
     <div class="card">
         <div class="card-header">
-            @Model.Cow.Name
+            Cow's name: @Model.Cow.Name
         </div>
         <div class="card-body">
             <h3>History of Diagnoses</h3>
-            @if (Model.Diagnosis.Any())
+            @if (Model.Diagnosis != null)
             {
-                    <ul>
+                <ul>
                     @foreach (var item in Model.Diagnosis)
                     {
-                                <li>
-                                    <strong>Disease:</strong> @item.NameOfDisease
-                                    <br />
-                                    <strong>Comment:</strong> @item.Comment
-                                    <br />
-                                    <strong>Create Time:</strong> @item.CreateTime
-                                    <br />
-                                    <strong>Delete Time:</strong> @item.DeleteTime
-                                </li>
+                        <li>
+                            <strong>Disease:</strong> @item.IddiseaseNavigation.Name
+                            <br />
+                            <strong>Comment:</strong> @item.Comment
+                            <br />
+                            <strong>Create Time:</strong> @item.CreateTime?.ToString("yyyy-MM-dd HH:mm")
+                            <br />
+                            <strong>Delete Time:</strong> @item.DeleteTime?.ToString("yyyy-MM-dd HH:mm")
+                        </li>
                     }
-                    </ul>
+                </ul>
             }
             else
             {
-                    <p class="no-data">No diagnoses found for this cow.</p>
+                <p class="no-data">No diagnoses found for this cow.</p>
             }
 
-            <h3>History of Treatment</h3>
-            @if (Model.Treatments.Any())
+            <h3>History of Treatments</h3>
+            @if (Model.Treatments != null && Model.Treatments.Count > 0)
             {
-                    <ul>
+                <ul>
                     @foreach (var item in Model.Treatments)
                     {
-                                <li>
-                                    <strong>Medicine:</strong> @item.NameOfMedicine
-                                    <br />
-                                    <strong>Comment:</strong> @item.Comment
-                                    <br />
-                                    <strong>Create Time:</strong> @item.CreateTime
-                                    <br />
-                                    <strong>Delete Time:</strong> @item.DeleteTime
-                                </li>
+                        <li>
+                            <strong>Medicine:</strong> @item.IdmedicineNavigation.Name
+                            <br />
+                            <strong>Comment:</strong> @item.Comment
+                            <br />
+                            <strong>Create Time:</strong> @item.CreateTime?.ToString("yyyy-MM-dd HH:mm")
+                            <br />
+                            <strong>Delete Time:</strong> @item.DeleteTime?.ToString("yyyy-MM-dd HH:mm")
+                        </li>
                     }
-                    </ul>
+                </ul>
             }
             else
             {
-                    <p class="no-data">No treatments found for this cow.</p>
+                <p class="no-data">No treatments found for this cow.</p>
             }
 
             <a href="@ViewBag.PreviousUrl" class="btn btn-primary">Return</a>

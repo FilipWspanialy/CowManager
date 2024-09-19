@@ -26,7 +26,6 @@ namespace CowManagerApp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> UsersList()
         {
-            // Pobierz wszystkich użytkowników z rolą "Customer"
             var usersInRole = await _userManager.GetUsersInRoleAsync("Costumer");
 
             return View(usersInRole);

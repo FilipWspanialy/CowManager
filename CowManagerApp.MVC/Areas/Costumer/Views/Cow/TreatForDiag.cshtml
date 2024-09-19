@@ -37,7 +37,7 @@
 else
 {
     <h3>Treatment</h3>
-  
+    <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id" class="btn btn-secondary">Documentation</a>
     @if (Model.Treatments.Any())
     {
         <ul>

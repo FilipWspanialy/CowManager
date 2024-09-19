@@ -24,6 +24,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Herd</th>
+            <th>Owner</th>
             <th>Birth date</th>
             <th>Death date</th>
             <th>Actions</th>
@@ -45,6 +46,7 @@
                     }
                     </td>
                     <td>@item.Nameherd</td>
+                    <td>@item.UserName</td>
                     <td>@(item.BirthDate.HasValue ? item.BirthDate.Value.ToString("dd-MM-yyyy") : "")</td>
                     <td>@(item.DeathDate.HasValue ? item.DeathDate.Value.ToString("dd-MM-yyyy") : "")</td>
                     <td>

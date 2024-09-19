@@ -16,7 +16,7 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Comment</th>
+            <th>Name</th>
             <th>Amount of cows</th>
             <th>Actions</th>
         </tr>
@@ -25,8 +25,8 @@
         @foreach (var item in Model.Herd)
         {
                 <tr>
-                    <td><a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Id</a></td>
-                    <td><a href="@Url.Action("HerdDetails", new { id = item.Id })">@item.Comment</a></td>
+                    <td><a asp-controller="Herd" asp-action="HerdDetails" asp-route-id="@item.Id">@item.Id</a></td>
+                    <td><a asp-controller="Herd" asp-action="HerdDetails" asp-route-id="@item.Id">@item.Comment</a></td>
                     <td>@item.AmountOfCows</td>
                     <td>
                         <a asp-controller="Herd" asp-action="AddCow" asp-route-id="@item.Id" class="btn btn-info btn-sm">Add Cow</a>
@@ -44,7 +44,7 @@
 </p>
 
 
-<form asp-action="Index" method="get">
+<form asp-action="UserDetails" method="get">
     <p>
         Search by name: <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
         <input type="submit" value="Search" class="btn btn-primary" />
@@ -69,7 +69,16 @@
         {
                 <tr>
                     <td>@item.Cowid</td>
-                    <td>@item.Name</td>
+                    <td>
+                    @if (item.DeathDate.HasValue)
+                    {
+                        <span class="strikethrough">@item.Name</span>
+                    }
+                    else
+                    {
+                        <span>@item.Name</span>
+                    }
+                    </td>
                     <td>@item.Comment</td>
                     <td>@item.Nameherd</td>
                     <td>@item.BirthDate</td>

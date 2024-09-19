@@ -46,6 +46,10 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         }
         public async Task<IActionResult> Details(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            ViewBag.PreviousUrl = referer;
+
+
             if (id == null)
             {
                 return NotFound();
@@ -60,171 +64,184 @@ namespace CowManagerApp.Areas.Costumer.Controllers
             return View(cows);
         }
 
-        public async Task<IActionResult> Create()
-        {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //public async Task<IActionResult> Create()
+        //{
+        //    string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var herds = await _context.Herds
-                            .Where(c => c.UserId == userId)
-                            .ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Comment");
+        //    var herds = await _context.Herds
+        //                    .Where(c => c.UserId == userId)
+        //                    .ToListAsync();
+        //    ViewBag.Herds = new SelectList(herds, "Id", "Comment");
 
-            if (herds == null || !herds.Any())
-            {
-                ViewBag.HerdsError = "No herds available.";
-            }
-            return View();
-        }
+        //    if (herds == null || !herds.Any())
+        //    {
+        //        ViewBag.HerdsError = "No herds available.";
+        //    }
+        //    return View();
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
-        {
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("Name,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
+        //{
             
-            cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (ModelState.IsValid)
-            {
-                bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cows.Cowid);
+        //    cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    if (ModelState.IsValid)
+        //    {
+        //        bool isCowidExists = await _context.Cows.AnyAsync(c => c.Cowid == cows.Cowid);
 
-                if (isCowidExists)
-                {
-                    ModelState.AddModelError("Cowid", "Cowid already exists.");
-                }
-                else
-                {
-                    _context.Add(cows);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-            }
-            var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
+        //        if (isCowidExists)
+        //        {
+        //            ModelState.AddModelError("Cowid", "Cowid already exists.");
+        //        }
+        //        else
+        //        {
+        //            _context.Add(cows);
+        //            await _context.SaveChangesAsync();
+        //            return RedirectToAction(nameof(Index));
+        //        }
+        //    }
+        //    var herds = await _context.Herds.ToListAsync();
+        //    ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
 
-            return View(cows);
-        }
+        //    return View(cows);
+        //}
 
-        public async Task<IActionResult> Edit(int? id)
-        {
-            var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id");
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Edit(int? id)
+        //{
+        //    var herds = await _context.Herds.ToListAsync();
+        //    ViewBag.Herds = new SelectList(herds, "Id", "Id");
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var cows = await _context.Cows.FindAsync(id);
-            if (cows == null)
-            {
-                return NotFound();
-            }
-            return View(cows);
-        }
+        //    var cows = await _context.Cows.FindAsync(id);
+        //    if (cows == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(cows);
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Nameherd,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
-        {
-            cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var idherd = await _context.Herds.FindAsync(cows.Idherd);
-            cows.Nameherd = idherd.Comment;
-            if (id != cows.Id)
-            {
-                return NotFound();
-            }
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    var existingCow = await _context.Cows
-                        .Where(c => c.Cowid == cows.Cowid && c.Id != cows.Id)
-                        .FirstOrDefaultAsync();
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Nameherd,Idherd,Comment,BirthDate,DeathDate")] Cow cows)
+        //{
+        //    cows.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    var idherd = await _context.Herds.FindAsync(cows.Idherd);
+        //    cows.Nameherd = idherd.Comment;
+        //    if (id != cows.Id)
+        //    {
+        //        return NotFound();
+        //    }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            var existingCow = await _context.Cows
+        //                .Where(c => c.Cowid == cows.Cowid && c.Id != cows.Id)
+        //                .FirstOrDefaultAsync();
 
-                    if (existingCow != null)
-                    {
-                        ModelState.AddModelError("Cowid", "Cowid already exists.");
-                    }
-                    else
-                    {
-                        _context.Update(cows);
-                        await _context.SaveChangesAsync();
-                        return RedirectToAction(nameof(Index));
-                    }
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CowExists(cows.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-            }
-            var herds = await _context.Herds.ToListAsync();
-            ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
-            return View(cows);
-        }
+        //            if (existingCow != null)
+        //            {
+        //                ModelState.AddModelError("Cowid", "Cowid already exists.");
+        //            }
+        //            else
+        //            {
+        //                _context.Update(cows);
+        //                await _context.SaveChangesAsync();
+        //                return RedirectToAction(nameof(Index));
+        //            }
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!CowExists(cows.Id))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //    }
+        //    var herds = await _context.Herds.ToListAsync();
+        //    ViewBag.Herds = new SelectList(herds, "Id", "Id", cows.Idherd);
+        //    return View(cows);
+        //}
 
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var cows = await _context.Cows
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (cows == null)
-            {
-                return NotFound();
-            }
+        //    var cows = await _context.Cows
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (cows == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(cows);
-        }
+        //    return View(cows);
+        //}
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            using (var transaction = await _context.Database.BeginTransactionAsync())
-            {
-                try
-                {
-                    var cow = await _context.Cows.FindAsync(id);
-                    if (cow != null)
-                    {
-                        var diagnoses = _context.Diagnoses.Where(d => d.Idcow == id);
-                        _context.Diagnoses.RemoveRange(diagnoses);
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    using (var transaction = await _context.Database.BeginTransactionAsync())
+        //    {
+        //        try
+        //        {
+        //            var cow = await _context.Cows.FindAsync(id);
+        //            if (cow != null)
+        //            {
+        //                var diagnoses = _context.Diagnoses.Where(d => d.Idcow == id);
+        //                _context.Diagnoses.RemoveRange(diagnoses);
 
-                        var treatments = _context.Treatments.Where(t => t.Idcow == id);
-                        _context.Treatments.RemoveRange(treatments);
+        //                var treatments = _context.Treatments.Where(t => t.Idcow == id);
+        //                _context.Treatments.RemoveRange(treatments);
 
-                        _context.Cows.Remove(cow);
+        //                _context.Cows.Remove(cow);
 
-                        await _context.SaveChangesAsync();
+        //                await _context.SaveChangesAsync();
 
-                        await transaction.CommitAsync();
-                    }
-                }
-                catch (Exception)
-                {
-                    await transaction.RollbackAsync();
-                    throw;
-                }
-            }
-            return RedirectToAction(nameof(Index));
-        }
+        //                await transaction.CommitAsync();
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            await transaction.RollbackAsync();
+        //            throw;
+        //        }
+        //    }
+        //    return RedirectToAction(nameof(Index));
+        //}
 
-        private bool CowExists(int id)
-        {
-            return _context.Cows.Any(e => e.Id == id);
-        }
+        //private bool CowExists(int id)
+        //{
+        //    return _context.Cows.Any(e => e.Id == id);
+        //}
 
         // ********************************************************************************* diagnosis adn treatments
         public async Task<IActionResult> Diag(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("TreatForDiag") && !referer.Contains("Documentation") && !referer.Contains("DiseaseDetails"))
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
+
+
             if (id == null)
             {
                 return NotFound();
@@ -392,6 +409,17 @@ namespace CowManagerApp.Areas.Costumer.Controllers
         // ********************************************************************************* treatment
         public async Task<IActionResult> Treat(int? id)
         {
+            var referer = Request.Headers["Referer"].ToString();
+            if (!string.IsNullOrEmpty(referer) && !referer.Contains("Documentation") && !referer.Contains("MedicineDetails")) 
+            {
+                HttpContext.Session.SetString("PreviousUrl", referer);
+                ViewBag.PreviousUrl = referer;
+
+            }
+            else
+            {
+                ViewBag.PreviousUrl = HttpContext.Session.GetString("PreviousUrl");
+            }
             if (id == null)
             {
                 return NotFound();

@@ -62,7 +62,7 @@
             @Model.Cow.Name
         </div>
         <div class="card-body">
-            <p><strong>Comments:</strong> @Model.Cow.Comment</p>
+            <p>@Model.Cow.Cowid</p>
             <a asp-action="Diag" asp-route-id="@Model.Cow.Id" class="btn btn-secondary">Back to diagnosis</a>
             <a asp-action="Documentation" asp-controller="Cow" asp-route-id="@Model.Cow.Id" class="btn btn-secondary">Documentation</a>
             <h2>@ViewBag.Disease</h2>

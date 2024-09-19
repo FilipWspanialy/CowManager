@@ -2,7 +2,7 @@
 @model CowManager.Models.Models.Herd
 
 @{
-    ViewData["Title"] = $"Herd Details - {Model.Id}";
+    ViewData["Title"] = $"Herd Details - {Model.Comment}";
 }
 
 <style>
@@ -46,7 +46,7 @@
 </style>
 
 <div class="page-container">
-    <h1>Cows in herd: @Model.Id</h1>
+    <h1>Cows in herd: @Model.Comment</h1>
     <p>Total Cows: @Model.AmountOfCows</p>
 
     <div>
@@ -62,6 +62,12 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Comment</th>
+                <th>
+                    Birth date
+                </th>
+                <th>
+                    Death date
+                </th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -70,8 +76,23 @@
             {
                     <tr>
                         <td>@item.Id</td>
-                        <td>@item.Name</td>
+                        <td>
+                        @if (item.DeathDate.HasValue)
+                        {
+                            <span class="strikethrough">@item.Name</span>
+                        }
+                        else
+                        {
+                            <span>@item.Name</span>
+                        }
+                        </td>
                         <td>@item.Comment</td>
+                        <td>
+                        @item.BirthDate
+                        </td>
+                        <td>
+                        @item.DeathDate
+                        </td>
                         <td>
                             <a class="btn btn-info" asp-action="Diag" asp-controller="Cow" asp-route-id="@item.Id">Diagnosis</a>
                             <a class="btn btn-info" asp-action="Treat" asp-controller="Cow" asp-route-id="@item.Id">Treatment</a>

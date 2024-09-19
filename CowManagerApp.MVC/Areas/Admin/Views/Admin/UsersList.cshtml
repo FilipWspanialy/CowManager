@@ -1,14 +1,14 @@
 ﻿<link rel="stylesheet" href="~/css/Create.css" asp-append-version="true" />
 @model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
 
-<h2 style="color: black;">User List</h2>
+<h2 style="color: black;">Users List</h2>
 
 <table id="user-list-table" style="background-color: #f0f0f0; color: #000; border: 1px solid #000;" class="table custom-table">
     <thead>
         <tr>
             <th>Email</th>
             <th>Name</th>
-            <th>Akcje</th> 
+            
         </tr>
     </thead>
     <tbody>
@@ -19,10 +19,7 @@
                     <td>
                         <a href="@Url.Action("UserDetails", "Admin", new { id = user.Id })">@user.UserName</a>
                     </td>
-                    <td>
-                        <a href="@Url.Action("EditUser", "Admin", new { id = user.Id })" class="btn btn-primary btn-sm">Edytuj</a>
-                        <a href="@Url.Action("DeleteUser", "Admin", new { id = user.Id })" class="btn btn-danger btn-sm">Usuń</a>
-                    </td>
+                   
                 </tr>
         }
     </tbody>
